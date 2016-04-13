@@ -15,6 +15,12 @@ You can see a live demo of the widgets [here](http://mozaik-gitlab.herokuapp.com
 
 ## Widgets
 
+- [Branches](#gitlab-branches)
+- [Build Histogram](#gitlab-build-histogram)
+- [Build History](#gitlab-build-history)
+- [Members](#gitlab-members)
+- [Merge Requests Gauge](#gitlab-merge-requests-gauge)
+- [Project](#gitlab-project)
 
 ### GitLab Branches
 
