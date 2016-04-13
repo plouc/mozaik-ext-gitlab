@@ -37,6 +37,29 @@ key       | required | description
 ```
 
 
+### GitLab Build Histogram
+
+> Show GitLab project build histogram.
+
+![Gitlab project build histogram](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_build_histogram.png)
+
+#### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+#### usage
+
+```javascript
+{
+  type: 'gitlab.build_histogram',
+  project: 'gitlab-org/gitlab-ce',
+  columns: 1, rows: 1, x: 0, y: 0
+}
+```
+
+
 ### GitLab Build History
 
 > Show GitLab project build history.
