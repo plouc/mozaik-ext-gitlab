@@ -131,6 +131,29 @@ key       | required | description
 ```
 
 
+### GitLab Project
+
+> Show GitLab project merge requests gauge.
+
+![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
+
+#### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+#### usage
+
+```javascript
+{
+  type: 'gitlab.project',
+  project: 'gitlab-org/gitlab-ce',
+  columns: 1, rows: 1, x: 0, y: 0
+}
+```
+
+
 [license-image]: https://img.shields.io/github/license/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [license-url]: https://github.com/plouc/mozaik-ext-gitlab/blob/master/LICENSE.md
 [travis-image]: https://img.shields.io/travis/plouc/mozaik-ext-gitlab.svg?style=flat-square
