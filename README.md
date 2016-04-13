@@ -7,6 +7,8 @@
 [![Coverage Status][coverage-image]][coverage-url]
 ![widget count][widget-count-image]
 
+This repository contains some widgets to use with [Mozaïk](https://github.com/plouc/mozaik).
+
 ## Demo
 
 You can see a live demo of the widgets [here](http://mozaik-gitlab.herokuapp.com/)
