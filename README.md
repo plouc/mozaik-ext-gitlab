@@ -164,4 +164,4 @@ key       | required | description
 [gemnasium-url]: https://gemnasium.com/plouc/mozaik-ext-gitlab
 [coverage-image]: https://img.shields.io/coveralls/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [coverage-url]: https://coveralls.io/github/plouc/mozaik-ext-gitlab
-[widget-count-image]: https://img.shields.io/badge/widgets-x0-green.svg?style=flat-square
+[widget-count-image]: https://img.shields.io/badge/widgets-x6-green.svg?style=flat-square
