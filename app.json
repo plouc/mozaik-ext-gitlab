@@ -1,7 +1,7 @@
 {
   "name": "Mozaïk GitLab dashboard",
   "description": "A Mozaïk based GitLab dashboard",
-  "repository": "https://github.com/plouc/mozaik-ext-gitlab#demo",
+  "repository": "https://github.com/plouc/mozaik-ext-gitlab/tree/demo",
   "logo": "https://raw.githubusercontent.com/wiki/plouc/mozaik/assets/mozaik-logo-v2.png",
   "keywords": ["node", "mozaik", "dashboard", "gitlab"],
   "env": {
