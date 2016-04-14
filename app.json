@@ -1,0 +1,20 @@
+{
+  "name": "Mozaïk GitLab dashboard",
+  "description": "A Mozaïk based GitLab dashboard",
+  "repository": "https://github.com/heroku/node-js-sample",
+  "logo": "https://raw.githubusercontent.com/wiki/plouc/mozaik/assets/mozaik-logo-v2.png",
+  "keywords": ["node", "mozaik", "dashboard", "gitlab"],
+  "env": {
+    "GITLAB_BASE_URL": {
+      "description": "The gitlab API base url",
+      "value": "https://gitlab.com/api/v3"
+    },
+    "GITLAB_API_TOKEN": {
+      "description": "The gitlab API token"
+    },
+    "GITLAB_PROJECT": {
+      "description": "ID or NAMESPACE/PROJECT_NAME of the project you want to build a dashboard for",
+      "value": "gitlab-org/gitlab-ce"
+    }
+  }
+}
