@@ -2,7 +2,7 @@
 require('dotenv').load();
 
 
-var gitlabProject = 'gitlab-org/gitlab-ce';
+var gitlabProject = process.env.GITLAB_PROJECT || 'gitlab-org/gitlab-ce';
 
 
 var config = {
