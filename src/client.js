@@ -51,7 +51,7 @@ const client = mozaik => {
             });
         },
         projectMergeRequests({ project, query = {} }) {
-            return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`, query)
+            return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests?state=opened`, query)
                 .then(res => res.body)
             ;
         }
