@@ -10,27 +10,32 @@ class MergeRequestsGauge extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { mergeRequests: [] };
+        this.state = { mergeRequestCount: 0 };
     }
 
     getApiRequest() {
         const { project } = this.props;
 
         return {
-            id:     `gitlab.projectMergeRequests.${ project }`,
-            params: { project }
+            id:     `gitlab.projectMergeRequests.${ project }.opened`,
+            params: {
+                project,
+                query: {
+                    state: 'closed'
+                }
+            }
         };
     }
 
-    onApiData(mergeRequests) {
-        this.setState({ mergeRequests });
+    onApiData({ total }) {
+        this.setState({ mergeRequestCount: total });
     }
 
     render() {
-        const { thresholds }    = this.props;
-        const { mergeRequests } = this.state;
+        const { thresholds }        = this.props;
+        const { mergeRequestCount } = this.state;
 
-        const cappedValue    = Math.min(mergeRequests.length, _.max(thresholds.map(threshold => threshold.threshold)));
+        const cappedValue    = Math.min(mergeRequestCount, _.max(thresholds.map(threshold => threshold.threshold)));
         let message          = null;
         const normThresholds = thresholds.map(threshold => {
             if (message === null && cappedValue <= threshold.threshold) {
@@ -48,7 +53,7 @@ class MergeRequestsGauge extends Component {
                 <div className="widget__header">
                     Pending Merge Requests
                     <span className="widget__header__count">
-                        {mergeRequests.length}
+                        {mergeRequestCount}
                     </span>
                     <i className="fa fa-dashboard"/>
                 </div>
@@ -58,7 +63,7 @@ class MergeRequestsGauge extends Component {
                             donutRatio={0.65}
                             spacing={{ top: 45, right: 45, left: 45 }}
                             ranges={normThresholds}
-                            value={mergeRequests.length}
+                            value={mergeRequestCount}
                         />
                     </div>
                     <div className="gitlab__merge-requests_gauge_message">
