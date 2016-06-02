@@ -121,6 +121,8 @@ key       | required | description
 
 > Show GitLab project contributors.
 
+![Gitlab project contributors](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project_contributors.png)
+
 #### parameters
 
 key       | required | description
