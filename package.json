@@ -22,7 +22,7 @@
     "gulp": "^3.9.0",
     "lodash": "4.9.0",
     "mozaik": "1.4.3",
-    "mozaik-ext-gitlab": "0.1.0",
+    "mozaik-ext-gitlab": "0.1.1",
     "react": "^0.13.3"
   },
   "scripts": {
