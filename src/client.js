@@ -54,7 +54,7 @@ const client = mozaik => {
             return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`, query)
                 .then(res => {
                     return {
-                        total:   res.header['x-total'],
+                        total:   parseInt(res.header['x-total'], 10),
                         results: res.body
                     };
                 })

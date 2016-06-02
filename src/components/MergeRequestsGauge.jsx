@@ -21,7 +21,7 @@ class MergeRequestsGauge extends Component {
             params: {
                 project,
                 query: {
-                    state: 'closed'
+                    state: 'opened'
                 }
             }
         };
