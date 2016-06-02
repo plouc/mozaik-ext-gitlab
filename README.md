@@ -20,7 +20,8 @@ You can see a live demo of the widgets [here](http://mozaik-gitlab.herokuapp.com
 - [Branches](#gitlab-branches)
 - [Build Histogram](#gitlab-build-histogram)
 - [Build History](#gitlab-build-history)
-- [Members](#gitlab-members)
+- [Project Members](#gitlab-project-members)
+- [Project Contributors](#gitlab-project-contributors)
 - [Merge Requests Gauge](#gitlab-merge-requests-gauge)
 - [Project](#gitlab-project)
 
@@ -93,7 +94,7 @@ key       | required | description
 ```
 
 
-### GitLab Members
+### GitLab Project Members
 
 > Show GitLab project members.
 
@@ -109,7 +110,30 @@ key       | required | description
 
 ```javascript
 {
-  type: 'gitlab.members',
+  type: 'gitlab.project_members',
+  project: 'gitlab-org/gitlab-ce',
+  columns: 1, rows: 1, x: 0, y: 0
+}
+```
+
+
+### GitLab Project Contributors
+
+> Show GitLab project contributors.
+
+![Gitlab project contributors](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project_contributors.png)
+
+#### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+#### usage
+
+```javascript
+{
+  type: 'gitlab.project_contributors',
   project: 'gitlab-org/gitlab-ce',
   columns: 1, rows: 1, x: 0, y: 0
 }
@@ -172,6 +196,6 @@ key       | required | description
 [gemnasium-url]: https://gemnasium.com/plouc/mozaik-ext-gitlab
 [coverage-image]: https://img.shields.io/coveralls/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [coverage-url]: https://coveralls.io/github/plouc/mozaik-ext-gitlab
-[widget-count-image]: https://img.shields.io/badge/widgets-x6-green.svg?style=flat-square
+[widget-count-image]: https://img.shields.io/badge/widgets-x7-green.svg?style=flat-square
 [heroku-image]: https://www.herokucdn.com/deploy/button.svg
 [heroku-url]: https://heroku.com/deploy?template=https://github.com/plouc/mozaik-ext-gitlab/tree/demo

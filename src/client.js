@@ -38,6 +38,11 @@ const client = mozaik => {
                 .then(res => res.body)
             ;
         },
+        projectContributors({ project }) {
+            return buildApiRequest(`/projects/${encodeURIComponent(project)}/repository/contributors`)
+                .then(res => res.body)
+            ;
+        },
         projectBuilds({ project }) {
             return Promise.props({
                 project: operations.project({ project }),
