@@ -15,8 +15,13 @@
     "plugins": [
         "react"
     ],
+    "settings": {
+        "react": {
+            "version": "15.0"
+        }
+    },
     "rules": {
-        "semi": 2,
+        "semi": [2, "never"],
         "prefer-template": 2,
         "indent": [2, 4, {
             "SwitchCase": 1
@@ -52,9 +57,7 @@
             "allowBind": false
         }],
         "react/no-direct-mutation-state": 2,
-        "react/no-deprecated": [2, {
-            "react": "0.13.3"
-        }],
+        "react/no-deprecated": [2],
         "react/prop-types": [1, {}],
         "react/react-in-jsx-scope": 2,
         "react/prefer-es6-class": [2, "always"],

@@ -1,35 +1,17 @@
-import React, { Component, PropTypes } from 'react';
-import reactMixin                      from 'react-mixin';
-import { ListenerMixin }               from 'reflux';
-import Mozaik                          from 'mozaik/browser';
-import Branch                          from './Branch.jsx';
+import React, { Component, PropTypes } from 'react'
+import Branch                          from './Branch'
 
 
 class Branches extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            project:  null,
-            branches: []
-        };
-    }
-
-    getApiRequest() {
-        const { project } = this.props;
-
+    static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectBranches.${ project }`,
             params: { project }
-        };
-    }
-
-    onApiData({ project, branches }) {
-        this.setState({ project, branches });
+        }
     }
 
     render() {
-        const { project, branches } = this.state;
+        const { apiData: { project, branches } } = this.props
 
         return (
             <div>
@@ -46,19 +28,27 @@ class Branches extends Component {
                     ))}
                 </div>
             </div>
-        );
+        )
     }
 }
 
 Branches.propTypes = {
     project: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.number
-    ]).isRequired
-};
+        PropTypes.number,
+    ]).isRequired,
+    apiData: PropTypes.shape({
+        project:  PropTypes.object,
+        branches: PropTypes.array.isRequired,
+    }).isRequired,
+}
 
-reactMixin(Branches.prototype, ListenerMixin);
-reactMixin(Branches.prototype, Mozaik.Mixin.ApiConsumer);
+Branches.defaultProps = {
+    apiData: {
+        project:  null,
+        branches: [],
+    },
+}
 
 
-export default Branches;
+export default Branches

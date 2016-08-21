@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
 
 
 class ProjectContributorsItem extends Component {
     render() {
-        const { name, commits } = this.props.contributor;
+        const { contributor: { name, commits } } = this.props
 
         return (
             <div className="list__item">
@@ -12,18 +12,16 @@ class ProjectContributorsItem extends Component {
                     {commits}&nbsp;<i className="fa fa-dot-circle-o"/>
                 </span>
             </div>
-        );
+        )
     }
 }
-
-ProjectContributorsItem.displayName = 'ProjectContributorsItem';
 
 ProjectContributorsItem.propTypes = {
     contributor: PropTypes.shape({
         name:    PropTypes.string.isRequired,
-        commits: PropTypes.number.isRequired
-    }).isRequired
-};
+        commits: PropTypes.number.isRequired,
+    }).isRequired,
+}
 
 
-export default ProjectContributorsItem;
+export default ProjectContributorsItem

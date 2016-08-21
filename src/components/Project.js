@@ -1,35 +1,19 @@
-import React, { Component, PropTypes } from 'react';
-import reactMixin                      from 'react-mixin';
-import { ListenerMixin }               from 'reflux';
-import Mozaik                          from 'mozaik/browser';
+import React, { Component, PropTypes } from 'react'
 
 
 class Project extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { project: null };
-    }
-
-    getApiRequest() {
-        const { project } = this.props;
-
+    static getApiRequest({ project }) {
         return {
             id:     `gitlab.project.${ project }`,
-            params: { project }
-        };
-    }
-
-    onApiData(project) {
-        //console.log(project);
-        this.setState({ project });
+            params: { project },
+        }
     }
 
     render() {
-        const { project } = this.state;
+        const { apiData: project } = this.props
 
-        if (project === null) {
-            return null;
+        if (!project) {
+            return null
         }
 
         return (
@@ -67,21 +51,17 @@ class Project extends Component {
                     </a>
                 </div>
             </div>
-        );
+        )
     }
 }
-
-Project.displayName = 'Project';
 
 Project.propTypes = {
     project: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.number
-    ]).isRequired
-};
-
-reactMixin(Project.prototype, ListenerMixin);
-reactMixin(Project.prototype, Mozaik.Mixin.ApiConsumer);
+        PropTypes.number,
+    ]).isRequired,
+    apiData: PropTypes.object,
+}
 
 
-export default Project;
+export default Project

@@ -1,19 +1,19 @@
-import React, { Component, PropTypes } from 'react';
-import moment                          from 'moment';
+import React, { Component, PropTypes } from 'react'
+import moment                          from 'moment'
 
 
 class BuildHistoryItem extends Component {
     render() {
-        const { project, build } = this.props;
+        const { project, build } = this.props
 
-        let commitNode = null;
+        let commitNode = null
         if (build.commit) {
             commitNode = (
                 <span className="travis__build-history__item__message">{build.commit.message}</span>
-            );
+            )
         }
 
-        const cssClasses = `list__item list__item--with-status list__item--with-status--${build.status}`;
+        const cssClasses = `list__item list__item--with-status list__item--with-status--${build.status}`
 
         return (
             <div className={cssClasses}>
@@ -37,11 +37,9 @@ class BuildHistoryItem extends Component {
                     </time>
                 )}
             </div>
-        );
+        )
     }
 }
-
-BuildHistoryItem.displayName = 'BuildHistoryItem';
 
 BuildHistoryItem.propTypes = {
     project: PropTypes.shape({
@@ -55,7 +53,7 @@ BuildHistoryItem.propTypes = {
             message: PropTypes.string.isRequired
         })
     }).isRequired
-};
+}
 
 
-export default BuildHistoryItem;
+export default BuildHistoryItem

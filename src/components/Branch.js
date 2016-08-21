@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import moment                          from 'moment';
+import React, { Component, PropTypes } from 'react'
+import moment                          from 'moment'
 
 
 class Branch extends Component {
     render() {
-        const { project, branch } = this.props;
+        const { project, branch } = this.props
 
         return (
             <div className="list__item">
@@ -37,11 +37,9 @@ class Branch extends Component {
                     </time>
                 </div>
             </div>
-        );
+        )
     }
 }
-
-Branch.displayName = 'Branch';
 
 Branch.propTypes = {
     project: PropTypes.shape({
@@ -54,8 +52,8 @@ Branch.propTypes = {
             message:     PropTypes.string.isRequired,
             author_name: PropTypes.string.isRequired
         }).isRequired
-    }).isRequired
-};
+    }).isRequired,
+}
 
 
-export default Branch;
+export default Branch

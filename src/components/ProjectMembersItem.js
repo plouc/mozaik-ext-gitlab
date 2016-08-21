@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
 
 
 class ProjectMembersItem extends Component {
     render() {
-        const { member } = this.props;
+        const { member } = this.props
 
         return (
             <a className="gitlab__project-members__item" href={member.web_url} target="_blank">
@@ -12,19 +12,17 @@ class ProjectMembersItem extends Component {
                 </span>
                 {member.username}
             </a>
-        );
+        )
     }
 }
-
-ProjectMembersItem.displayName = 'ProjectMembersItem';
 
 ProjectMembersItem.propTypes = {
     member: PropTypes.shape({
         username:   PropTypes.string.isRequired,
         avatar_url: PropTypes.string.isRequired,
-        web_url:    PropTypes.string.isRequired
+        web_url:    PropTypes.string.isRequired,
     }).isRequired
-};
+}
 
 
-export default ProjectMembersItem;
+export default ProjectMembersItem

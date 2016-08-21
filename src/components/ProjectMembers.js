@@ -1,32 +1,17 @@
-import React, { Component, PropTypes } from 'react';
-import reactMixin                      from 'react-mixin';
-import { ListenerMixin }               from 'reflux';
-import Mozaik                          from 'mozaik/browser';
-import ProjectMembersItem              from './ProjectMembersItem.jsx';
+import React, { Component, PropTypes } from 'react'
+import ProjectMembersItem              from './ProjectMembersItem'
 
 
 class ProjectMembers extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { members: [] };
-    }
-
-    getApiRequest() {
-        const { project } = this.props;
-
+    static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectMembers.${ project }`,
             params: { project }
-        };
-    }
-
-    onApiData(members) {
-        this.setState({ members });
+        }
     }
 
     render() {
-        const { members } = this.state;
+        const { apiData: members } = this.props
 
         return (
             <div>
@@ -46,21 +31,21 @@ class ProjectMembers extends Component {
                     ))}
                 </div>
             </div>
-        );
+        )
     }
 }
-
-ProjectMembers.displayName = 'ProjectMembers';
 
 ProjectMembers.propTypes = {
     project: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
-    ]).isRequired
-};
+    ]).isRequired,
+    apiData: PropTypes.array.isRequired,
+}
 
-reactMixin(ProjectMembers.prototype, ListenerMixin);
-reactMixin(ProjectMembers.prototype, Mozaik.Mixin.ApiConsumer);
+ProjectMembers.defaultProps = {
+    apiData: [],
+}
 
 
-export default ProjectMembers;
+export default ProjectMembers
