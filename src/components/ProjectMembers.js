@@ -16,9 +16,11 @@ class ProjectMembers extends Component {
         return (
             <div>
                 <div className="widget__header">
-                    Project members
-                    <span className="widget__header__count">
-                        {members.length}
+                    <span>
+                        Project members
+                        <span className="widget__header__count">
+                            {members.length}
+                        </span>
                     </span>
                     <i className="fa fa-child" />
                 </div>

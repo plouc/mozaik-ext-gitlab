@@ -20,7 +20,7 @@ class Project extends Component {
             <div>
                 <div className="widget__header">
                     <a href={project.web_url} target="_blank">{project.name}</a>
-                    <i className="fa fa-info" />
+                    <i className="fa fa-gitlab" />
                 </div>
                 <div className="widget__body">
                     <span className="label__group">
