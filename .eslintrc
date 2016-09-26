@@ -34,7 +34,10 @@
             "beforeColon": false,
             "afterColon":  true
         }],
-        "quotes": [2, "single"],
+        "quotes": [2, "single", {
+            "avoidEscape":           true,
+            "allowTemplateLiterals": true
+        }],
         "jsx-quotes": [2, "prefer-double"],
         "array-bracket-spacing": [2, "never"],
         "eol-last": 2,
