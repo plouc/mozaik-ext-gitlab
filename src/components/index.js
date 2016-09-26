@@ -5,6 +5,8 @@ import BuildHistory from './BuildHistory'
 import BuildHistogram from './BuildHistogram'
 import Branches from './Branches'
 //import MergeRequestsGauge  from './MergeRequestsGauge'
+import LabelsBubbles from './LabelsBubbles'
+import LabelsTreemap from './LabelsTreemap'
 
 export default {
     Project,
@@ -14,4 +16,6 @@ export default {
     BuildHistogram,
     Branches,
     //MergeRequestsGauge,
+    LabelsBubbles,
+    LabelsTreemap,
 }

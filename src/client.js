@@ -92,6 +92,10 @@ const client = mozaik => {
                 }
             })
         },
+        projectLabels({ project }) {
+            return buildApiRequest(`/projects/${encodeURIComponent(project)}/labels`)
+                .then(res => res.body)
+        }
     }
 
     return operations
