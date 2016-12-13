@@ -39,12 +39,13 @@ key       | required | description
 
 #### usage
 
-```javascript
-{
-  type: 'gitlab.branches',
-  project: 'gitlab-org/gitlab-ce',
-  columns: 1, rows: 1, x: 0, y: 0
-}
+``` yaml
+type:    gitlab.branches
+project: gitlab-org/gitlab-ce
+columns: 1
+rows:    1
+x:       0
+y:       0
 ```
 
 
@@ -62,12 +63,13 @@ key       | required | description
 
 #### usage
 
-```javascript
-{
-  type: 'gitlab.build_histogram',
-  project: 'gitlab-org/gitlab-ce',
-  columns: 1, rows: 1, x: 0, y: 0
-}
+``` yaml
+type:    gitlab.build_histogram
+project: gitlab-org/gitlab-ce
+columns: 1
+rows:    1
+x:       0
+y:       0
 ```
 
 
@@ -85,12 +87,13 @@ key       | required | description
 
 #### usage
 
-```javascript
-{
-  type: 'gitlab.build_history',
-  project: 'gitlab-org/gitlab-ce',
-  columns: 1, rows: 1, x: 0, y: 0
-}
+``` yaml
+type:    gitlab.build_history
+project: gitlab-org/gitlab-ce
+columns: 1
+rows:    1
+x:       0
+y:       0
 ```
 
 
@@ -108,12 +111,13 @@ key       | required | description
 
 #### usage
 
-```javascript
-{
-  type: 'gitlab.project_members',
-  project: 'gitlab-org/gitlab-ce',
-  columns: 1, rows: 1, x: 0, y: 0
-}
+``` yaml
+type:    gitlab.project_members
+project: gitlab-org/gitlab-ce
+columns: 1
+rows:    1
+x:       0
+y:       0
 ```
 
 
@@ -131,12 +135,13 @@ key       | required | description
 
 #### usage
 
-```javascript
-{
-  type: 'gitlab.project_contributors',
-  project: 'gitlab-org/gitlab-ce',
-  columns: 1, rows: 1, x: 0, y: 0
-}
+``` yaml
+type:    gitlab.project_contributors
+project: gitlab-org/gitlab-ce
+columns: 1
+rows:    1
+x:       0
+y:       0
 ```
 
 
@@ -154,12 +159,13 @@ key       | required | description
 
 #### usage
 
-```javascript
-{
-  type: 'gitlab.merge_requests_gauge',
-  project: 'gitlab-org/gitlab-ce',
-  columns: 1, rows: 1, x: 0, y: 0
-}
+``` yaml
+type:    gitlab.merge_requests_gauge
+project: gitlab-org/gitlab-ce
+columns: 1
+rows:    1
+x:       0
+y:       0
 ```
 
 
@@ -177,12 +183,13 @@ key       | required | description
 
 #### usage
 
-```javascript
-{
-  type: 'gitlab.project',
-  project: 'gitlab-org/gitlab-ce',
-  columns: 1, rows: 1, x: 0, y: 0
-}
+``` yaml
+type:    gitlab.project
+project: gitlab-org/gitlab-ce
+columns: 1
+rows:    1
+x:       0
+y:       0
 ```
 
 
