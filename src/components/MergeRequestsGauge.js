@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import _                               from 'lodash'
-import Mozaik                          from 'mozaik/ui'
-const { Gauge }                        = Mozaik
+import { Gauge }                       from 'mozaik/ui'
 
 
 class MergeRequestsGauge extends Component {

@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import moment                          from 'moment'
-import Mozaik                          from 'mozaik/ui'
-const { BarChart }                     = Mozaik
+import { BarChart }                    from 'mozaik/ui'
 
 
 class BuildHistogram extends Component {

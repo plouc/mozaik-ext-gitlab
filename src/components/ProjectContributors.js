@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import _                               from 'lodash'
 import ProjectContributorsItem         from './ProjectContributorsItem'
+import { TrapApiError }                from 'mozaik/ui'
 
 
 class ProjectContributors extends Component {
@@ -12,7 +13,7 @@ class ProjectContributors extends Component {
     }
 
     render() {
-        let { apiData: contributors } = this.props
+        let { apiData: contributors, apiError } = this.props
         contributors = _.orderBy(contributors.slice(), ['commits'], ['desc'])
 
         return (
@@ -25,12 +26,16 @@ class ProjectContributors extends Component {
                     <i className="fa fa-child" />
                 </div>
                 <div className="widget__body">
-                    {contributors.map(contributor => (
-                        <ProjectContributorsItem
-                            key={`contributor.${contributor.email}`}
-                            contributor={contributor}
-                        />
-                    ))}
+                    <TrapApiError error={apiError}>
+                        <div>
+                            {contributors.map(contributor => (
+                                <ProjectContributorsItem
+                                    key={`contributor.${contributor.email}`}
+                                    contributor={contributor}
+                                />
+                            ))}
+                        </div>
+                    </TrapApiError>
                 </div>
             </div>
         )
@@ -38,11 +43,12 @@ class ProjectContributors extends Component {
 }
 
 ProjectContributors.propTypes = {
-    project: PropTypes.oneOfType([
+    project:  PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
     ]).isRequired,
-    apiData: PropTypes.array.isRequired,
+    apiData:  PropTypes.array.isRequired,
+    apiError: PropTypes.object,
 }
 
 ProjectContributors.defaultProps = {
