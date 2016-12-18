@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { WidgetHeader, WidgetBody }    from 'mozaik/ui'
 import Branch                          from './Branch'
 
 
@@ -15,18 +16,16 @@ class Branches extends Component {
 
         return (
             <div>
-                <div className="widget__header">
-                    Project branches
-                    <span className="widget__header__count">
-                        {branches.length}
-                    </span>
-                    <i className="fa fa-code-fork" />
-                </div>
-                <div className="widget__body">
+                <WidgetHeader
+                    title="Project branches"
+                    count={branches.length}
+                    icon="code-fork"
+                />
+                <WidgetBody>
                     {branches.map(branch => (
                         <Branch key={branch.name} project={project} branch={branch} />
                     ))}
-                </div>
+                </WidgetBody>
             </div>
         )
     }

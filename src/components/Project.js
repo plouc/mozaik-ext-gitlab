@@ -1,4 +1,9 @@
 import React, { Component, PropTypes } from 'react'
+import {
+    WidgetHeader,
+    WidgetBody,
+    WidgetLabel,
+} from 'mozaik/ui'
 
 
 class Project extends Component {
@@ -18,38 +23,37 @@ class Project extends Component {
 
         return (
             <div>
-                <div className="widget__header">
-                    <a href={project.web_url} target="_blank">{project.name}</a>
-                    <i className="fa fa-gitlab" />
-                </div>
-                <div className="widget__body">
-                    <span className="label__group">
-                        <span className="label__addon">
-                            <i className={`fa fa-${project.public ? 'unlock' : 'lock'}`} />
-                        </span>
-                        <span className="label">
-                            {project.public ? 'public' : 'private'}
-                        </span>
-                    </span>
-                    <span className="label__group">
-                        <span className="label__addon">
-                            {project.star_count}
-                        </span>
-                        <span className="label">stars</span>
-                        <span className="label__addon">
-                            <i className="fa fa-star" />
-                        </span>
-                    </span>
-                    <a className="label__group" href={`${project.web_url}/forks`} target="_blank">
-                        <span className="label__addon">
-                            {project.forks_count}
-                        </span>
-                        <span className="label">forks</span>
-                        <span className="label__addon">
-                            <i className="fa fa-code-fork" />
-                        </span>
-                    </a>
-                </div>
+                <WidgetHeader
+                    title={<a href={project.web_url} target="_blank">{project.name}</a>}
+                    icon="gitlab"
+                />
+                <WidgetBody
+                    style={{
+                        padding:        '1.6vmin 1.6vmin 0',
+                        display:        'flex',
+                        flexWrap:       'wrap',
+                        justifyContent: 'space-between',
+                        alignContent:   'flex-start',
+                    }}
+                >
+                    <WidgetLabel
+                        label={project.public ? 'public' : 'private'}
+                        prefix={<i className={`fa fa-${project.public ? 'unlock' : 'lock'}`} />}
+                        style={{ width: '48%', marginBottom: '1.6vmin' }}
+                    />
+                    <WidgetLabel
+                        label="stars"
+                        prefix={project.star_count}
+                        suffix={<i className="fa fa-star" />}
+                        style={{ width: '48%', marginBottom: '1.6vmin' }}
+                    />
+                    <WidgetLabel
+                        label={<a href={`${project.web_url}/forks`} target="_blank">forks</a>}
+                        prefix={project.forks_count}
+                        suffix={<i className="fa fa-code-fork" />}
+                        style={{ width: '48%', marginBottom: '1.6vmin' }}
+                    />
+                </WidgetBody>
             </div>
         )
     }

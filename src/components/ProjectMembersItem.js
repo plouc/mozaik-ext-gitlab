@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component, PropTypes }  from 'react'
+import { WidgetListItem, WidgetAvatar } from 'mozaik/ui'
 
 
 class ProjectMembersItem extends Component {
@@ -6,12 +7,24 @@ class ProjectMembersItem extends Component {
         const { member } = this.props
 
         return (
-            <a className="gitlab__project-members__item" href={member.web_url} target="_blank">
-                <span className="gitlab__project-members__item__avatar">
-                    <img src={member.avatar_url} alt={member.username} />
-                </span>
-                {member.username}
-            </a>
+            <WidgetListItem
+                title={member.username}
+                href={member.web_url}
+                pre={
+                    <WidgetAvatar size="3vmin">
+                        <img
+                            src={member.avatar_url}
+                            alt={member.username}
+                        />
+                    </WidgetAvatar>
+                }
+                style={{
+                    width:        '48%',
+                    marginBottom: '1vmin',
+                    borderBottom: 0,
+                    padding:      0,
+                }}
+            />
         )
     }
 }

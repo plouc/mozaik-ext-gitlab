@@ -1,42 +1,40 @@
 import React, { Component, PropTypes } from 'react'
 import moment                          from 'moment'
+import { WidgetListItem }              from 'mozaik/ui'
 
 
 class Branch extends Component {
     render() {
         const { project, branch } = this.props
 
+        // {branch.protected && (<span><i className="fa fa-lock" /> protected</span>)}
+
         return (
-            <div className="list__item">
-                <div className="list__item__header">
-                    <a
-                        href={`${project.web_url}/tree/${branch.name}`}
-                        target="_blank"
-                        className="gitlab__branches__item__name"
-                    >
-                        {branch.name}
-                    </a>
-                    {branch.protected && (
-                        <span>
-                            <i className="fa fa-lock" /> protected
-                        </span>
-                    )}
-                    <a
-                        href={`${project.web_url}/commit/${branch.commit.id}`}
-                        target="_blank"
-                        className="gitlab__branches__item__commit__id"
-                    >
-                        {branch.commit.id.substring(0, 7)}
-                    </a>
-                </div>
-                <div className="gitlab__branches__item__commit__message">
-                    {branch.commit.message}
-                    <time className="list__item__time">
-                        <i className="fa fa-clock-o" />&nbsp;
-                        {moment(branch.commit.committed_date).fromNow()}
-                    </time>
-                </div>
-            </div>
+            <WidgetListItem
+                title={
+                    <span>
+                        <a href={`${project.web_url}/tree/${branch.name}`} target="_blank">
+                            {branch.name}
+                        </a>&nbsp;
+                        <a
+                            href={`${project.web_url}/commit/${branch.commit.id}`}
+                            target="_blank"
+                            style={{ textDecoration: 'underline' }}
+                        >
+                            #{branch.commit.id.substring(0, 7)}
+                        </a>
+                    </span>
+                }
+                meta={
+                    <div>
+                        <div>{branch.commit.message}</div>
+                        <time>
+                            <i className="fa fa-clock-o" />&nbsp;
+                            {moment(branch.commit.committed_date).fromNow()}
+                        </time>
+                    </div>
+                }
+            />
         )
     }
 }

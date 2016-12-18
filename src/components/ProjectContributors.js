@@ -1,7 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import _                               from 'lodash'
 import ProjectContributorsItem         from './ProjectContributorsItem'
-import { TrapApiError }                from 'mozaik/ui'
+import {
+    TrapApiError,
+    WidgetHeader,
+    WidgetBody,
+} from 'mozaik/ui'
 
 
 class ProjectContributors extends Component {
@@ -18,14 +22,12 @@ class ProjectContributors extends Component {
 
         return (
             <div>
-                <div className="widget__header">
-                    Project contributors
-                    <span className="widget__header__count">
-                        {contributors.length}
-                    </span>
-                    <i className="fa fa-child" />
-                </div>
-                <div className="widget__body">
+                <WidgetHeader
+                    title="Project contributors"
+                    count={contributors.length}
+                    icon="child"
+                />
+                <WidgetBody>
                     <TrapApiError error={apiError}>
                         <div>
                             {contributors.map(contributor => (
@@ -36,7 +38,7 @@ class ProjectContributors extends Component {
                             ))}
                         </div>
                     </TrapApiError>
-                </div>
+                </WidgetBody>
             </div>
         )
     }

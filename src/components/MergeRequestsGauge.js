@@ -1,6 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import _                               from 'lodash'
-import { Gauge }                       from 'mozaik/ui'
+import {
+    Gauge,
+    WidgetHeader,
+    WidgetBody,
+} from 'mozaik/ui'
 
 
 class MergeRequestsGauge extends Component {
@@ -34,14 +38,12 @@ class MergeRequestsGauge extends Component {
 
         return (
             <div>
-                <div className="widget__header">
-                    Pending Merge Requests
-                    <span className="widget__header__count">
-                        {mergeRequestCount}
-                    </span>
-                    <i className="fa fa-dashboard"/>
-                </div>
-                <div className="widget__body">
+                <WidgetHeader
+                    title="Pending Merge Requests"
+                    count={mergeRequestCount}
+                    icon="dashboard"
+                />
+                <WidgetBody>
                     <div className="gitlab__merge-requests_gauge_chart">
                         <Gauge
                             donutRatio={0.65}
@@ -53,7 +55,7 @@ class MergeRequestsGauge extends Component {
                     <div className="gitlab__merge-requests_gauge_message">
                         {message}
                     </div>
-                </div>
+                </WidgetBody>
             </div>
         )
     }

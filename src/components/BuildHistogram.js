@@ -1,9 +1,37 @@
 import React, { Component, PropTypes } from 'react'
 import moment                          from 'moment'
-import { BarChart }                    from 'mozaik/ui'
+import {
+    WidgetHeader,
+    WidgetBody,
+} from 'mozaik/ui'
+import {
+    ResponsiveChart as Chart,
+    Scale,
+    Axis,
+    Grid,
+    Bars,
+} from 'nivo'
+
+
+const margin = { top: 20, right: 20, bottom: 40, left: 60 }
 
 
 class BuildHistogram extends Component {
+    static propTypes = {
+        project: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]).isRequired,
+        apiData: PropTypes.shape({
+            project: PropTypes.object,
+            builds:  PropTypes.array.isRequired,
+        }),
+    }
+
+    static contextTypes = {
+        theme: PropTypes.object.isRequired,
+    }
+
     static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectBuilds.${ project }`,
@@ -12,61 +40,55 @@ class BuildHistogram extends Component {
     }
 
     render() {
-        const { apiData: { builds } } = this.props
+        const { apiData } = this.props
+        const { theme }   = this.context
 
-        // converts to format required by BarChart component
-        const data = builds.map(({ id, status, started_at, finished_at }) => {
-            let duration = 0
-            if (started_at && finished_at) {
-                duration = moment(finished_at).diff(started_at) / 1000
-            }
+        let subject = null
 
-            return {
-                x: id,
-                y: duration,
-                status
-            }
-        })
+        let body = <div>no data</div>
+        if (apiData !== undefined) {
+            const { project, builds } = apiData
 
-        const barChartOptions = {
-            mode:            'stacked',
-            xLegend:         'build number',
-            xLegendPosition: 'right',
-            yLegend:         'duration (seconds)',
-            yLegendPosition: 'top',
-            xPadding:        0.3,
-            barClass:        d => `result--${ d.status }`
+            subject = (
+                <a href={project.web_url} target="_blank">
+                    {project.name}
+                </a>
+            )
+
+            const data = builds.map(({ id, status, started_at, finished_at }) => {
+                let duration = 0
+                if (started_at && finished_at) {
+                    duration = moment(finished_at).diff(started_at) / 1000
+                }
+
+                return { id, duration, status }
+            })
+
+            body = (
+                <Chart data={data} margin={margin} theme={theme.charts}>
+                    <Scale id="duration" type="linear" dataKey="duration" axis="y"/>
+                    <Scale id="id" type="band" dataKey="id" axis="x" padding={0.3}/>
+                    <Grid yScale="duration"/>
+                    <Axis position="left" scaleId="duration" axis="y"/>
+                    <Axis position="bottom" scaleId="id" axis="x"/>
+                    <Bars xScale="id" x="id" yScale="duration" y="duration" color="#fff"/>
+                </Chart>
+            )
         }
 
         return (
             <div>
-                <div className="widget__header">
-                    Build histogram
-                    <i className="fa fa-bar-chart" />
-                </div>
-                <div className="widget__body">
-                    <BarChart data={[{ data: data }]} options={barChartOptions}/>
-                </div>
+                <WidgetHeader
+                    title="Builds"
+                    subject={subject}
+                    icon="bar-chart"
+                />
+                <WidgetBody style={{ overflowY: 'hidden' }}>
+                    {body}
+                </WidgetBody>
             </div>
         )
     }
-}
-
-BuildHistogram.propTypes = {
-    project: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-    ]).isRequired,
-    apiData: PropTypes.shape({
-        builds: PropTypes.array.isRequired,
-    }).isRequired,
-}
-
-BuildHistogram.defaultProps = {
-    apiData: {
-        project: null,
-        builds:  [],
-    },
 }
 
 

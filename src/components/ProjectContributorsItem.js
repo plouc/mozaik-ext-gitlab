@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { WidgetListItem }              from 'mozaik/ui'
 
 
 class ProjectContributorsItem extends Component {
@@ -6,12 +7,14 @@ class ProjectContributorsItem extends Component {
         const { contributor: { name, commits } } = this.props
 
         return (
-            <div className="list__item">
-                {name}&nbsp;
-                <span className="gitlab__project-contributors__item__count">
-                    {commits}&nbsp;<i className="fa fa-dot-circle-o"/>
-                </span>
-            </div>
+            <WidgetListItem
+                title={name}
+                post={(
+                    <span>
+                        {commits}&nbsp;<i className="fa fa-dot-circle-o"/>
+                    </span>
+                )}
+            />
         )
     }
 }

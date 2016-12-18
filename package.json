@@ -12,7 +12,7 @@
     "url": "https://github.com/plouc"
   },
   "homepage": "https://github.com/plouc/mozaik-ext-gitlab",
-  "main": "./src/components/index.js",
+  "main": "./lib/components/index.js",
   "keywords": [
     "gitlab",
     "gitlab-ci",
@@ -21,6 +21,7 @@
     "extension",
     "dashboard"
   ],
+  "engineStrict": true,
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=3.0.0"
@@ -36,12 +37,11 @@
   },
   "devDependencies": {
     "ava": "0.16.0",
+    "babel-cli": "^6.18.0",
     "babel-core": "6.13.2",
     "babel-eslint": "6.1.2",
+    "babel-preset-react-app": "^2.0.1",
     "babel-plugin-istanbul": "2.0.0",
-    "babel-preset-es2015": "6.13.2",
-    "babel-preset-react": "6.11.1",
-    "babel-preset-stage-2": "6.11.0",
     "babel-register": "6.11.6",
     "coveralls": "2.11.12",
     "enzyme": "2.4.1",
@@ -50,21 +50,24 @@
     "mockery": "1.7.0",
     "nock": "7.7.2",
     "nyc": "8.1.0",
-    "react": "15.3.1",
-    "react-addons-test-utils": "15.3.1",
-    "react-dom": "15.3.1",
+    "react": "^15.4.1",
+    "react-addons-test-utils": "^15.4.1",
+    "react-dom": "^15.4.1",
     "sinon": "1.17.5"
   },
   "peerDependencies": {
-    "mozaik": ">=2.0.0",
-    "react": ">=15.0.0"
+    "mozaik": "^2.0.0-alpha.7",
+    "nivo": "^1.0.0-alpha.7",
+    "react": "^15.4.1"
   },
   "scripts": {
     "eslint": "eslint ./src/** ./test/**",
     "test": "ava",
     "test-cover": "nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "cover-report": "nyc report --reporter=lcov && open coverage/lcov-report/index.html"
+    "cover-report": "nyc report --reporter=lcov && open coverage/lcov-report/index.html",
+    "build": "rm -rf lib/* && babel src --no-comments --out-dir lib",
+    "watch": "NODE_ENV=development babel src --watch --out-dir lib"
   },
   "ava": {
     "files": [

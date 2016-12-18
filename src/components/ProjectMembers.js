@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { WidgetHeader, WidgetBody }    from 'mozaik/ui'
 import ProjectMembersItem              from './ProjectMembersItem'
 
 
@@ -15,23 +16,26 @@ class ProjectMembers extends Component {
 
         return (
             <div>
-                <div className="widget__header">
-                    <span>
-                        Project members
-                        <span className="widget__header__count">
-                            {members.length}
-                        </span>
-                    </span>
-                    <i className="fa fa-child" />
-                </div>
-                <div className="widget__body">
+                <WidgetHeader
+                    title="Project members"
+                    count={members.length}
+                    icon="child"
+                />
+                <WidgetBody
+                    style={{
+                        padding:        '1.6vmin',
+                        display:        'flex',
+                        flexWrap:       'wrap',
+                        justifyContent: 'space-between',
+                    }}
+                >
                     {members.map(member => (
                         <ProjectMembersItem
                             key={`member.${member.id}`}
                             member={member}
                         />
                     ))}
-                </div>
+                </WidgetBody>
             </div>
         )
     }

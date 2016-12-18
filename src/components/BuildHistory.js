@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { WidgetHeader, WidgetBody }    from 'mozaik/ui'
 import BuildHistoryItem                from './BuildHistoryItem'
 
 
@@ -15,15 +16,15 @@ class BuildHistory extends Component {
 
         return (
             <div>
-                <div className="widget__header">
-                    Build history
-                    <i className="fa fa-bars" />
-                </div>
-                <div className="widget__body">
+                <WidgetHeader
+                    title="Build history"
+                    icon="bars"
+                />
+                <WidgetBody>
                     {builds.map(build => (
                         <BuildHistoryItem key={build.id} project={project} build={build} />
                     ))}
-                </div>
+                </WidgetBody>
             </div>
         )
     }
