@@ -1,12 +1,21 @@
 import React, { Component, PropTypes } from 'react'
 import {
+    Widget,
     WidgetHeader,
     WidgetBody,
     WidgetLabel,
 } from 'mozaik/ui'
 
 
-class Project extends Component {
+export default class Project extends Component {
+    static propTypes = {
+        project: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
+        apiData: PropTypes.object,
+    }
+
     static getApiRequest({ project }) {
         return {
             id:     `gitlab.project.${ project }`,
@@ -17,12 +26,10 @@ class Project extends Component {
     render() {
         const { apiData: project } = this.props
 
-        if (!project) {
-            return null
-        }
+        if (!project) return null
 
         return (
-            <div>
+            <Widget>
                 <WidgetHeader
                     title={<a href={project.web_url} target="_blank">{project.name}</a>}
                     icon="gitlab"
@@ -54,18 +61,7 @@ class Project extends Component {
                         style={{ width: '48%', marginBottom: '1.6vmin' }}
                     />
                 </WidgetBody>
-            </div>
+            </Widget>
         )
     }
 }
-
-Project.propTypes = {
-    project: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]).isRequired,
-    apiData: PropTypes.object,
-}
-
-
-export default Project

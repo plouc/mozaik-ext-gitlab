@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import moment                          from 'moment'
 import {
+    Widget,
     WidgetHeader,
     WidgetBody,
 } from 'mozaik/ui'
@@ -16,7 +17,7 @@ import {
 const margin = { top: 20, right: 20, bottom: 40, left: 60 }
 
 
-class BuildHistogram extends Component {
+export default class BuildHistogram extends Component {
     static propTypes = {
         project: PropTypes.oneOfType([
             PropTypes.string,
@@ -77,7 +78,7 @@ class BuildHistogram extends Component {
         }
 
         return (
-            <div>
+            <Widget>
                 <WidgetHeader
                     title="Builds"
                     subject={subject}
@@ -86,10 +87,7 @@ class BuildHistogram extends Component {
                 <WidgetBody style={{ overflowY: 'hidden' }}>
                     {body}
                 </WidgetBody>
-            </div>
+            </Widget>
         )
     }
 }
-
-
-export default BuildHistogram

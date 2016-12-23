@@ -1,9 +1,31 @@
 import React, { Component, PropTypes } from 'react'
-import { WidgetHeader, WidgetBody }    from 'mozaik/ui'
 import Branch                          from './Branch'
+import {
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+} from 'mozaik/ui'
 
 
-class Branches extends Component {
+export default class Branches extends Component {
+    static propTypes = {
+        project: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
+        apiData: PropTypes.shape({
+            project:  PropTypes.object,
+            branches: PropTypes.array.isRequired,
+        }).isRequired,
+    }
+
+    static defaultProps = {
+        apiData: {
+            project:  null,
+            branches: [],
+        },
+    }
+
     static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectBranches.${ project }`,
@@ -15,7 +37,7 @@ class Branches extends Component {
         const { apiData: { project, branches } } = this.props
 
         return (
-            <div>
+            <Widget>
                 <WidgetHeader
                     title="Project branches"
                     count={branches.length}
@@ -26,28 +48,7 @@ class Branches extends Component {
                         <Branch key={branch.name} project={project} branch={branch} />
                     ))}
                 </WidgetBody>
-            </div>
+            </Widget>
         )
     }
 }
-
-Branches.propTypes = {
-    project: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]).isRequired,
-    apiData: PropTypes.shape({
-        project:  PropTypes.object,
-        branches: PropTypes.array.isRequired,
-    }).isRequired,
-}
-
-Branches.defaultProps = {
-    apiData: {
-        project:  null,
-        branches: [],
-    },
-}
-
-
-export default Branches

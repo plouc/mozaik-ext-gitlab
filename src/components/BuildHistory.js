@@ -1,9 +1,31 @@
 import React, { Component, PropTypes } from 'react'
-import { WidgetHeader, WidgetBody }    from 'mozaik/ui'
 import BuildHistoryItem                from './BuildHistoryItem'
+import {
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+} from 'mozaik/ui'
 
 
-class BuildHistory extends Component {
+export default class BuildHistory extends Component {
+    static propTypes = {
+        project: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]).isRequired,
+        apiData: PropTypes.shape({
+            project: PropTypes.object,
+            builds:  PropTypes.array.isRequired,
+        }),
+    }
+
+    static defaultProps = {
+        apiData: {
+            project: null,
+            builds:  [],
+        },
+    }
+
     static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectBuilds.${project}`,
@@ -15,7 +37,7 @@ class BuildHistory extends Component {
         const { apiData: {  project, builds } } = this.props
 
         return (
-            <div>
+            <Widget>
                 <WidgetHeader
                     title="Build history"
                     icon="bars"
@@ -25,28 +47,7 @@ class BuildHistory extends Component {
                         <BuildHistoryItem key={build.id} project={project} build={build} />
                     ))}
                 </WidgetBody>
-            </div>
+            </Widget>
         )
     }
 }
-
-BuildHistory.propTypes = {
-    project: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-    ]).isRequired,
-    apiData: PropTypes.shape({
-        project: PropTypes.object,
-        builds:  PropTypes.array.isRequired,
-    }),
-}
-
-BuildHistory.defaultProps = {
-    apiData: {
-        project: null,
-        builds:  [],
-    },
-}
-
-
-export default BuildHistory

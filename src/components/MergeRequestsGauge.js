@@ -2,12 +2,35 @@ import React, { Component, PropTypes } from 'react'
 import _                               from 'lodash'
 import {
     Gauge,
+    Widget,
     WidgetHeader,
     WidgetBody,
 } from 'mozaik/ui'
 
 
-class MergeRequestsGauge extends Component {
+export default class MergeRequestsGauge extends Component {
+    static propTypes = {
+        project: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
+        thresholds: PropTypes.arrayOf(PropTypes.shape({
+            threshold: PropTypes.number.isRequired,
+            color:     PropTypes.string.isRequired,
+            message:   PropTypes.string.isRequired,
+        })).isRequired,
+        apiData: PropTypes.number.isRequired,
+    }
+
+    static defaultProps = {
+        thresholds: [
+            { threshold: 3,  color: '#85e985', message: 'good job!' },
+            { threshold: 5,  color: '#ecc265', message: 'you should consider reviewing' },
+            { threshold: 10, color: '#f26a3f', message: 'merge requests overflow' },
+        ],
+        apiData: 0,
+    }
+
     static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectMergeRequests.${ project }.opened`,
@@ -37,7 +60,7 @@ class MergeRequestsGauge extends Component {
         })
 
         return (
-            <div>
+            <Widget>
                 <WidgetHeader
                     title="Pending Merge Requests"
                     count={mergeRequestCount}
@@ -56,32 +79,7 @@ class MergeRequestsGauge extends Component {
                         {message}
                     </div>
                 </WidgetBody>
-            </div>
+            </Widget>
         )
     }
 }
-
-MergeRequestsGauge.propTypes = {
-    project: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]).isRequired,
-    thresholds: PropTypes.arrayOf(PropTypes.shape({
-        threshold: PropTypes.number.isRequired,
-        color:     PropTypes.string.isRequired,
-        message:   PropTypes.string.isRequired,
-    })).isRequired,
-    apiData: PropTypes.number.isRequired,
-}
-
-MergeRequestsGauge.defaultProps = {
-    thresholds: [
-        { threshold: 3,  color: '#85e985', message: 'good job!' },
-        { threshold: 5,  color: '#ecc265', message: 'you should consider reviewing' },
-        { threshold: 10, color: '#f26a3f', message: 'merge requests overflow' },
-    ],
-    apiData: 0,
-}
-
-
-export default MergeRequestsGauge

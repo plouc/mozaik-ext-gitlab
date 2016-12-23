@@ -3,12 +3,26 @@ import _                               from 'lodash'
 import ProjectContributorsItem         from './ProjectContributorsItem'
 import {
     TrapApiError,
+    Widget,
     WidgetHeader,
     WidgetBody,
 } from 'mozaik/ui'
 
 
-class ProjectContributors extends Component {
+export default class ProjectContributors extends Component {
+    static propTypes = {
+        project:  PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
+        apiData:  PropTypes.array.isRequired,
+        apiError: PropTypes.object,
+    }
+
+    static defaultProps = {
+        apiData: [],
+    }
+
     static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectContributors.${ project }`,
@@ -21,7 +35,7 @@ class ProjectContributors extends Component {
         contributors = _.orderBy(contributors.slice(), ['commits'], ['desc'])
 
         return (
-            <div>
+            <Widget>
                 <WidgetHeader
                     title="Project contributors"
                     count={contributors.length}
@@ -39,23 +53,7 @@ class ProjectContributors extends Component {
                         </div>
                     </TrapApiError>
                 </WidgetBody>
-            </div>
+            </Widget>
         )
     }
 }
-
-ProjectContributors.propTypes = {
-    project:  PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]).isRequired,
-    apiData:  PropTypes.array.isRequired,
-    apiError: PropTypes.object,
-}
-
-ProjectContributors.defaultProps = {
-    apiData: [],
-}
-
-
-export default ProjectContributors

@@ -1,9 +1,25 @@
 import React, { Component, PropTypes } from 'react'
-import { WidgetHeader, WidgetBody }    from 'mozaik/ui'
 import ProjectMembersItem              from './ProjectMembersItem'
+import {
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+} from 'mozaik/ui'
 
 
-class ProjectMembers extends Component {
+export default class ProjectMembers extends Component {
+    static propTypes = {
+        project: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]).isRequired,
+        apiData: PropTypes.array.isRequired,
+    }
+
+    static defaultProps = {
+        apiData: [],
+    }
+
     static getApiRequest({ project }) {
         return {
             id:     `gitlab.projectMembers.${ project }`,
@@ -15,7 +31,7 @@ class ProjectMembers extends Component {
         const { apiData: members } = this.props
 
         return (
-            <div>
+            <Widget>
                 <WidgetHeader
                     title="Project members"
                     count={members.length}
@@ -36,22 +52,7 @@ class ProjectMembers extends Component {
                         />
                     ))}
                 </WidgetBody>
-            </div>
+            </Widget>
         )
     }
 }
-
-ProjectMembers.propTypes = {
-    project: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-    ]).isRequired,
-    apiData: PropTypes.array.isRequired,
-}
-
-ProjectMembers.defaultProps = {
-    apiData: [],
-}
-
-
-export default ProjectMembers
