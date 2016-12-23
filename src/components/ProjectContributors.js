@@ -6,6 +6,7 @@ import {
     Widget,
     WidgetHeader,
     WidgetBody,
+    WidgetLoader,
 } from 'mozaik/ui'
 
 
@@ -15,12 +16,12 @@ export default class ProjectContributors extends Component {
             PropTypes.string,
             PropTypes.number,
         ]).isRequired,
-        apiData:  PropTypes.array.isRequired,
+        title:    PropTypes.string,
+        apiData:  PropTypes.shape({
+            project:      PropTypes.object.isRequired,
+            contributors: PropTypes.arrayOf(PropTypes.object).isRequired,
+        }),
         apiError: PropTypes.object,
-    }
-
-    static defaultProps = {
-        apiData: [],
     }
 
     static getApiRequest({ project }) {
@@ -31,26 +32,44 @@ export default class ProjectContributors extends Component {
     }
 
     render() {
-        let { apiData: contributors, apiError } = this.props
-        contributors = _.orderBy(contributors.slice(), ['commits'], ['desc'])
+        const { title, apiData, apiError } = this.props
+
+        let body    = <WidgetLoader />
+        let subject = null
+        let count
+        if (apiData) {
+            const { project, contributors } = apiData
+
+            const sortedContributors = _.orderBy(contributors.slice(), ['commits'], ['desc'])
+
+            count = contributors.length
+
+            subject = (
+                <a href={project.web_url} target="_blank">
+                    {project.name}
+                </a>
+            )
+
+            body = (
+                <div>
+                    {sortedContributors.map(contributor => (
+                        <ProjectContributorsItem key={`contributor.${contributor.email}`} contributor={contributor}/>
+                    ))}
+                </div>
+            )
+        }
 
         return (
             <Widget>
                 <WidgetHeader
-                    title="Project contributors"
-                    count={contributors.length}
+                    title={title || 'Contributors'}
+                    subject={title ? null : subject}
+                    count={count}
                     icon="child"
                 />
                 <WidgetBody>
                     <TrapApiError error={apiError}>
-                        <div>
-                            {contributors.map(contributor => (
-                                <ProjectContributorsItem
-                                    key={`contributor.${contributor.email}`}
-                                    contributor={contributor}
-                                />
-                            ))}
-                        </div>
+                        {body}
                     </TrapApiError>
                 </WidgetBody>
             </Widget>

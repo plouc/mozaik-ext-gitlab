@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import {
+    TrapApiError,
     Widget,
     WidgetHeader,
     WidgetBody,
+    WidgetLoader,
     WidgetLabel,
 } from 'mozaik/ui'
 
@@ -13,6 +15,7 @@ export default class Project extends Component {
             PropTypes.string,
             PropTypes.number,
         ]).isRequired,
+        title:   PropTypes.string,
         apiData: PropTypes.object,
     }
 
@@ -24,23 +27,27 @@ export default class Project extends Component {
     }
 
     render() {
-        const { apiData: project } = this.props
+        const { title: _title, apiData: project, apiError } = this.props
 
-        if (!project) return null
+        let body  = <WidgetLoader />
+        let title = 'Project'
+        if (project) {
+            title = (
+                <a href={project.web_url} target="_blank">
+                    {project.name}
+                </a>
+            )
 
-        return (
-            <Widget>
-                <WidgetHeader
-                    title={<a href={project.web_url} target="_blank">{project.name}</a>}
-                    icon="gitlab"
-                />
-                <WidgetBody
+            body = (
+                <div
                     style={{
                         padding:        '1.6vmin 1.6vmin 0',
                         display:        'flex',
                         flexWrap:       'wrap',
                         justifyContent: 'space-between',
                         alignContent:   'flex-start',
+                        width:          '100%',
+                        height:         '100%',
                     }}
                 >
                     <WidgetLabel
@@ -60,6 +67,20 @@ export default class Project extends Component {
                         suffix={<i className="fa fa-code-fork" />}
                         style={{ width: '48%', marginBottom: '1.6vmin' }}
                     />
+                </div>
+            )
+        }
+
+        return (
+            <Widget>
+                <WidgetHeader
+                    title={_title || title}
+                    icon="gitlab"
+                />
+                <WidgetBody>
+                    <TrapApiError error={apiError}>
+                        {body}
+                    </TrapApiError>
                 </WidgetBody>
             </Widget>
         )

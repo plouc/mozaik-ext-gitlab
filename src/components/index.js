@@ -4,7 +4,7 @@ import ProjectContributors from './ProjectContributors'
 import BuildHistory        from './BuildHistory'
 import BuildHistogram      from './BuildHistogram'
 import Branches            from './Branches'
-import MergeRequestsGauge  from './MergeRequestsGauge'
+//import MergeRequestsGauge  from './MergeRequestsGauge'
 
 
 export default {
@@ -14,5 +14,5 @@ export default {
     BuildHistory,
     BuildHistogram,
     Branches,
-    MergeRequestsGauge,
+    //MergeRequestsGauge,
 }

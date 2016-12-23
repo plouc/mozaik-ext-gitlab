@@ -2,40 +2,43 @@ import React, { Component, PropTypes }  from 'react'
 import { WidgetListItem, WidgetAvatar } from 'mozaik/ui'
 
 
-class ProjectMembersItem extends Component {
+export default class ProjectMembersItem extends Component {
+    static propTypes = {
+        member: PropTypes.shape({
+            name:       PropTypes.string.isRequired,
+            avatar_url: PropTypes.string,
+            web_url:    PropTypes.string.isRequired,
+            state:      PropTypes.string.isRequired,
+        }).isRequired,
+    }
+
     render() {
-        const { member } = this.props
+        const { member: {
+            name,
+            avatar_url,
+            web_url,
+            state,
+        } } = this.props
+
+        let avatar = null
+        if (avatar_url) {
+            avatar = (
+                <WidgetAvatar size="3vmin">
+                    <img
+                        src={avatar_url}
+                        alt={username}
+                    />
+                </WidgetAvatar>
+            )
+        }
 
         return (
             <WidgetListItem
-                title={member.username}
-                href={member.web_url}
-                pre={
-                    <WidgetAvatar size="3vmin">
-                        <img
-                            src={member.avatar_url}
-                            alt={member.username}
-                        />
-                    </WidgetAvatar>
-                }
-                style={{
-                    width:        '48%',
-                    marginBottom: '1vmin',
-                    borderBottom: 0,
-                    padding:      0,
-                }}
+                title={<a href={web_url} target="_blank">{name}</a>}
+                href={web_url}
+                pre={avatar}
+                meta={state}
             />
         )
     }
 }
-
-ProjectMembersItem.propTypes = {
-    member: PropTypes.shape({
-        username:   PropTypes.string.isRequired,
-        avatar_url: PropTypes.string.isRequired,
-        web_url:    PropTypes.string.isRequired,
-    }).isRequired
-}
-
-
-export default ProjectMembersItem

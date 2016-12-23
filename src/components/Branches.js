@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import Branch                          from './Branch'
 import {
+    TrapApiError,
     Widget,
     WidgetHeader,
     WidgetBody,
+    WidgetLoader,
 } from 'mozaik/ui'
 
 
@@ -13,17 +15,11 @@ export default class Branches extends Component {
             PropTypes.string,
             PropTypes.number,
         ]).isRequired,
+        title:   PropTypes.string,
         apiData: PropTypes.shape({
             project:  PropTypes.object,
             branches: PropTypes.array.isRequired,
-        }).isRequired,
-    }
-
-    static defaultProps = {
-        apiData: {
-            project:  null,
-            branches: [],
-        },
+        }),
     }
 
     static getApiRequest({ project }) {
@@ -34,19 +30,43 @@ export default class Branches extends Component {
     }
 
     render() {
-        const { apiData: { project, branches } } = this.props
+        const { title, apiData, apiError } = this.props
+
+        let body    = <WidgetLoader />
+        let subject = null
+        let count
+        if (apiData) {
+            const { project, branches } = apiData
+
+            count = branches.length
+
+            subject = (
+                <a href={project.web_url} target="_blank">
+                    {project.name}
+                </a>
+            )
+
+            body  = (
+                <div>
+                    {branches.map(branch => (
+                        <Branch key={branch.name} project={project} branch={branch} />
+                    ))}
+                </div>
+            )
+        }
 
         return (
             <Widget>
                 <WidgetHeader
-                    title="Project branches"
-                    count={branches.length}
+                    title={title || 'Branches'}
+                    subject={title ? null : subject}
+                    count={count}
                     icon="code-fork"
                 />
                 <WidgetBody>
-                    {branches.map(branch => (
-                        <Branch key={branch.name} project={project} branch={branch} />
-                    ))}
+                    <TrapApiError error={apiError}>
+                        {body}
+                    </TrapApiError>
                 </WidgetBody>
             </Widget>
         )

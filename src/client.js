@@ -34,25 +34,27 @@ const client = mozaik => {
             
         },
         projectMembers({ project }) {
-            return buildApiRequest(`/projects/${encodeURIComponent(project)}/members`)
-                .then(res => res.body)
-            
+            return Promise.props({
+                project: operations.project({ project }),
+                members: buildApiRequest(`/projects/${encodeURIComponent(project)}/members`).then(res => res.body),
+            })
         },
         projectContributors({ project }) {
-            return buildApiRequest(`/projects/${encodeURIComponent(project)}/repository/contributors`)
-                .then(res => res.body)
-            
+            return Promise.props({
+                project:      operations.project({ project }),
+                contributors: buildApiRequest(`/projects/${encodeURIComponent(project)}/repository/contributors`).then(res => res.body),
+            })
         },
         projectBuilds({ project }) {
             return Promise.props({
                 project: operations.project({ project }),
-                builds:  buildApiRequest(`/projects/${encodeURIComponent(project)}/builds?per_page=40`).then(res => res.body)
+                builds:  buildApiRequest(`/projects/${encodeURIComponent(project)}/builds?per_page=40`).then(res => res.body),
             })
         },
         projectBranches({ project }) {
             return Promise.props({
                 project:  operations.project({ project }),
-                branches: buildApiRequest(`/projects/${encodeURIComponent(project)}/repository/branches`).then(res => res.body)
+                branches: buildApiRequest(`/projects/${encodeURIComponent(project)}/repository/branches`).then(res => res.body),
             })
         },
         projectMergeRequests({ project, query = {} }) {

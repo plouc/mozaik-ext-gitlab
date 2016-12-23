@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import ProjectMembersItem              from './ProjectMembersItem'
 import {
+    TrapApiError,
     Widget,
     WidgetHeader,
     WidgetBody,
+    WidgetLoader,
 } from 'mozaik/ui'
 
 
@@ -13,11 +15,11 @@ export default class ProjectMembers extends Component {
             PropTypes.string,
             PropTypes.number
         ]).isRequired,
-        apiData: PropTypes.array.isRequired,
-    }
-
-    static defaultProps = {
-        apiData: [],
+        title:   PropTypes.string,
+        apiData: PropTypes.shape({
+            project: PropTypes.object.isRequired,
+            members: PropTypes.arrayOf(PropTypes.object).isRequired,
+        }),
     }
 
     static getApiRequest({ project }) {
@@ -28,29 +30,41 @@ export default class ProjectMembers extends Component {
     }
 
     render() {
-        const { apiData: members } = this.props
+        const { title, apiData, apiError } = this.props
+
+        let body    = <WidgetLoader />
+        let subject = null
+        let count
+        if (apiData) {
+            const { project, members } = apiData
+
+            count = members.length
+
+            subject = (
+                <a href={project.web_url} target="_blank">
+                    {project.name}
+                </a>
+            )
+
+            body = (
+                <div>
+                    {members.map(member => <ProjectMembersItem key={`member.${member.id}`} member={member}/>)}
+                </div>
+            )
+        }
 
         return (
             <Widget>
                 <WidgetHeader
-                    title="Project members"
-                    count={members.length}
+                    title={title || 'Members'}
+                    subject={title ? null : subject}
+                    count={count}
                     icon="child"
                 />
-                <WidgetBody
-                    style={{
-                        padding:        '1.6vmin',
-                        display:        'flex',
-                        flexWrap:       'wrap',
-                        justifyContent: 'space-between',
-                    }}
-                >
-                    {members.map(member => (
-                        <ProjectMembersItem
-                            key={`member.${member.id}`}
-                            member={member}
-                        />
-                    ))}
+                <WidgetBody>
+                    <TrapApiError error={apiError}>
+                        {body}
+                    </TrapApiError>
                 </WidgetBody>
             </Widget>
         )

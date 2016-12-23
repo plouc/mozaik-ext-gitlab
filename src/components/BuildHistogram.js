@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import moment                          from 'moment'
 import {
+    TrapApiError,
     Widget,
     WidgetHeader,
     WidgetBody,
+    WidgetLoader,
 } from 'mozaik/ui'
 import {
     ResponsiveChart as Chart,
@@ -23,6 +25,7 @@ export default class BuildHistogram extends Component {
             PropTypes.string,
             PropTypes.number
         ]).isRequired,
+        title:   PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object,
             builds:  PropTypes.array.isRequired,
@@ -41,15 +44,13 @@ export default class BuildHistogram extends Component {
     }
 
     render() {
-        const { apiData } = this.props
-        const { theme }   = this.context
+        const { title, apiData, apiError } = this.props
+        const { theme }                    = this.context
 
+        let body    = <WidgetLoader />
         let subject = null
-
-        let body = <div>no data</div>
-        if (apiData !== undefined) {
+        if (apiData) {
             const { project, builds } = apiData
-
             subject = (
                 <a href={project.web_url} target="_blank">
                     {project.name}
@@ -80,12 +81,14 @@ export default class BuildHistogram extends Component {
         return (
             <Widget>
                 <WidgetHeader
-                    title="Builds"
-                    subject={subject}
+                    title={title || 'Builds'}
+                    subject={title ? null : subject}
                     icon="bar-chart"
                 />
                 <WidgetBody style={{ overflowY: 'hidden' }}>
-                    {body}
+                    <TrapApiError error={apiError}>
+                        {body}
+                    </TrapApiError>
                 </WidgetBody>
             </Widget>
         )
