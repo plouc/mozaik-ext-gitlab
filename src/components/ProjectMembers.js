@@ -1,38 +1,31 @@
-import React, { Component, PropTypes } from 'react'
-import ProjectMembersItem              from './ProjectMembersItem'
-import {
-    TrapApiError,
-    Widget,
-    WidgetHeader,
-    WidgetBody,
-    WidgetLoader,
-} from 'mozaik/ui'
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import MembersIcon from 'react-icons/lib/fa/child'
+import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import ProjectMembersItem from './ProjectMembersItem'
 
 export default class ProjectMembers extends Component {
     static propTypes = {
-        project: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number
-        ]).isRequired,
-        title:   PropTypes.string,
+        project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        title: PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object.isRequired,
             members: PropTypes.arrayOf(PropTypes.object).isRequired,
         }),
+        apiError: PropTypes.object,
     }
 
     static getApiRequest({ project }) {
         return {
-            id:     `gitlab.projectMembers.${ project }`,
-            params: { project }
+            id: `gitlab.projectMembers.${project}`,
+            params: { project },
         }
     }
 
     render() {
         const { title, apiData, apiError } = this.props
 
-        let body    = <WidgetLoader />
+        let body = <WidgetLoader />
         let subject = null
         let count
         if (apiData) {
@@ -48,7 +41,9 @@ export default class ProjectMembers extends Component {
 
             body = (
                 <div>
-                    {members.map(member => <ProjectMembersItem key={`member.${member.id}`} member={member}/>)}
+                    {members.map(member =>
+                        <ProjectMembersItem key={`member.${member.id}`} member={member} />
+                    )}
                 </div>
             )
         }
@@ -59,7 +54,7 @@ export default class ProjectMembers extends Component {
                     title={title || 'Members'}
                     subject={title ? null : subject}
                     count={count}
-                    icon="child"
+                    icon={MembersIcon}
                 />
                 <WidgetBody>
                     <TrapApiError error={apiError}>

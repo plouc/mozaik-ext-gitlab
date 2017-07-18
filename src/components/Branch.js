@@ -1,9 +1,26 @@
-import React, { Component, PropTypes } from 'react'
-import moment                          from 'moment'
-import { WidgetListItem }              from 'mozaik/ui'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import moment from 'moment'
+import ClockIcon from 'react-icons/lib/fa/clock-o'
+import { WidgetListItem } from '@mozaik/ui'
 
+export default class Branch extends Component {
+    static propTypes = {
+        project: PropTypes.shape({
+            web_url: PropTypes.string.isRequired,
+        }).isRequired,
+        branch: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            protected: PropTypes.bool.isRequired,
+            commit: PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                message: PropTypes.string.isRequired,
+                author_name: PropTypes.string.isRequired,
+                committed_date: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired,
+    }
 
-class Branch extends Component {
     render() {
         const { project, branch } = this.props
 
@@ -27,9 +44,16 @@ class Branch extends Component {
                 }
                 meta={
                     <div>
-                        <div>{branch.commit.message}</div>
-                        <time>
-                            <i className="fa fa-clock-o" />&nbsp;
+                        <div>
+                            {branch.commit.message}
+                        </div>
+                        <time
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <ClockIcon />&nbsp;
                             {moment(branch.commit.committed_date).fromNow()}
                         </time>
                     </div>
@@ -38,20 +62,3 @@ class Branch extends Component {
         )
     }
 }
-
-Branch.propTypes = {
-    project: PropTypes.shape({
-        web_url: PropTypes.string.isRequired
-    }).isRequired,
-    branch: PropTypes.shape({
-        name:      PropTypes.string.isRequired,
-        protected: PropTypes.bool.isRequired,
-        commit:    PropTypes.shape({
-            message:     PropTypes.string.isRequired,
-            author_name: PropTypes.string.isRequired
-        }).isRequired
-    }).isRequired,
-}
-
-
-export default Branch

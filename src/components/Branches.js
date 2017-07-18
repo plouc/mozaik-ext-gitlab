@@ -1,40 +1,33 @@
-import React, { Component, PropTypes } from 'react'
-import Branch                          from './Branch'
-import {
-    TrapApiError,
-    Widget,
-    WidgetHeader,
-    WidgetBody,
-    WidgetLoader,
-} from 'mozaik/ui'
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import BranchesIcon from 'react-icons/lib/fa/code-fork'
+import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import Branch from './Branch'
 
 export default class Branches extends Component {
     static propTypes = {
-        project: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-        ]).isRequired,
-        title:   PropTypes.string,
+        project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        title: PropTypes.string,
         apiData: PropTypes.shape({
-            project:  PropTypes.object,
+            project: PropTypes.object,
             branches: PropTypes.array.isRequired,
         }),
+        apiError: PropTypes.object,
     }
 
     static getApiRequest({ project }) {
         return {
-            id:     `gitlab.projectBranches.${ project }`,
-            params: { project }
+            id: `gitlab.projectBranches.${project}`,
+            params: { project },
         }
     }
 
     render() {
         const { title, apiData, apiError } = this.props
 
-        let body    = <WidgetLoader />
+        let body = <WidgetLoader />
         let subject = null
-        let count
+        let count = 0
         if (apiData) {
             const { project, branches } = apiData
 
@@ -46,11 +39,11 @@ export default class Branches extends Component {
                 </a>
             )
 
-            body  = (
+            body = (
                 <div>
-                    {branches.map(branch => (
+                    {branches.map(branch =>
                         <Branch key={branch.name} project={project} branch={branch} />
-                    ))}
+                    )}
                 </div>
             )
         }
@@ -61,7 +54,7 @@ export default class Branches extends Component {
                     title={title || 'Branches'}
                     subject={title ? null : subject}
                     count={count}
-                    icon="code-fork"
+                    icon={BranchesIcon}
                 />
                 <WidgetBody>
                     <TrapApiError error={apiError}>

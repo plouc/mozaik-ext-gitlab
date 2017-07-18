@@ -1,39 +1,42 @@
-import React, { Component, PropTypes } from 'react'
-import _                               from 'lodash'
-import {
-    Gauge,
-    Widget,
-    WidgetHeader,
-    WidgetBody,
-} from 'mozaik/ui'
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import _ from 'lodash'
+import { Gauge, Widget, WidgetHeader, WidgetBody } from '@mozaik/ui'
 
 export default class MergeRequestsGauge extends Component {
     static propTypes = {
-        project: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-        ]).isRequired,
-        thresholds: PropTypes.arrayOf(PropTypes.shape({
-            threshold: PropTypes.number.isRequired,
-            color:     PropTypes.string.isRequired,
-            message:   PropTypes.string.isRequired,
-        })).isRequired,
+        project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        thresholds: PropTypes.arrayOf(
+            PropTypes.shape({
+                threshold: PropTypes.number.isRequired,
+                color: PropTypes.string.isRequired,
+                message: PropTypes.string.isRequired,
+            })
+        ).isRequired,
         apiData: PropTypes.number.isRequired,
+        apiError: PropTypes.object,
     }
 
     static defaultProps = {
         thresholds: [
-            { threshold: 3,  color: '#85e985', message: 'good job!' },
-            { threshold: 5,  color: '#ecc265', message: 'you should consider reviewing' },
-            { threshold: 10, color: '#f26a3f', message: 'merge requests overflow' },
+            { threshold: 3, color: '#85e985', message: 'good job!' },
+            {
+                threshold: 5,
+                color: '#ecc265',
+                message: 'you should consider reviewing',
+            },
+            {
+                threshold: 10,
+                color: '#f26a3f',
+                message: 'merge requests overflow',
+            },
         ],
         apiData: 0,
     }
 
     static getApiRequest({ project }) {
         return {
-            id:     `gitlab.projectMergeRequests.${ project }.opened`,
+            id: `gitlab.projectMergeRequests.${project}.opened`,
             params: {
                 project,
                 query: {
@@ -46,8 +49,11 @@ export default class MergeRequestsGauge extends Component {
     render() {
         const { thresholds, apiData: mergeRequestCount } = this.props
 
-        const cappedValue    = Math.min(mergeRequestCount, _.max(thresholds.map(threshold => threshold.threshold)))
-        let message          = null
+        const cappedValue = Math.min(
+            mergeRequestCount,
+            _.max(thresholds.map(threshold => threshold.threshold))
+        )
+        let message = null
         const normThresholds = thresholds.map(threshold => {
             if (message === null && cappedValue <= threshold.threshold) {
                 message = threshold.message
@@ -55,7 +61,7 @@ export default class MergeRequestsGauge extends Component {
 
             return {
                 upperBound: threshold.threshold,
-                color:      threshold.color,
+                color: threshold.color,
             }
         })
 

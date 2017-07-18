@@ -1,9 +1,29 @@
-test
-preview
+# Doc
+/preview
+
+# config
+.babelrc
+.eslintrc.yml
+.gitignore
+.npmignore
 .travis.yml
-.eslintrc
-npm-debug.log*
-.nyc_output
-coverage
+
+# Logs
+*.log*
+
+# Non transpiled source code
+/src
+
+# Tests
+/test
+/.nyc_output
+/coverage
+
+# GitHub
+/.github
+
+# OSX
 .DS_Store
-ISSUE_TEMPLATE.md
+
+# IDE
+.idea

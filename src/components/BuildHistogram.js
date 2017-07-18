@@ -1,53 +1,35 @@
-import React, { Component, PropTypes } from 'react'
-import moment                          from 'moment'
-import {
-    TrapApiError,
-    Widget,
-    WidgetHeader,
-    WidgetBody,
-    WidgetLoader,
-} from 'mozaik/ui'
-import {
-    ResponsiveChart as Chart,
-    Scale,
-    Axis,
-    Grid,
-    Bars,
-} from 'nivo'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import BuildsIcon from 'react-icons/lib/fa/bar-chart'
+import moment from 'moment'
+import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import { ResponsiveBar } from 'nivo'
 
-
-const margin = { top: 20, right: 20, bottom: 40, left: 60 }
-
+const margin = { top: 20, right: 20, bottom: 60, left: 70 }
 
 export default class BuildHistogram extends Component {
     static propTypes = {
-        project: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number
-        ]).isRequired,
-        title:   PropTypes.string,
+        project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        title: PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object,
-            builds:  PropTypes.array.isRequired,
+            builds: PropTypes.array.isRequired,
         }),
-    }
-
-    static contextTypes = {
+        apiError: PropTypes.object,
         theme: PropTypes.object.isRequired,
     }
 
     static getApiRequest({ project }) {
         return {
-            id:     `gitlab.projectBuilds.${ project }`,
+            id: `gitlab.projectBuilds.${project}`,
             params: { project },
         }
     }
 
     render() {
-        const { title, apiData, apiError } = this.props
-        const { theme }                    = this.context
+        const { title, apiData, apiError, theme } = this.props
 
-        let body    = <WidgetLoader />
+        let body = <WidgetLoader />
         let subject = null
         if (apiData) {
             const { project, builds } = apiData
@@ -57,24 +39,44 @@ export default class BuildHistogram extends Component {
                 </a>
             )
 
-            const data = builds.map(({ id, status, started_at, finished_at }) => {
-                let duration = 0
-                if (started_at && finished_at) {
-                    duration = moment(finished_at).diff(started_at) / 1000
-                }
+            const data = [
+                {
+                    id: 'builds',
+                    data: builds.map(({ id, status, started_at, finished_at }) => {
+                        let duration = 0
+                        if (started_at && finished_at) {
+                            duration = moment(finished_at).diff(started_at, 'minutes')
+                        }
 
-                return { id, duration, status }
-            })
+                        return { id: `${id}`, duration, status, x: id, y: duration }
+                    }),
+                },
+            ]
 
             body = (
-                <Chart data={data} margin={margin} theme={theme.charts}>
-                    <Scale id="duration" type="linear" dataKey="duration" axis="y"/>
-                    <Scale id="id" type="band" dataKey="id" axis="x" padding={0.3}/>
-                    <Grid yScale="duration"/>
-                    <Axis position="left" scaleId="duration" axis="y"/>
-                    <Axis position="bottom" scaleId="id" axis="x"/>
-                    <Bars xScale="id" x="id" yScale="duration" y="duration" color="#fff"/>
-                </Chart>
+                <ResponsiveBar
+                    data={data}
+                    margin={margin}
+                    xPadding={0.3}
+                    theme={theme.charts}
+                    animate={false}
+                    axes={{
+                        left: {
+                            tickPadding: 7,
+                            tickSize: 0,
+                            legend: 'duration (mn)',
+                            legendPosition: 'center',
+                            legendOffset: -40,
+                        },
+                        bottom: {
+                            tickSize: 0,
+                            tickPadding: 7,
+                            legend: 'build id',
+                            legendPosition: 'center',
+                            legendOffset: 40,
+                        },
+                    }}
+                />
             )
         }
 
@@ -83,7 +85,7 @@ export default class BuildHistogram extends Component {
                 <WidgetHeader
                     title={title || 'Builds'}
                     subject={title ? null : subject}
-                    icon="bar-chart"
+                    icon={BuildsIcon}
                 />
                 <WidgetBody style={{ overflowY: 'hidden' }}>
                     <TrapApiError error={apiError}>
