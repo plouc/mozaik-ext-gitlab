@@ -1,5 +1,6 @@
-const request = require('superagent-bluebird-promise')
-const Promise = require('bluebird')
+'use strict'
+
+const request = require('request-promise-native')
 const chalk = require('chalk')
 const config = require('./config')
 
@@ -11,18 +12,25 @@ const client = mozaik => {
 
     const buildApiRequest = (path, params) => {
         const url = config.get('gitlab.baseUrl')
-        const req = request.get(`${url}${path}`)
+
+        const options = {
+            uri: `${url}${path}`,
+            qs: {},
+            json: true,
+            resolveWithFullResponse: true,
+            headers: {
+                'PRIVATE-TOKEN': config.get('gitlab.token'),
+            },
+        }
 
         const paramsDebug = params ? ` ${JSON.stringify(params)}` : ''
         mozaik.logger.info(chalk.yellow(`[gitlab] calling ${url}${path}${paramsDebug}`))
 
         if (params) {
-            req.query(params)
+            options.qs = params
         }
 
-        req.set('PRIVATE-TOKEN', config.get('gitlab.token'))
-
-        return req.promise()
+        return request(options)
     }
 
     const operations = {
@@ -30,36 +38,48 @@ const client = mozaik => {
             return buildApiRequest(`/projects/${encodeURIComponent(project)}`).then(res => res.body)
         },
         projectMembers({ project }) {
-            return Promise.props({
-                project: operations.project({ project }),
-                members: buildApiRequest(`/projects/${encodeURIComponent(project)}/members`).then(
+            return Promise.all([
+                operations.project({ project }),
+                buildApiRequest(`/projects/${encodeURIComponent(project)}/members`).then(
                     res => res.body
                 ),
-            })
+            ]).then(([project, members]) => ({
+                project,
+                members,
+            }))
         },
         projectContributors({ project }) {
-            return Promise.props({
-                project: operations.project({ project }),
-                contributors: buildApiRequest(
+            return Promise.all([
+                operations.project({ project }),
+                buildApiRequest(
                     `/projects/${encodeURIComponent(project)}/repository/contributors`
                 ).then(res => res.body),
-            })
+            ]).then(([project, contributors]) => ({
+                project,
+                contributors,
+            }))
         },
         projectBuilds({ project }) {
-            return Promise.props({
-                project: operations.project({ project }),
-                builds: buildApiRequest(
-                    `/projects/${encodeURIComponent(project)}/builds?per_page=40`
-                ).then(res => res.body),
-            })
+            return Promise.all([
+                operations.project({ project }),
+                buildApiRequest(`/projects/${encodeURIComponent(project)}/builds?per_page=40`).then(
+                    res => res.body
+                ),
+            ]).then(([project, builds]) => ({
+                project,
+                builds,
+            }))
         },
         projectBranches({ project }) {
-            return Promise.props({
-                project: operations.project({ project }),
-                branches: buildApiRequest(
+            return Promise.all([
+                operations.project({ project }),
+                buildApiRequest(
                     `/projects/${encodeURIComponent(project)}/repository/branches`
                 ).then(res => res.body),
-            })
+            ]).then(([project, branches]) => ({
+                project,
+                branches,
+            }))
         },
         projectMergeRequests({ project, query = {} }) {
             return buildApiRequest(
