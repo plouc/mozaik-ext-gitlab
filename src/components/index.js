@@ -1,11 +1,10 @@
-import Project             from './Project.jsx';
-import ProjectMembers      from './ProjectMembers.jsx';
-import ProjectContributors from './ProjectContributors.jsx';
-import BuildHistory        from './BuildHistory.jsx';
-import BuildHistogram      from './BuildHistogram.jsx';
-import Branches            from './Branches.jsx';
-import MergeRequestsGauge  from './MergeRequestsGauge.jsx';
-
+import Project from './Project'
+import ProjectMembers from './ProjectMembers'
+import ProjectContributors from './ProjectContributors'
+import BuildHistory from './BuildHistory'
+import BuildHistogram from './BuildHistogram'
+import Branches from './Branches'
+//import MergeRequestsGauge  from './MergeRequestsGauge'
 
 export default {
     Project,
@@ -14,5 +13,5 @@ export default {
     BuildHistory,
     BuildHistogram,
     Branches,
-    MergeRequestsGauge
-};
+    //MergeRequestsGauge,
+}
