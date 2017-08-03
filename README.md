@@ -202,6 +202,92 @@ dashboards:
     y:         0
 ```
 
+### GitLab project labels bubble chart
+
+> Show GitLab project info.
+
+![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
+
+#### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+#### usage
+
+``` yaml
+# config.yml
+dashboards:
+- # …
+  widgets:
+  - extension: gitlab
+    widget:    Project
+    project:   gitlab-org/gitlab-ce
+    columns:   1
+    rows:      1
+    x:         0
+    y:         0
+```
+
+
+### GitLab project labels pie chart
+
+> Show GitLab project info.
+
+![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
+
+#### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+#### usage
+
+``` yaml
+# config.yml
+dashboards:
+- # …
+  widgets:
+  - extension: gitlab
+    widget:    Project
+    project:   gitlab-org/gitlab-ce
+    columns:   1
+    rows:      1
+    x:         0
+    y:         0
+```
+
+
+### GitLab project labels tree map chart
+
+> Show GitLab project info.
+
+![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
+
+#### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+#### usage
+
+``` yaml
+# config.yml
+dashboards:
+- # …
+  widgets:
+  - extension: gitlab
+    widget:    Project
+    project:   gitlab-org/gitlab-ce
+    columns:   1
+    rows:      1
+    x:         0
+    y:         0
+```
+
 
 [license-image]: https://img.shields.io/github/license/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [license-url]: https://github.com/plouc/mozaik-ext-gitlab/blob/master/LICENSE.md
@@ -213,6 +299,6 @@ dashboards:
 [gemnasium-url]: https://gemnasium.com/plouc/mozaik-ext-gitlab
 [coverage-image]: https://img.shields.io/coveralls/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [coverage-url]: https://coveralls.io/github/plouc/mozaik-ext-gitlab
-[widget-count-image]: https://img.shields.io/badge/widgets-x6-green.svg?style=flat-square
+[widget-count-image]: https://img.shields.io/badge/widgets-x9-green.svg?style=flat-square
 [heroku-image]: https://www.herokucdn.com/deploy/button.svg
 [heroku-url]: https://heroku.com/deploy?template=https://github.com/plouc/mozaik-ext-gitlab/tree/demo

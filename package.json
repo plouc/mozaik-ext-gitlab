@@ -63,7 +63,7 @@
   },
   "peerDependencies": {
     "@mozaik/ui": "^2.0.0-alpha.11",
-    "nivo": "^0.1.0",
+    "nivo": "^0.2.0",
     "react": "^15.6.1"
   },
   "scripts": {
