@@ -21,13 +21,17 @@ You can see a live demo of the widgets [here](http://mozaik-gitlab.herokuapp.com
 
 ## Widgets
 
-- [Branches](#gitlab-branches)
-- [Build Histogram](#gitlab-build-histogram)
-- [Build History](#gitlab-build-history)
+- [Project](#gitlab-project)
 - [Project Members](#gitlab-project-members)
 - [Project Contributors](#gitlab-project-contributors)
-- [Project](#gitlab-project)
-
+- [Branches](#gitlab-branches)
+- Builds
+    - [Build Histogram](#gitlab-build-histogram)
+    - [Build History](#gitlab-build-history)
+- Labels
+    - [Labels Bubble chart](#gitlab-labels-bubble-chart)
+    - [Labels Pie](#gitlab-labels-pie)
+    - [Labels Tree map](#gitlab-labels-tree-map)
 
 ### GitLab Branches
 
@@ -202,6 +206,98 @@ dashboards:
     y:         0
 ```
 
+### GitLab labels bubble chart
+
+> Show GitLab project's labels stats using a bubble chart.
+
+![Gitlab labels bubble chart](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_bubble.png)
+
+#### parameters
+
+key       | required | default               | description
+----------|----------|-----------------------|----------------
+`project` | yes      | *n/a*                 | *ID or NAMESPACE/PROJECT_NAME of a project*
+`countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
+`title`   | no       | *n/a*                 | *Overrides widget title*
+
+#### usage
+
+``` yaml
+# config.yml
+dashboards:
+- # …
+  widgets:
+  - extension: gitlab
+    widget:    LabelsBubble
+    project:   gitlab-org/gitlab-ce
+    columns:   1
+    rows:      1
+    x:         0
+    y:         0
+```
+
+
+### GitLab labels pie
+
+> Show GitLab project's labels stats using a pie chart.
+
+![Gitlab labels pie](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_pie.png)
+
+#### parameters
+
+key       | required | default               | description
+----------|----------|-----------------------|----------------
+`project` | yes      | *n/a*                 | *ID or NAMESPACE/PROJECT_NAME of a project*
+`countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
+`title`   | no       | *n/a*                 | *Overrides widget title*
+
+#### usage
+
+``` yaml
+# config.yml
+dashboards:
+- # …
+  widgets:
+  - extension: gitlab
+    widget:    LabelsPie
+    project:   gitlab-org/gitlab-ce
+    columns:   1
+    rows:      1
+    x:         0
+    y:         0
+```
+
+
+### GitLab labels tree map
+
+> Show GitLab project's labels stats using a tree map chart.
+
+![Gitlab labels tree map](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_treemap.png)
+
+#### parameters
+
+key       | required | default               | description
+----------|----------|-----------------------|----------------
+`project` | yes      | *n/a*                 | *ID or NAMESPACE/PROJECT_NAME of a project*
+`countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
+`title`   | no       | *n/a*                 | *Overrides widget title*
+
+#### usage
+
+``` yaml
+# config.yml
+dashboards:
+- # …
+  widgets:
+  - extension: gitlab
+    widget:    LabelsTreemap
+    project:   gitlab-org/gitlab-ce
+    columns:   1
+    rows:      1
+    x:         0
+    y:         0
+```
+
 
 [license-image]: https://img.shields.io/github/license/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [license-url]: https://github.com/plouc/mozaik-ext-gitlab/blob/master/LICENSE.md
@@ -213,6 +309,6 @@ dashboards:
 [gemnasium-url]: https://gemnasium.com/plouc/mozaik-ext-gitlab
 [coverage-image]: https://img.shields.io/coveralls/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [coverage-url]: https://coveralls.io/github/plouc/mozaik-ext-gitlab
-[widget-count-image]: https://img.shields.io/badge/widgets-x6-green.svg?style=flat-square
+[widget-count-image]: https://img.shields.io/badge/widgets-x9-green.svg?style=flat-square
 [heroku-image]: https://www.herokucdn.com/deploy/button.svg
 [heroku-url]: https://heroku.com/deploy?template=https://github.com/plouc/mozaik-ext-gitlab/tree/demo

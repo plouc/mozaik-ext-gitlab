@@ -92,6 +92,17 @@ const client = mozaik => {
                 }
             })
         },
+        projectLabels({ project }) {
+            return Promise.all([
+                operations.project({ project }),
+                buildApiRequest(`/projects/${encodeURIComponent(project)}/labels`).then(
+                    res => res.body
+                ),
+            ]).then(([project, labels]) => ({
+                project,
+                labels,
+            }))
+        },
     }
 
     return operations

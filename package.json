@@ -53,6 +53,7 @@
     "husky": "^0.14.3",
     "jest": "^20.0.4",
     "lint-staged": "^4.0.2",
+    "nivo": "^0.12.0",
     "nock": "^9.0.14",
     "prettier": "^1.5.3",
     "react": "^15.6.1",
@@ -63,7 +64,7 @@
   },
   "peerDependencies": {
     "@mozaik/ui": "^2.0.0-alpha.11",
-    "nivo": "^0.1.0",
+    "nivo": "^0.12.0",
     "react": "^15.6.1"
   },
   "scripts": {
@@ -73,6 +74,7 @@
     "test:cover": "jest --verbose --coverage",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:commonjs:watch": "npm run build:commonjs -- --watch",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:es:watch": "npm run build:es -- --watch",
     "build": "npm run build:commonjs && npm run build:es",

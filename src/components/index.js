@@ -5,6 +5,7 @@ import BuildHistory from './BuildHistory'
 import BuildHistogram from './BuildHistogram'
 import Branches from './Branches'
 //import MergeRequestsGauge  from './MergeRequestsGauge'
+import * as labels from './labels'
 
 export default {
     Project,
@@ -14,4 +15,5 @@ export default {
     BuildHistogram,
     Branches,
     //MergeRequestsGauge,
+    ...labels,
 }
