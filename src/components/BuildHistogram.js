@@ -6,6 +6,21 @@ import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@m
 import { ResponsiveBar } from 'nivo'
 
 const margin = { top: 20, right: 20, bottom: 60, left: 70 }
+const colorBy = d => d.color
+const axisLeft = {
+    tickPadding: 7,
+    tickSize: 0,
+    legend: 'duration (mn)',
+    legendPosition: 'center',
+    legendOffset: -40,
+}
+const axisBottom = {
+    tickSize: 0,
+    tickPadding: 7,
+    legend: 'build id',
+    legendPosition: 'center',
+    legendOffset: 40,
+}
 
 export default class BuildHistogram extends Component {
     static propTypes = {
@@ -29,6 +44,12 @@ export default class BuildHistogram extends Component {
     render() {
         const { title, apiData, apiError, theme } = this.props
 
+        const getColorForStatus = status => {
+            if (status === 'success') return theme.colors.success
+            if (status === 'failed') return theme.colors.failure
+            return theme.colors.unknown
+        }
+
         let body = <WidgetLoader />
         let subject = null
         if (apiData) {
@@ -48,7 +69,14 @@ export default class BuildHistogram extends Component {
                             duration = moment(finished_at).diff(started_at, 'minutes')
                         }
 
-                        return { id: `${id}`, duration, status, x: id, y: duration }
+                        return {
+                            id: `${id}`,
+                            duration,
+                            status,
+                            x: id,
+                            y: duration,
+                            color: getColorForStatus(status),
+                        }
                     }),
                 },
             ]
@@ -60,22 +88,10 @@ export default class BuildHistogram extends Component {
                     xPadding={0.3}
                     theme={theme.charts}
                     animate={false}
-                    axes={{
-                        left: {
-                            tickPadding: 7,
-                            tickSize: 0,
-                            legend: 'duration (mn)',
-                            legendPosition: 'center',
-                            legendOffset: -40,
-                        },
-                        bottom: {
-                            tickSize: 0,
-                            tickPadding: 7,
-                            legend: 'build id',
-                            legendPosition: 'center',
-                            legendOffset: 40,
-                        },
-                    }}
+                    enableLabels={false}
+                    colorBy={colorBy}
+                    axisLeft={axisLeft}
+                    axisBottom={axisBottom}
                 />
             )
         }
