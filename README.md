@@ -21,13 +21,17 @@ You can see a live demo of the widgets [here](http://mozaik-gitlab.herokuapp.com
 
 ## Widgets
 
-- [Branches](#gitlab-branches)
-- [Build Histogram](#gitlab-build-histogram)
-- [Build History](#gitlab-build-history)
+- [Project](#gitlab-project)
 - [Project Members](#gitlab-project-members)
 - [Project Contributors](#gitlab-project-contributors)
-- [Project](#gitlab-project)
-
+- [Branches](#gitlab-branches)
+- Builds
+    - [Build Histogram](#gitlab-build-histogram)
+    - [Build History](#gitlab-build-history)
+- Labels
+    - [Labels Bubble chart](#gitlab-labels-bubble-chart)
+    - [Labels Pie](#gitlab-labels-pie)
+    - [Labels Tree map](#gitlab-labels-tree-map)
 
 ### GitLab Branches
 
@@ -202,17 +206,19 @@ dashboards:
     y:         0
 ```
 
-### GitLab project labels bubble chart
+### GitLab labels bubble chart
 
-> Show GitLab project info.
+> Show GitLab project's labels stats using a bubble chart.
 
-![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
+![Gitlab labels bubble chart](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_bubble.png)
 
 #### parameters
 
-key       | required | description
-----------|----------|--------------------------
-`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+key       | required | default               | description
+----------|----------|-----------------------|----------------
+`project` | yes      | *n/a*                 | *ID or NAMESPACE/PROJECT_NAME of a project*
+`countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
+`title`   | no       | *n/a*                 | *Overrides widget title*
 
 #### usage
 
@@ -222,7 +228,7 @@ dashboards:
 - # …
   widgets:
   - extension: gitlab
-    widget:    Project
+    widget:    LabelsBubble
     project:   gitlab-org/gitlab-ce
     columns:   1
     rows:      1
@@ -231,17 +237,19 @@ dashboards:
 ```
 
 
-### GitLab project labels pie chart
+### GitLab labels pie
 
-> Show GitLab project info.
+> Show GitLab project's labels stats using a pie chart.
 
-![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
+![Gitlab labels pie](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_pie.png)
 
 #### parameters
 
-key       | required | description
-----------|----------|--------------------------
-`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+key       | required | default               | description
+----------|----------|-----------------------|----------------
+`project` | yes      | *n/a*                 | *ID or NAMESPACE/PROJECT_NAME of a project*
+`countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
+`title`   | no       | *n/a*                 | *Overrides widget title*
 
 #### usage
 
@@ -251,7 +259,7 @@ dashboards:
 - # …
   widgets:
   - extension: gitlab
-    widget:    Project
+    widget:    LabelsPie
     project:   gitlab-org/gitlab-ce
     columns:   1
     rows:      1
@@ -260,17 +268,19 @@ dashboards:
 ```
 
 
-### GitLab project labels tree map chart
+### GitLab labels tree map
 
-> Show GitLab project info.
+> Show GitLab project's labels stats using a tree map chart.
 
-![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
+![Gitlab labels tree map](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_treemap.png)
 
 #### parameters
 
-key       | required | description
-----------|----------|--------------------------
-`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+key       | required | default               | description
+----------|----------|-----------------------|----------------
+`project` | yes      | *n/a*                 | *ID or NAMESPACE/PROJECT_NAME of a project*
+`countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
+`title`   | no       | *n/a*                 | *Overrides widget title*
 
 #### usage
 
@@ -280,7 +290,7 @@ dashboards:
 - # …
   widgets:
   - extension: gitlab
-    widget:    Project
+    widget:    LabelsTreemap
     project:   gitlab-org/gitlab-ce
     columns:   1
     rows:      1
