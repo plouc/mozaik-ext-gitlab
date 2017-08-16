@@ -18,7 +18,7 @@ export default class LabelsTreemap extends Component {
                     return (
                         <ResponsiveTreeMap
                             root={data}
-                            tile="binary"
+                            tile="squarify"
                             labelSkipSize={12}
                             identity="id"
                             value={countBy}

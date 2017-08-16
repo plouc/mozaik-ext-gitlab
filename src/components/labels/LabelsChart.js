@@ -28,6 +28,7 @@ export default class LabelsChart extends Component {
         title: PropTypes.string,
         animate: PropTypes.bool.isRequired,
         children: PropTypes.func.isRequired,
+        theme: PropTypes.object.isRequired,
     }
 
     static defaultProps = {
@@ -43,7 +44,7 @@ export default class LabelsChart extends Component {
     }
 
     render() {
-        const { apiData, apiError, title, countBy, animate, children } = this.props
+        const { apiData, apiError, title, countBy, animate, children, theme } = this.props
 
         let body = <WidgetLoader />
         let subject = null
@@ -63,6 +64,7 @@ export default class LabelsChart extends Component {
                 labels,
                 countBy,
                 animate,
+                theme: theme.charts,
             })
         }
 

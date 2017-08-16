@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import { ResponsiveBubble } from 'nivo'
 import LabelsChart from './LabelsChart'
 
+const margin = {
+    top: 10,
+    right: 10,
+    bottom: 10,
+    left: 10,
+}
+
 export default class LabelsBubble extends Component {
     static getApiRequest = LabelsChart.getApiRequest
 
@@ -18,6 +25,7 @@ export default class LabelsBubble extends Component {
                     return (
                         <ResponsiveBubble
                             root={data}
+                            margin={margin}
                             labelSkipRadius={12}
                             value={countBy}
                             label={d => `${d.name} ${d[countBy]}`}
