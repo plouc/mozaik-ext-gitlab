@@ -17,18 +17,20 @@ const axisLeft = {
 const axisBottom = {
     tickSize: 0,
     tickPadding: 7,
-    legend: 'build id',
+    legend: 'job id',
     legendPosition: 'center',
     legendOffset: 40,
 }
 
-export default class BuildHistogram extends Component {
+export default class JobHistogram extends Component {
     static propTypes = {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object,
-            builds: PropTypes.array.isRequired,
+            jobs: {
+                items:PropTypes.array.isRequired,
+            }
         }),
         apiError: PropTypes.object,
         theme: PropTypes.object.isRequired,
@@ -36,7 +38,7 @@ export default class BuildHistogram extends Component {
 
     static getApiRequest({ project }) {
         return {
-            id: `gitlab.projectBuilds.${project}`,
+            id: `gitlab.projectJobs.${project}`,
             params: { project },
         }
     }
@@ -53,7 +55,7 @@ export default class BuildHistogram extends Component {
         let body = <WidgetLoader />
         let subject = null
         if (apiData) {
-            const { project, builds } = apiData
+            const { project, jobs } = apiData
             subject = (
                 <a href={project.web_url} target="_blank">
                     {project.name}
@@ -62,8 +64,8 @@ export default class BuildHistogram extends Component {
 
             const data = [
                 {
-                    id: 'builds',
-                    data: builds.map(({ id, status, started_at, finished_at }) => {
+                    id: 'jobs',
+                    data: jobs.items.map(({ id, status, started_at, finished_at }) => {
                         let duration = 0
                         if (started_at && finished_at) {
                             duration = moment(finished_at).diff(started_at, 'minutes')
@@ -99,14 +101,12 @@ export default class BuildHistogram extends Component {
         return (
             <Widget>
                 <WidgetHeader
-                    title={title || 'Builds'}
+                    title={title || 'Jobs'}
                     subject={title ? null : subject}
                     icon={BuildsIcon}
                 />
                 <WidgetBody style={{ overflowY: 'hidden' }}>
-                    <TrapApiError error={apiError}>
-                        {body}
-                    </TrapApiError>
+                    <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
         )

@@ -2,22 +2,24 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import BuildsIcon from 'react-icons/lib/fa/bars'
 import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
-import BuildHistoryItem from './BuildHistoryItem'
+import JobHistoryItem from './JobHistoryItem'
 
-export default class BuildHistory extends Component {
+export default class JobHistory extends Component {
     static propTypes = {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object,
-            builds: PropTypes.array.isRequired,
+            jobs: {
+                items:PropTypes.array.isRequired,
+            }
         }),
         apiError: PropTypes.object,
     }
 
     static getApiRequest({ project }) {
         return {
-            id: `gitlab.projectBuilds.${project}`,
+            id: `gitlab.projectJobs.${project}`,
             params: { project },
         }
     }
@@ -28,7 +30,7 @@ export default class BuildHistory extends Component {
         let body = <WidgetLoader />
         let subject = null
         if (apiData) {
-            const { project, builds } = apiData
+            const { project, jobs } = apiData
 
             subject = (
                 <a href={project.web_url} target="_blank">
@@ -38,9 +40,7 @@ export default class BuildHistory extends Component {
 
             body = (
                 <div>
-                    {builds.map(build =>
-                        <BuildHistoryItem key={build.id} project={project} build={build} />
-                    )}
+                    {jobs.items.map(job => <JobHistoryItem key={job.id} project={project} job={job} />)}
                 </div>
             )
         }
@@ -48,14 +48,12 @@ export default class BuildHistory extends Component {
         return (
             <Widget>
                 <WidgetHeader
-                    title={title || 'Builds'}
+                    title={title || 'Jobs'}
                     subject={title ? null : subject}
                     icon={BuildsIcon}
                 />
                 <WidgetBody>
-                    <TrapApiError error={apiError}>
-                        {body}
-                    </TrapApiError>
+                    <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
         )

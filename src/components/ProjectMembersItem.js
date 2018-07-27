@@ -13,7 +13,9 @@ export default class ProjectMembersItem extends Component {
     }
 
     render() {
-        const { member: { name, avatar_url, web_url, state } } = this.props
+        const {
+            member: { name, avatar_url, web_url, state },
+        } = this.props
 
         let avatar = null
         if (avatar_url) {

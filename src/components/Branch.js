@@ -44,9 +44,7 @@ export default class Branch extends Component {
                 }
                 meta={
                     <div>
-                        <div>
-                            {branch.commit.message}
-                        </div>
+                        <div>{branch.commit.message}</div>
                         <time
                             style={{
                                 display: 'flex',

@@ -77,9 +77,7 @@ export default class LabelsChart extends Component {
                     icon={LabelsIcon}
                 />
                 <WidgetBody>
-                    <TrapApiError error={apiError}>
-                        {body}
-                    </TrapApiError>
+                    <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
         )

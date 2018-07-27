@@ -10,7 +10,12 @@ export default class Branches extends Component {
         title: PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object,
-            branches: PropTypes.array.isRequired,
+            branches: {
+                items:PropTypes.array.isRequired,
+                pagination: PropTypes.shape({
+                    total: PropTypes.number.isRequired,
+                }).isRequired,
+            }
         }),
         apiError: PropTypes.object,
     }
@@ -31,7 +36,7 @@ export default class Branches extends Component {
         if (apiData) {
             const { project, branches } = apiData
 
-            count = branches.length
+            count = branches.pagination.total
 
             subject = (
                 <a href={project.web_url} target="_blank">
@@ -41,9 +46,9 @@ export default class Branches extends Component {
 
             body = (
                 <div>
-                    {branches.map(branch =>
+                    {branches.items.map(branch => (
                         <Branch key={branch.name} project={project} branch={branch} />
-                    )}
+                    ))}
                 </div>
             )
         }
@@ -57,9 +62,7 @@ export default class Branches extends Component {
                     icon={BranchesIcon}
                 />
                 <WidgetBody>
-                    <TrapApiError error={apiError}>
-                        {body}
-                    </TrapApiError>
+                    <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
         )

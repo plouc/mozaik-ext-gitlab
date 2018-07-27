@@ -25,9 +25,9 @@ You can see a live demo of the widgets [here](http://mozaik-gitlab.herokuapp.com
 - [Project Members](#gitlab-project-members)
 - [Project Contributors](#gitlab-project-contributors)
 - [Branches](#gitlab-branches)
-- Builds
-    - [Build Histogram](#gitlab-build-histogram)
-    - [Build History](#gitlab-build-history)
+- Jobs
+    - [Job Histogram](#gitlab-job-histogram)
+    - [Job History](#gitlab-job-history)
 - Labels
     - [Labels Bubble chart](#gitlab-labels-bubble-chart)
     - [Labels Pie](#gitlab-labels-pie)
@@ -62,11 +62,11 @@ dashboards:
 ```
 
 
-### GitLab Build Histogram
+### GitLab Job Histogram
 
-> Show GitLab project build histogram.
+> Show GitLab project job histogram.
 
-![Gitlab project build histogram](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_build_histogram.png)
+![Gitlab project job histogram](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_build_histogram.png)
 
 #### parameters
 
@@ -82,7 +82,7 @@ dashboards:
 - # …
   widgets:
   - extension: gitlab
-    widget:    BuildHistogram
+    widget:    JobHistogram
     project:   gitlab-org/gitlab-ce
     columns:   2
     rows:      1
@@ -91,11 +91,11 @@ dashboards:
 ```
 
 
-### GitLab Build History
+### GitLab Job History
 
-> Show GitLab project build history.
+> Show GitLab project job history.
 
-![Gitlab project build history](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_build_history.png)
+![Gitlab project job history](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_build_history.png)
 
 #### parameters
 
@@ -111,7 +111,7 @@ dashboards:
 - # …
   widgets:
   - extension: gitlab
-    widget:    BuildHistory
+    widget:    JobHistory
     project:   gitlab-org/gitlab-ce
     columns:   1
     rows:      1

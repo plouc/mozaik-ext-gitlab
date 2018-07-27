@@ -12,7 +12,9 @@ export default class ProjectContributorsItem extends Component {
     }
 
     render() {
-        const { contributor: { name, commits } } = this.props
+        const {
+            contributor: { name, commits },
+        } = this.props
 
         return (
             <WidgetListItem
