@@ -10,7 +10,12 @@ export default class ProjectMembers extends Component {
         title: PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object.isRequired,
-            members: PropTypes.arrayOf(PropTypes.object).isRequired,
+            members: {
+                items:PropTypes.array.isRequired,
+                pagination: PropTypes.shape({
+                    total: PropTypes.number.isRequired,
+                }).isRequired,
+            }
         }),
         apiError: PropTypes.object,
     }
@@ -31,7 +36,7 @@ export default class ProjectMembers extends Component {
         if (apiData) {
             const { project, members } = apiData
 
-            count = members.length
+            count = members.pagination.total
 
             subject = (
                 <a href={project.web_url} target="_blank">
@@ -41,9 +46,9 @@ export default class ProjectMembers extends Component {
 
             body = (
                 <div>
-                    {members.map(member =>
+                    {members.items.map(member => (
                         <ProjectMembersItem key={`member.${member.id}`} member={member} />
-                    )}
+                    ))}
                 </div>
             )
         }
@@ -57,9 +62,7 @@ export default class ProjectMembers extends Component {
                     icon={MembersIcon}
                 />
                 <WidgetBody>
-                    <TrapApiError error={apiError}>
-                        {body}
-                    </TrapApiError>
+                    <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
         )

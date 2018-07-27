@@ -5,9 +5,32 @@ const chalk = require('chalk')
 const config = require('./config')
 
 /**
+ * @typedef {Object} Pagination
+ * @property {number} total
+ * @property {number} page
+ * @property {number} pages
+ * @property {number} perPage
+ * @property {number} previousPage
+ * @property {number} nextPage
+ */
+
+/**
+ * @param {object} headers
+ * @return {Pagination}
+ */
+const paginationFromHeaders = headers => ({
+    total: Number(headers['x-total']),
+    page: Number(headers['x-page']),
+    pages: Number(headers['x-total-pages']),
+    perPage: Number(headers['x-per-page']),
+    previousPage: Number(headers['x-prev-page']),
+    nextPage: Number(headers['x-next-page']),
+})
+
+/**
  * @param {Mozaik} mozaik
  */
-const client = mozaik => {
+const index = mozaik => {
     mozaik.loadApiConfig(config)
 
     const buildApiRequest = (path, params) => {
@@ -40,9 +63,12 @@ const client = mozaik => {
         projectMembers({ project }) {
             return Promise.all([
                 operations.project({ project }),
-                buildApiRequest(`/projects/${encodeURIComponent(project)}/members`).then(
-                    res => res.body
-                ),
+                buildApiRequest(
+                    `/projects/${encodeURIComponent(project)}/members`
+                ).then(res => ({
+                    items: res.body,
+                    pagination: paginationFromHeaders(res.headers),
+                })),
             ]).then(([project, members]) => ({
                 project,
                 members,
@@ -53,21 +79,27 @@ const client = mozaik => {
                 operations.project({ project }),
                 buildApiRequest(
                     `/projects/${encodeURIComponent(project)}/repository/contributors`
-                ).then(res => res.body),
+                ).then(res => ({
+                    items: res.body,
+                    pagination: paginationFromHeaders(res.headers),
+                })),
             ]).then(([project, contributors]) => ({
                 project,
                 contributors,
             }))
         },
-        projectBuilds({ project }) {
+        projectJobs({ project }) {
             return Promise.all([
                 operations.project({ project }),
-                buildApiRequest(`/projects/${encodeURIComponent(project)}/builds?per_page=40`).then(
-                    res => res.body
-                ),
-            ]).then(([project, builds]) => ({
+                buildApiRequest(
+                    `/projects/${encodeURIComponent(project)}/jobs?per_page=40`
+                ).then(res => ({
+                    items: res.body,
+                    pagination: paginationFromHeaders(res.headers),
+                })),
+            ]).then(([project, jobs]) => ({
                 project,
-                builds,
+                jobs,
             }))
         },
         projectBranches({ project }) {
@@ -75,7 +107,10 @@ const client = mozaik => {
                 operations.project({ project }),
                 buildApiRequest(
                     `/projects/${encodeURIComponent(project)}/repository/branches`
-                ).then(res => res.body),
+                ).then(res => ({
+                    items: res.body,
+                    pagination: paginationFromHeaders(res.headers),
+                })),
             ]).then(([project, branches]) => ({
                 project,
                 branches,
@@ -85,19 +120,20 @@ const client = mozaik => {
             return buildApiRequest(
                 `/projects/${encodeURIComponent(project)}/merge_requests`,
                 query
-            ).then(res => {
-                return {
-                    total: parseInt(res.header['x-total'], 10),
-                    results: res.body,
-                }
-            })
+            ).then(res => ({
+                items: res.body,
+                pagination: paginationFromHeaders(res.headers),
+            }))
         },
         projectLabels({ project }) {
             return Promise.all([
                 operations.project({ project }),
-                buildApiRequest(`/projects/${encodeURIComponent(project)}/labels`).then(
-                    res => res.body
-                ),
+                buildApiRequest(
+                    `/projects/${encodeURIComponent(project)}/labels`
+                ).then(res => ({
+                    items: res.body,
+                    pagination: paginationFromHeaders(res.headers),
+                })),
             ]).then(([project, labels]) => ({
                 project,
                 labels,
@@ -108,4 +144,4 @@ const client = mozaik => {
     return operations
 }
 
-module.exports = client
+module.exports = index

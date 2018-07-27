@@ -82,9 +82,7 @@ export default class Project extends Component {
             <Widget>
                 <WidgetHeader title={_title || title} icon={GitlabIcon} />
                 <WidgetBody>
-                    <TrapApiError error={apiError}>
-                        {body}
-                    </TrapApiError>
+                    <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
         )

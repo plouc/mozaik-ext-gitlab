@@ -11,7 +11,12 @@ export default class ProjectContributors extends Component {
         title: PropTypes.string,
         apiData: PropTypes.shape({
             project: PropTypes.object.isRequired,
-            contributors: PropTypes.arrayOf(PropTypes.object).isRequired,
+            contributors: {
+                items:PropTypes.array.isRequired,
+                pagination: PropTypes.shape({
+                    total: PropTypes.number.isRequired,
+                }).isRequired,
+            }
         }),
         apiError: PropTypes.object,
     }
@@ -32,9 +37,9 @@ export default class ProjectContributors extends Component {
         if (apiData) {
             const { project, contributors } = apiData
 
-            const sortedContributors = _.orderBy(contributors.slice(), ['commits'], ['desc'])
+            const sortedContributors = _.orderBy(contributors.items.slice(), ['commits'], ['desc'])
 
-            count = contributors.length
+            count = contributors.pagination.total
 
             subject = (
                 <a href={project.web_url} target="_blank">
@@ -44,12 +49,12 @@ export default class ProjectContributors extends Component {
 
             body = (
                 <div>
-                    {sortedContributors.map(contributor =>
+                    {sortedContributors.map(contributor => (
                         <ProjectContributorsItem
                             key={`contributor.${contributor.email}`}
                             contributor={contributor}
                         />
-                    )}
+                    ))}
                 </div>
             )
         }
@@ -63,9 +68,7 @@ export default class ProjectContributors extends Component {
                     icon={ContributorsIcon}
                 />
                 <WidgetBody>
-                    <TrapApiError error={apiError}>
-                        {body}
-                    </TrapApiError>
+                    <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
         )

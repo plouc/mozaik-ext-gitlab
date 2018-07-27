@@ -81,9 +81,7 @@ export default class MergeRequestsGauge extends Component {
                             value={parseInt(mergeRequestCount, 10)}
                         />
                     </div>
-                    <div className="gitlab__merge-requests_gauge_message">
-                        {message}
-                    </div>
+                    <div className="gitlab__merge-requests_gauge_message">{message}</div>
                 </WidgetBody>
             </Widget>
         )
