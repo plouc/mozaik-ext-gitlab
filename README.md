@@ -68,7 +68,7 @@ key       | required | description
 
 > Show GitLab project members.
 
-![Gitlab project members](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_members.png)
+![Gitlab project members](preview/project_members.png)
 
 ### parameters
 
@@ -88,141 +88,109 @@ key       | required | description
   y:         0
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### GitLab Branches
+## GitLab Branches
 
 > Show GitLab project branches.
 
 ![Gitlab project branches](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_branches.png)
 
-#### parameters
+### parameters
 
 key       | required | description
 ----------|----------|--------------------------
 `project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
 
-#### usage
+### usage
 
 ``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    Branches
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
+- extension: gitlab
+  widget:    Branches
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
 ```
 
-
-### GitLab Job Histogram
+## GitLab Job Histogram
 
 > Show GitLab project job histogram.
 
 ![Gitlab project job histogram](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_build_histogram.png)
 
-#### parameters
+### parameters
 
 key       | required | description
 ----------|----------|--------------------------
 `project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
 
-#### usage
+### usage
 
 ``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    JobHistogram
-    project:   gitlab-org/gitlab-ce
-    columns:   2
-    rows:      1
-    x:         0
-    y:         0
+- extension: gitlab
+  widget:    JobHistogram
+  project:   gitlab-org/gitlab-ce
+  columns:   2
+  rows:      1
+  x:         0
+  y:         0
 ```
 
-
-### GitLab Job History
+## GitLab Job History
 
 > Show GitLab project job history.
 
 ![Gitlab project job history](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_build_history.png)
 
-#### parameters
+### parameters
 
 key       | required | description
 ----------|----------|--------------------------
 `project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
 
-#### usage
+### usage
 
 ``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    JobHistory
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
+- extension: gitlab
+  widget:    JobHistory
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
 ```
 
-### GitLab Project Contributors
+## GitLab Project Contributors
 
 > Show GitLab project contributors.
 
 ![Gitlab project contributors](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project_contributors.png)
 
-#### parameters
+### parameters
 
 key       | required | description
 ----------|----------|--------------------------
 `project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
 
-#### usage
+### usage
 
 ``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    ProjectContributors
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
+- extension: gitlab
+  widget:    ProjectContributors
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
 ```
 
-### GitLab labels bubble chart
+## GitLab labels bubble chart
 
 > Show GitLab project's labels stats using a bubble chart.
 
 ![Gitlab labels bubble chart](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_bubble.png)
 
-#### parameters
+### parameters
 
 key       | required | default               | description
 ----------|----------|-----------------------|----------------
@@ -230,30 +198,25 @@ key       | required | default               | description
 `countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
 `title`   | no       | *n/a*                 | *Overrides widget title*
 
-#### usage
+### usage
 
 ``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    LabelsBubble
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
+- extension: gitlab
+  widget:    LabelsBubble
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
 ```
 
-
-### GitLab labels pie
+## GitLab labels pie
 
 > Show GitLab project's labels stats using a pie chart.
 
 ![Gitlab labels pie](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_pie.png)
 
-#### parameters
+### parameters
 
 key       | required | default               | description
 ----------|----------|-----------------------|----------------
@@ -261,30 +224,25 @@ key       | required | default               | description
 `countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
 `title`   | no       | *n/a*                 | *Overrides widget title*
 
-#### usage
+### usage
 
 ``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    LabelsPie
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
+- extension: gitlab
+  widget:    LabelsPie
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
 ```
 
-
-### GitLab labels tree map
+## GitLab labels tree map
 
 > Show GitLab project's labels stats using a tree map chart.
 
 ![Gitlab labels tree map](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_labels_treemap.png)
 
-#### parameters
+### parameters
 
 key       | required | default               | description
 ----------|----------|-----------------------|----------------
@@ -292,20 +250,16 @@ key       | required | default               | description
 `countBy` | yes      | `'open_issues_count'` | *Defines which count to use, must be one of: `'open_issues_count'`, `'closed_issues_count'`, `'open_merge_requests_count'`*
 `title`   | no       | *n/a*                 | *Overrides widget title*
 
-#### usage
+### usage
 
 ``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    LabelsTreemap
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
+- extension: gitlab
+  widget:    LabelsTreemap
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
 ```
 
 
