@@ -6,18 +6,19 @@ exports[`should render as expected 1`] = `
   style={Object {}}
 >
   <div
-    className="sc-bwzfXH fMILzD"
+    className="sc-bwzfXH bJUZVN"
   >
     <header
-      className="sc-htpNat llvRri"
+      className="sc-htpNat lcyfRu"
       style={Object {}}
     >
       <span>
         <div
-          className="sc-ifAKCX bDEKRH"
+          className="sc-ifAKCX rpFvk"
         >
           <a
             href="https://gitlab.com/plouc/ploucifier"
+            rel="noopener noreferrer"
             target="_blank"
           >
             ploucifier
@@ -31,31 +32,33 @@ exports[`should render as expected 1`] = `
         </div>
       </span>
       <div
-        className="sc-EHOje dlEdwN"
+        className="sc-EHOje iJdEwV"
       >
         <svg
-          fill="currentColor"
-          height="1em"
-          preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "color": "#000",
-              "verticalAlign": "middle",
-            }
-          }
-          viewBox="0 0 40 40"
-          width="1em"
+          fill="none"
+          height="2vmin"
+          stroke="#000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="2vmin"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <g>
-            <path
-              d="m9.5 10.5q0-1.2-0.8-1.9t-1.9-0.8-1.9 0.8-0.8 1.9 0.8 1.9 1.9 0.8 1.9-0.8 0.8-1.9z m22.7 12.2q0 1.1-0.8 1.9l-10.4 10.5q-0.8 0.8-2 0.8-1.1 0-1.9-0.8l-15.2-15.2q-0.8-0.8-1.3-2.2t-0.6-2.5v-8.8q0-1.1 0.8-1.9t1.9-0.8h8.9q1.1 0 2.5 0.5t2.1 1.4l15.2 15.2q0.8 0.8 0.8 1.9z m8.2 0q0 1.1-0.8 1.9l-10.5 10.5q-0.8 0.8-1.9 0.8-0.8 0-1.2-0.3t-1.2-1l10-10q0.8-0.8 0.8-1.9 0-1.1-0.8-1.9l-15.2-15.2q-0.8-0.8-2.1-1.4t-2.5-0.5h4.7q1.2 0 2.5 0.5t2.2 1.4l15.2 15.2q0.8 0.8 0.8 1.9z"
-            />
-          </g>
+          <path
+            d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+          />
+          <line
+            x1="7"
+            x2="7"
+            y1="7"
+            y2="7"
+          />
         </svg>
       </div>
     </header>
     <div
-      className="sc-bZQynM cUinle"
+      className="sc-bZQynM kFUlyb"
       style={Object {}}
     >
       <div
