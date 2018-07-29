@@ -18,9 +18,6 @@ export default class EventDescription extends Component {
             return <div>{truncate(target_title)}</div>
         }
 
-        if (target_type === 'DiscussionNote') {
-        }
-
         if (push_data !== undefined) {
             return <div>{truncate(push_data.commit_title)}</div>
         }

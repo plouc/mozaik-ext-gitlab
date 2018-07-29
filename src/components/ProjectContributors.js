@@ -1,7 +1,15 @@
 import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader, UsersIcon } from '@mozaik/ui'
+import {
+    TrapApiError,
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+    WidgetLoader,
+    ExternalLink,
+    UsersIcon,
+} from '@mozaik/ui'
 import ProjectContributorsItem from './ProjectContributorsItem'
 
 export default class ProjectContributors extends Component {
@@ -40,11 +48,7 @@ export default class ProjectContributors extends Component {
 
             count = contributors.pagination.total
 
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = (
                 <Fragment>

@@ -8,7 +8,7 @@ export default class ProjectActivityItem extends Component {
     static propTypes = eventPropType
 
     render() {
-        const { action_name, created_at, author } = this.props
+        const { action_name, author } = this.props
 
         return (
             <WidgetListItem

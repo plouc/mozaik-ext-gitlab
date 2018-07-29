@@ -6,6 +6,7 @@ import {
     WidgetHeader,
     WidgetBody,
     WidgetLoader,
+    ExternalLink,
     ActivityIcon,
 } from '@mozaik/ui'
 import ProjectActivityItem from './ProjectActivityItem'
@@ -42,11 +43,7 @@ export default class ProjectActivity extends Component {
         if (apiData) {
             const { project, events } = apiData
 
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = (
                 <Fragment>

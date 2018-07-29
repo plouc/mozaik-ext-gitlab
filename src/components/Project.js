@@ -7,6 +7,7 @@ import {
     WidgetBody,
     WidgetLoader,
     WidgetLabel,
+    ExternalLink,
     GitlabIcon,
     LockIcon,
     UnlockIcon,
@@ -35,11 +36,7 @@ export default class Project extends Component {
         let body = <WidgetLoader />
         let title = 'Project'
         if (project) {
-            title = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            title = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = (
                 <div
@@ -70,11 +67,7 @@ export default class Project extends Component {
                         style={{ width: '48%', marginBottom: '1.6vmin' }}
                     />
                     <WidgetLabel
-                        label={
-                            <a href={`${project.web_url}/forks`} target="_blank">
-                                forks
-                            </a>
-                        }
+                        label={<ExternalLink href={`${project.web_url}/forks`}>forks</ExternalLink>}
                         prefix={project.forks_count}
                         suffix={<GitBranchIcon size="1.6vmin" />}
                         style={{ width: '48%', marginBottom: '1.6vmin' }}

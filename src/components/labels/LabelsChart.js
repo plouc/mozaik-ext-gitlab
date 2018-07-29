@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader, TagIcon } from '@mozaik/ui'
+import {
+    TrapApiError,
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+    WidgetLoader,
+    ExternalLink,
+    TagIcon,
+} from '@mozaik/ui'
 import { countTypes, countLabel } from './counts'
 
 export default class LabelsChart extends Component {
@@ -53,11 +61,7 @@ export default class LabelsChart extends Component {
 
             count = labels.length
 
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = children({
                 labels,

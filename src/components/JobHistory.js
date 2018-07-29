@@ -6,6 +6,7 @@ import {
     WidgetHeader,
     WidgetBody,
     WidgetLoader,
+    ExternalLink,
     BarChartIcon,
 } from '@mozaik/ui'
 import JobHistoryItem from './JobHistoryItem'
@@ -38,11 +39,7 @@ export default class JobHistory extends Component {
         if (apiData) {
             const { project, jobs } = apiData
 
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = (
                 <div>
