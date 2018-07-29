@@ -6,18 +6,24 @@ import {
     WidgetHeader,
     WidgetBody,
     WidgetLoader,
-    GitBranchIcon,
+    WidgetListItem,
 } from '@mozaik/ui'
-import BranchesItem from './BranchesItem'
 
-export default class Branches extends Component {
+export default class ProjectMilestones extends Component {
     static propTypes = {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string,
         apiData: PropTypes.shape({
-            project: PropTypes.object,
-            branches: {
-                items: PropTypes.array.isRequired,
+            project: PropTypes.object.isRequired,
+            milestones: {
+                items: PropTypes.arrayOf(
+                    PropTypes.shape({
+                        id: PropTypes.number.isRequired,
+                        title: PropTypes.string.isRequired,
+                        state: PropTypes.string.isRequired,
+                        due_date: PropTypes.string.isRequired,
+                    })
+                ).isRequired,
                 pagination: PropTypes.shape({
                     total: PropTypes.number.isRequired,
                 }).isRequired,
@@ -28,7 +34,7 @@ export default class Branches extends Component {
 
     static getApiRequest({ project }) {
         return {
-            id: `gitlab.projectBranches.${project}`,
+            id: `gitlab.projectMilestones.${project}`,
             params: { project },
         }
     }
@@ -38,11 +44,11 @@ export default class Branches extends Component {
 
         let body = <WidgetLoader />
         let subject = null
-        let count = 0
+        let count
         if (apiData) {
-            const { project, branches } = apiData
+            const { project, milestones } = apiData
 
-            count = branches.pagination.total
+            count = milestones.pagination.total
 
             subject = (
                 <a href={project.web_url} target="_blank">
@@ -52,8 +58,13 @@ export default class Branches extends Component {
 
             body = (
                 <Fragment>
-                    {branches.items.map(branch => (
-                        <BranchesItem key={branch.name} project={project} branch={branch} />
+                    {milestones.items.map(milestone => (
+                        <WidgetListItem
+                            key={`milestone.${milestone.id}`}
+                            title={milestone.title}
+                            meta={milestone.due_date}
+                            post={milestone.state}
+                        />
                     ))}
                 </Fragment>
             )
@@ -62,12 +73,11 @@ export default class Branches extends Component {
         return (
             <Widget>
                 <WidgetHeader
-                    title={title || 'Branches'}
+                    title={title || 'Milestones'}
                     subject={title ? null : subject}
                     count={count}
-                    icon={GitBranchIcon}
                 />
-                <WidgetBody disablePadding={true}>
+                <WidgetBody>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>

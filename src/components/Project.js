@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import GitlabIcon from 'react-icons/lib/fa/gitlab'
-import PublicIcon from 'react-icons/lib/fa/unlock'
-import PrivateIcon from 'react-icons/lib/fa/lock'
-import StarsIcon from 'react-icons/lib/fa/star'
-import ForksIcon from 'react-icons/lib/fa/code-fork'
 import {
     TrapApiError,
     Widget,
@@ -12,6 +7,11 @@ import {
     WidgetBody,
     WidgetLoader,
     WidgetLabel,
+    GitlabIcon,
+    LockIcon,
+    UnlockIcon,
+    StarIcon,
+    GitBranchIcon,
 } from '@mozaik/ui'
 
 export default class Project extends Component {
@@ -44,7 +44,6 @@ export default class Project extends Component {
             body = (
                 <div
                     style={{
-                        padding: '1.6vmin 1.6vmin 0',
                         display: 'flex',
                         flexWrap: 'wrap',
                         justifyContent: 'space-between',
@@ -55,13 +54,19 @@ export default class Project extends Component {
                 >
                     <WidgetLabel
                         label={project.public ? 'public' : 'private'}
-                        prefix={project.public ? <PublicIcon /> : <PrivateIcon />}
+                        prefix={
+                            project.public ? (
+                                <UnlockIcon size="1.6vmin" />
+                            ) : (
+                                <LockIcon size="1.6vmin" />
+                            )
+                        }
                         style={{ width: '48%', marginBottom: '1.6vmin' }}
                     />
                     <WidgetLabel
                         label="stars"
                         prefix={project.star_count}
-                        suffix={<StarsIcon />}
+                        suffix={<StarIcon size="1.6vmin" />}
                         style={{ width: '48%', marginBottom: '1.6vmin' }}
                     />
                     <WidgetLabel
@@ -71,7 +76,7 @@ export default class Project extends Component {
                             </a>
                         }
                         prefix={project.forks_count}
-                        suffix={<ForksIcon />}
+                        suffix={<GitBranchIcon size="1.6vmin" />}
                         style={{ width: '48%', marginBottom: '1.6vmin' }}
                     />
                 </div>

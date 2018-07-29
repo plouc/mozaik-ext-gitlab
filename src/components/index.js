@@ -4,7 +4,8 @@ import ProjectContributors from './ProjectContributors'
 import JobHistory from './JobHistory'
 import JobHistogram from './JobHistogram'
 import Branches from './Branches'
-//import MergeRequestsGauge  from './MergeRequestsGauge'
+import ProjectActivity from './activity/ProjectActivity'
+import ProjectMilestones from './ProjectMilestones'
 import * as labels from './labels'
 
 export default {
@@ -14,6 +15,7 @@ export default {
     JobHistory,
     JobHistogram,
     Branches,
-    //MergeRequestsGauge,
+    ProjectActivity,
+    ProjectMilestones,
     ...labels,
 }

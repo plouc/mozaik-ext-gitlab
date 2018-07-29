@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
-import MembersIcon from 'react-icons/lib/fa/child'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader, UsersIcon } from '@mozaik/ui'
 import ProjectMembersItem from './ProjectMembersItem'
 
 export default class ProjectMembers extends Component {
@@ -11,11 +10,11 @@ export default class ProjectMembers extends Component {
         apiData: PropTypes.shape({
             project: PropTypes.object.isRequired,
             members: {
-                items:PropTypes.array.isRequired,
+                items: PropTypes.array.isRequired,
                 pagination: PropTypes.shape({
                     total: PropTypes.number.isRequired,
                 }).isRequired,
-            }
+            },
         }),
         apiError: PropTypes.object,
     }
@@ -45,11 +44,11 @@ export default class ProjectMembers extends Component {
             )
 
             body = (
-                <div>
+                <Fragment>
                     {members.items.map(member => (
                         <ProjectMembersItem key={`member.${member.id}`} member={member} />
                     ))}
-                </div>
+                </Fragment>
             )
         }
 
@@ -59,9 +58,9 @@ export default class ProjectMembers extends Component {
                     title={title || 'Members'}
                     subject={title ? null : subject}
                     count={count}
-                    icon={MembersIcon}
+                    icon={UsersIcon}
                 />
-                <WidgetBody>
+                <WidgetBody disablePadding={true}>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>

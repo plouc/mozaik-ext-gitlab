@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-import ContributorsIcon from 'react-icons/lib/fa/child'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader, UsersIcon } from '@mozaik/ui'
 import ProjectContributorsItem from './ProjectContributorsItem'
 
 export default class ProjectContributors extends Component {
@@ -12,11 +11,11 @@ export default class ProjectContributors extends Component {
         apiData: PropTypes.shape({
             project: PropTypes.object.isRequired,
             contributors: {
-                items:PropTypes.array.isRequired,
+                items: PropTypes.array.isRequired,
                 pagination: PropTypes.shape({
                     total: PropTypes.number.isRequired,
                 }).isRequired,
-            }
+            },
         }),
         apiError: PropTypes.object,
     }
@@ -48,14 +47,14 @@ export default class ProjectContributors extends Component {
             )
 
             body = (
-                <div>
+                <Fragment>
                     {sortedContributors.map(contributor => (
                         <ProjectContributorsItem
                             key={`contributor.${contributor.email}`}
                             contributor={contributor}
                         />
                     ))}
-                </div>
+                </Fragment>
             )
         }
 
@@ -65,9 +64,9 @@ export default class ProjectContributors extends Component {
                     title={title || 'Contributors'}
                     subject={title ? null : subject}
                     count={count}
-                    icon={ContributorsIcon}
+                    icon={UsersIcon}
                 />
-                <WidgetBody>
+                <WidgetBody disablePadding={true}>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>

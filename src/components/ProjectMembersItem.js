@@ -6,6 +6,7 @@ export default class ProjectMembersItem extends Component {
     static propTypes = {
         member: PropTypes.shape({
             name: PropTypes.string.isRequired,
+            username: PropTypes.string.isRequired,
             avatar_url: PropTypes.string,
             web_url: PropTypes.string.isRequired,
             state: PropTypes.string.isRequired,
@@ -14,7 +15,7 @@ export default class ProjectMembersItem extends Component {
 
     render() {
         const {
-            member: { name, avatar_url, web_url, state },
+            member: { name, username, avatar_url, web_url, state },
         } = this.props
 
         let avatar = null
@@ -35,7 +36,8 @@ export default class ProjectMembersItem extends Component {
                 }
                 href={web_url}
                 pre={avatar}
-                meta={state}
+                meta={`@${username} - ${state}`}
+                align="top"
             />
         )
     }

@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import BuildsIcon from 'react-icons/lib/fa/bar-chart'
 import moment from 'moment'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import {
+    TrapApiError,
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+    WidgetLoader,
+    BarChartIcon,
+} from '@mozaik/ui'
 import { ResponsiveBar } from 'nivo'
 
 const margin = { top: 20, right: 20, bottom: 60, left: 70 }
@@ -29,8 +35,8 @@ export default class JobHistogram extends Component {
         apiData: PropTypes.shape({
             project: PropTypes.object,
             jobs: {
-                items:PropTypes.array.isRequired,
-            }
+                items: PropTypes.array.isRequired,
+            },
         }),
         apiError: PropTypes.object,
         theme: PropTypes.object.isRequired,
@@ -103,9 +109,9 @@ export default class JobHistogram extends Component {
                 <WidgetHeader
                     title={title || 'Jobs'}
                     subject={title ? null : subject}
-                    icon={BuildsIcon}
+                    icon={BarChartIcon}
                 />
-                <WidgetBody style={{ overflowY: 'hidden' }}>
+                <WidgetBody disablePadding={true} style={{ overflowY: 'hidden' }}>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
