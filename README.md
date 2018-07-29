@@ -14,23 +14,93 @@
 
 This repository contains some widgets to use with [Mozaïk](https://github.com/plouc/mozaik).
 
-## Demo
+You can see a live demo of this extension [here](http://mozaik-gitlab.herokuapp.com/)
 
-You can see a live demo of the widgets [here](http://mozaik-gitlab.herokuapp.com/)
+- [client configuration](#client-configuration)
+- widgets
+    - [Project](#project)
+    - [Project Members](#project-members)
+    - [Project Contributors](#gitlab-project-contributors)
+    - [Branches](#gitlab-branches)
+    - Jobs
+        - [Job Histogram](#gitlab-job-histogram)
+        - [Job History](#gitlab-job-history)
+    - Labels
+        - [Labels Bubble chart](#gitlab-labels-bubble-chart)
+        - [Labels Pie](#gitlab-labels-pie)
+        - [Labels Tree map](#gitlab-labels-tree-map)
 
-## Widgets
+## Client Configuration
 
-- [Project](#gitlab-project)
-- [Project Members](#gitlab-project-members)
-- [Project Contributors](#gitlab-project-contributors)
-- [Branches](#gitlab-branches)
-- Jobs
-    - [Job Histogram](#gitlab-job-histogram)
-    - [Job History](#gitlab-job-history)
-- Labels
-    - [Labels Bubble chart](#gitlab-labels-bubble-chart)
-    - [Labels Pie](#gitlab-labels-pie)
-    - [Labels Tree map](#gitlab-labels-tree-map)
+In order to use the Mozaïk gitlab extension, you must configure its **client**.
+Configuration is loaded from environment variables.
+
+| env key          | required | default | description
+|------------------|----------|---------|----------------------------
+| GITLAB_BASE_URL  | yes      |         | gitlab API base url, eg. `'https://gitlab.com/api/v4`
+| GITLAB_API_TOKEN | yes      |         | gitlab API token
+
+## Project
+
+> Show GitLab project info.
+
+![Gitlab project](preview/project.png)
+
+### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+### usage
+
+``` yaml
+- extension: gitlab
+  widget:    Project
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
+```
+
+## Project Members
+
+> Show GitLab project members.
+
+![Gitlab project members](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_members.png)
+
+### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+### usage
+
+``` yaml
+- extension: gitlab
+  widget:    ProjectMembers
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      1
+  x:         0
+  y:         0
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### GitLab Branches
 
@@ -118,36 +188,6 @@ dashboards:
     y:         0
 ```
 
-
-### GitLab Project Members
-
-> Show GitLab project members.
-
-![Gitlab project members](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_members.png)
-
-#### parameters
-
-key       | required | description
-----------|----------|--------------------------
-`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
-
-#### usage
-
-``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    ProjectMembers
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
-```
-
-
 ### GitLab Project Contributors
 
 > Show GitLab project contributors.
@@ -169,35 +209,6 @@ dashboards:
   widgets:
   - extension: gitlab
     widget:    ProjectContributors
-    project:   gitlab-org/gitlab-ce
-    columns:   1
-    rows:      1
-    x:         0
-    y:         0
-```
-
-
-### GitLab Project
-
-> Show GitLab project info.
-
-![Gitlab project](https://raw.githubusercontent.com/plouc/mozaik-ext-gitlab/master/preview/gitlab_project.png)
-
-#### parameters
-
-key       | required | description
-----------|----------|--------------------------
-`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
-
-#### usage
-
-``` yaml
-# config.yml
-dashboards:
-- # …
-  widgets:
-  - extension: gitlab
-    widget:    Project
     project:   gitlab-org/gitlab-ce
     columns:   1
     rows:      1

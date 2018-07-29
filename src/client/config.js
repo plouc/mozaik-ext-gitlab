@@ -4,7 +4,7 @@ const config = convict({
     gitlab: {
         baseUrl: {
             doc: 'The gitlab API base url.',
-            default: 'https://gitlab.com/api/v3',
+            default: null,
             format: String,
             env: 'GITLAB_BASE_URL',
         },

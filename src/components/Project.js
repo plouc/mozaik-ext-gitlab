@@ -1,26 +1,84 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import {
     TrapApiError,
     Widget,
-    WidgetHeader,
     WidgetBody,
     WidgetLoader,
     WidgetLabel,
     ExternalLink,
-    GitlabIcon,
     LockIcon,
     UnlockIcon,
     StarIcon,
     GitBranchIcon,
+    typography,
+    WidgetAvatar,
 } from '@mozaik/ui'
+
+const AVATAR_SIZE = '12vmin'
+const ICON_SIZE = '1.8vmin'
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+`
+
+const Header = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+const AvatarPlaceholder = styled.span`
+    width: ${AVATAR_SIZE};
+    height: ${AVATAR_SIZE};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: ${props => props.theme.colors.textHighlight};
+    background: ${props => props.theme.colors.unknown};
+    ${props => typography(props.theme, 'display')} font-size: 6vmin;
+`
+
+const Name = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
+    color: ${props => props.theme.colors.textHighlight};
+    margin: 1vmin 0 3vmin;
+    ${props => typography(props.theme, 'default', 'strong')};
+`
+
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2vmin;
+    grid-row-gap: 2vmin;
+`
+
+const Count = styled.span`
+    color: ${props => props.theme.colors.textHighlight};
+    ${props => typography(props.theme, 'default', 'strong')};
+`
 
 export default class Project extends Component {
     static propTypes = {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-        title: PropTypes.string,
-        apiData: PropTypes.object,
+        apiData: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            name_with_namespace: PropTypes.string.isRequired,
+            visibility: PropTypes.string.isRequired,
+            avatar_url: PropTypes.string,
+            star_count: PropTypes.number.isRequired,
+            forks_count: PropTypes.number.isRequired,
+        }),
         apiError: PropTypes.object,
+        theme: PropTypes.object.isRequired,
     }
 
     static getApiRequest({ project }) {
@@ -31,55 +89,68 @@ export default class Project extends Component {
     }
 
     render() {
-        const { title: _title, apiData: project, apiError } = this.props
+        const { apiData: project, apiError, theme } = this.props
 
         let body = <WidgetLoader />
-        let title = 'Project'
         if (project) {
-            title = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
+            let visibilityIcon
+            if (project.visibility === 'public') {
+                visibilityIcon = (
+                    <UnlockIcon
+                        size={ICON_SIZE}
+                        color={theme.colors.text}
+                        style={{ marginLeft: '1.6vmin' }}
+                    />
+                )
+            } else {
+                visibilityIcon = (
+                    <LockIcon
+                        size={ICON_SIZE}
+                        color={theme.colors.text}
+                        style={{ marginLeft: '1.6vmin' }}
+                    />
+                )
+            }
+
+            let avatar
+            if (project.avatar_url !== null) {
+                avatar = <img src={project.avatar_url} alt={project.name_with_namespace} />
+            } else {
+                avatar = <AvatarPlaceholder>{project.name[0]}</AvatarPlaceholder>
+            }
 
             body = (
-                <div
-                    style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        justifyContent: 'space-between',
-                        alignContent: 'flex-start',
-                        width: '100%',
-                        height: '100%',
-                    }}
-                >
-                    <WidgetLabel
-                        label={project.public ? 'public' : 'private'}
-                        prefix={
-                            project.public ? (
-                                <UnlockIcon size="1.6vmin" />
-                            ) : (
-                                <LockIcon size="1.6vmin" />
-                            )
-                        }
-                        style={{ width: '48%', marginBottom: '1.6vmin' }}
-                    />
-                    <WidgetLabel
-                        label="stars"
-                        prefix={project.star_count}
-                        suffix={<StarIcon size="1.6vmin" />}
-                        style={{ width: '48%', marginBottom: '1.6vmin' }}
-                    />
-                    <WidgetLabel
-                        label={<ExternalLink href={`${project.web_url}/forks`}>forks</ExternalLink>}
-                        prefix={project.forks_count}
-                        suffix={<GitBranchIcon size="1.6vmin" />}
-                        style={{ width: '48%', marginBottom: '1.6vmin' }}
-                    />
-                </div>
+                <Container>
+                    <Header>
+                        <WidgetAvatar size={AVATAR_SIZE}>{avatar}</WidgetAvatar>
+                    </Header>
+                    <Name>
+                        <ExternalLink href={project.web_url}>
+                            {project.name_with_namespace}
+                        </ExternalLink>{' '}
+                        {visibilityIcon}
+                    </Name>
+                    <Grid>
+                        <WidgetLabel
+                            label={<Count>{project.star_count}</Count>}
+                            prefix={<StarIcon size={ICON_SIZE} />}
+                            suffix="stars"
+                        />
+                        <WidgetLabel
+                            label={<Count>{project.forks_count}</Count>}
+                            prefix={<GitBranchIcon size={ICON_SIZE} />}
+                            suffix={
+                                <ExternalLink href={`${project.web_url}/forks`}>forks</ExternalLink>
+                            }
+                        />
+                    </Grid>
+                </Container>
             )
         }
 
         return (
             <Widget>
-                <WidgetHeader title={_title || title} icon={GitlabIcon} />
-                <WidgetBody>
+                <WidgetBody isHeaderless={true}>
                     <TrapApiError error={apiError}>{body}</TrapApiError>
                 </WidgetBody>
             </Widget>
