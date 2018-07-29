@@ -16,10 +16,13 @@ export default class JobHistory extends Component {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string,
         apiData: PropTypes.shape({
-            project: PropTypes.object,
-            jobs: {
+            project: PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                web_url: PropTypes.string.isRequired,
+            }).isRequired,
+            jobs: PropTypes.shape({
                 items: PropTypes.array.isRequired,
-            },
+            }).isRequired,
         }),
         apiError: PropTypes.object,
     }

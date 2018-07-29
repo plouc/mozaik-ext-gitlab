@@ -17,13 +17,16 @@ export default class ProjectContributors extends Component {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string,
         apiData: PropTypes.shape({
-            project: PropTypes.object.isRequired,
-            contributors: {
+            project: PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                web_url: PropTypes.string.isRequired,
+            }).isRequired,
+            contributors: PropTypes.shape({
                 items: PropTypes.array.isRequired,
                 pagination: PropTypes.shape({
                     total: PropTypes.number.isRequired,
                 }).isRequired,
-            },
+            }).isRequired,
         }),
         apiError: PropTypes.object,
     }

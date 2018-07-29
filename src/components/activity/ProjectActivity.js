@@ -17,13 +17,16 @@ export default class ProjectActivity extends Component {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string,
         apiData: PropTypes.shape({
-            project: PropTypes.object.isRequired,
-            events: {
+            project: PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                web_url: PropTypes.string.isRequired,
+            }).isRequired,
+            events: PropTypes.shape({
                 items: PropTypes.arrayOf(PropTypes.shape(eventPropType)).isRequired,
                 pagination: PropTypes.shape({
                     total: PropTypes.number.isRequired,
                 }).isRequired,
-            },
+            }).isRequired,
         }),
         apiError: PropTypes.object,
     }
