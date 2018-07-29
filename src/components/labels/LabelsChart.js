@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import LabelsIcon from 'react-icons/lib/fa/tags'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader } from '@mozaik/ui'
+import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader, TagIcon } from '@mozaik/ui'
 import { countTypes, countLabel } from './counts'
 
 export default class LabelsChart extends Component {
@@ -74,7 +73,7 @@ export default class LabelsChart extends Component {
                     title={title || `Labels by ${countLabel(countBy)}`}
                     subject={title ? null : subject}
                     count={count}
-                    icon={LabelsIcon}
+                    icon={TagIcon}
                 />
                 <WidgetBody>
                     <TrapApiError error={apiError}>{body}</TrapApiError>

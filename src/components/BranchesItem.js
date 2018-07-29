@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import ClockIcon from 'react-icons/lib/fa/clock-o'
-import { WidgetListItem } from '@mozaik/ui'
+import styled from 'styled-components'
+import { WidgetListItem, Text, typography, ClockIcon } from '@mozaik/ui'
 
-export default class Branch extends Component {
+const Header = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+const CommitSha = styled.a`
+    ${props => typography(props.theme, 'mono', 'small')};
+`
+
+export default class BranchesItem extends Component {
     static propTypes = {
         project: PropTypes.shape({
             web_url: PropTypes.string.isRequired,
@@ -29,23 +38,24 @@ export default class Branch extends Component {
         return (
             <WidgetListItem
                 title={
-                    <span>
+                    <Header>
                         <a href={`${project.web_url}/tree/${branch.name}`} target="_blank">
-                            {branch.name}
+                            <Text variant="strong">{branch.name}</Text>
                         </a>&nbsp;
-                        <a
+                        <CommitSha
                             href={`${project.web_url}/commit/${branch.commit.id}`}
                             target="_blank"
                             style={{ textDecoration: 'underline' }}
                         >
-                            #{branch.commit.id.substring(0, 7)}
-                        </a>
-                    </span>
+                            {branch.commit.id.substring(0, 7)}
+                        </CommitSha>
+                    </Header>
                 }
                 meta={
                     <div>
-                        <div>{branch.commit.message}</div>
-                        <time
+                        <Text variant="small">{branch.commit.message}</Text>
+                        <Text
+                            variant="small"
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -53,7 +63,7 @@ export default class Branch extends Component {
                         >
                             <ClockIcon />&nbsp;
                             {moment(branch.commit.committed_date).fromNow()}
-                        </time>
+                        </Text>
                     </div>
                 }
             />

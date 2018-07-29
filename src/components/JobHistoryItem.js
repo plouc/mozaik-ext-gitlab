@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import ClockIcon from 'react-icons/lib/fa/clock-o'
-import { WidgetListItem, WidgetLabel, WidgetStatusChip } from '@mozaik/ui'
+import { WidgetListItem, WidgetLabel, WidgetStatusChip, ClockIcon } from '@mozaik/ui'
 
 export default class JobHistoryItem extends Component {
     static propTypes = {
