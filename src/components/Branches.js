@@ -16,13 +16,16 @@ export default class Branches extends Component {
         project: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string,
         apiData: PropTypes.shape({
-            project: PropTypes.object,
-            branches: {
+            project: PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                web_url: PropTypes.string.isRequired,
+            }).isRequired,
+            branches: PropTypes.shape({
                 items: PropTypes.array.isRequired,
                 pagination: PropTypes.shape({
                     total: PropTypes.number.isRequired,
                 }).isRequired,
-            },
+            }).isRequired,
         }),
         apiError: PropTypes.object,
     }

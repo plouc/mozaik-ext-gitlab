@@ -6,81 +6,103 @@ exports[`should render as expected 1`] = `
   style={Object {}}
 >
   <div
-    className="sc-bwzfXH fMILzD"
+    className="sc-bwzfXH bJUZVN"
   >
     <header
-      className="sc-htpNat llvRri"
+      className="sc-htpNat lcyfRu"
       style={Object {}}
     >
       <span>
         <div
-          className="sc-ifAKCX bDEKRH"
+          className="sc-ifAKCX rpFvk"
         >
           <a
-            href="https://gitlab.com/plouc/ploucifier"
+            href="https://gitlab.com/gitlab-org/gitlab-runner"
+            rel="noopener noreferrer"
             target="_blank"
           >
-            ploucifier
+            gitlab-runner
           </a>
         </div>
         Branches
         <div
           className="sc-bxivhb eDwDKI"
         >
-          1
+          42
         </div>
       </span>
       <div
-        className="sc-EHOje dlEdwN"
+        className="sc-EHOje iJdEwV"
       >
         <svg
-          fill="currentColor"
-          height="1em"
-          preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "color": "#000",
-              "verticalAlign": "middle",
-            }
-          }
-          viewBox="0 0 40 40"
-          width="1em"
+          fill="none"
+          height="2vmin"
+          stroke="#000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="2vmin"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <g>
-            <path
-              d="m14.9 32.9q0-0.9-0.6-1.6t-1.5-0.6-1.5 0.6-0.7 1.6 0.7 1.5 1.5 0.6 1.5-0.6 0.6-1.5z m0-25.8q0-0.8-0.6-1.5t-1.5-0.6-1.5 0.6-0.7 1.5 0.7 1.6 1.5 0.6 1.5-0.6 0.6-1.6z m14.3 2.9q0-0.9-0.6-1.5t-1.5-0.6-1.5 0.6-0.7 1.5 0.7 1.5 1.5 0.6 1.5-0.6 0.6-1.5z m2.2 0q0 1.2-0.6 2.2t-1.6 1.5q0 6.4-5 9.2-1.6 0.9-4.6 1.9-2.8 0.8-3.7 1.5t-1 2.3v0.5q1 0.6 1.6 1.6t0.6 2.2q0 1.7-1.3 3t-3 1.2-3.1-1.2-1.2-3q0-1.2 0.6-2.2t1.5-1.5v-18.4q-0.9-0.5-1.5-1.5t-0.6-2.2q0-1.7 1.3-3t3-1.2 3 1.2 1.3 3q0 1.2-0.6 2.2t-1.6 1.5v11.1q1.2-0.5 3.5-1.2 1.2-0.4 1.9-0.7t1.6-0.7 1.3-0.9 0.9-1.1 0.6-1.6 0.2-2q-1-0.6-1.5-1.5t-0.6-2.2q0-1.8 1.2-3t3.1-1.3 3 1.3 1.3 3z"
-            />
-          </g>
+          <line
+            x1="6"
+            x2="6"
+            y1="3"
+            y2="15"
+          />
+          <circle
+            cx="18"
+            cy="6"
+            r="3"
+          />
+          <circle
+            cx="6"
+            cy="18"
+            r="3"
+          />
+          <path
+            d="M18 9a9 9 0 0 1-9 9"
+          />
         </svg>
       </div>
     </header>
     <div
-      className="sc-bZQynM cUinle"
+      className="sc-bZQynM FCrnA"
       style={Object {}}
     >
-      <div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
         <div
-          className="sc-cSHVUG gWizrO"
-          onClick={undefined}
-          style={undefined}
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
         >
           <div
-            style={
-              Object {
-                "flexGrow": 1,
-              }
-            }
+            className="sc-iwsKbI gExwvp"
           >
-            <span>
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
               <a
-                href="https://gitlab.com/plouc/ploucifier/tree/fix-something"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/0-6-stable"
+                rel="noopener noreferrer"
                 target="_blank"
               >
-                fix-something
+                <span
+                  className="sc-hzDkRC zpeZV"
+                  type="default"
+                >
+                  0-6-stable
+                </span>
               </a>
                
               <a
-                href="https://gitlab.com/plouc/ploucifier/commit/0610e6ffb1b8672eea4ba03591f1f0da13669bbc"
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/3227f0aa5be1d64d2ec694bd3758e0d43e92b36b"
                 style={
                   Object {
                     "textDecoration": "underline",
@@ -88,48 +110,1783 @@ exports[`should render as expected 1`] = `
                 }
                 target="_blank"
               >
-                #
-                0610e6f
+                3227f0a
               </a>
-            </span>
-            <div
-              className="sc-kgoBCf kFsOlB"
-            >
-              <div>
-                <div>
-                  Whatever
-                </div>
-                <time
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "display": "flex",
-                    }
+            </div>
+          </div>
+          <div
+            className="sc-jhAzac lfYNJx"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-fBuWsC dUciHS"
+                type="default"
+              >
+                Fix 0.6.2 release
+              </span>
+              <span
+                className="sc-fMiknA jrnBJM"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
                   }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
-                    }
-                    viewBox="0 0 40 40"
-                    width="1em"
-                  >
-                    <g>
-                      <path
-                        d="m23 12.1v10q0 0.4-0.2 0.6t-0.5 0.2h-7.2q-0.3 0-0.5-0.2t-0.2-0.6v-1.4q0-0.3 0.2-0.5t0.5-0.2h5v-7.9q0-0.3 0.2-0.5t0.6-0.2h1.4q0.3 0 0.5 0.2t0.2 0.5z m9.3 7.9q0-3.3-1.6-6.1t-4.5-4.4-6.1-1.6-6.1 1.6-4.4 4.4-1.6 6.1 1.6 6.1 4.4 4.4 6.1 1.6 6.1-1.6 4.5-4.4 1.6-6.1z m5 0q0 4.7-2.3 8.6t-6.3 6.2-8.6 2.3-8.6-2.3-6.2-6.2-2.3-8.6 2.3-8.6 6.2-6.2 8.6-2.3 8.6 2.3 6.3 6.2 2.3 8.6z"
-                      />
-                    </g>
-                  </svg>
-                   
-                  2 years ago
-                </time>
-              </div>
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                3 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/0-7-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-dVhcbM jxQjmj"
+                  type="default"
+                >
+                  0-7-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/998cf5d5ef3caf6535cc4c5f3279b08c3ee2ecc8"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                998cf5d
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-eqIVtm hCYmlC"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-fAjcbJ efLRoA"
+                type="default"
+              >
+                Fix compilation error
+              </span>
+              <span
+                className="sc-caSCKo gsheKy"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                3 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-0-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-gisBJw kwXBDZ"
+                  type="default"
+                >
+                  1-0-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/907cfa5e0682e938691ba5f5d665ff8147833a89"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                907cfa5
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-kjoXOD bVInpr"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-cHGsZl WCtRp"
+                type="default"
+              >
+                Fix error level checking for Windows Batch and PowerShell
+              </span>
+              <span
+                className="sc-TOsTZ gRPmVI"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-1-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-kgAjT cnYorU"
+                  type="default"
+                >
+                  1-1-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/67d3a962c2fab497b2ea5aea5730df49ae7ce5eb"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                67d3a96
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-cJSrbW kPkduk"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-ksYbfQ cNsbJo"
+                type="default"
+              >
+                Add CI_BUILD_TOKEN
+              </span>
+              <span
+                className="sc-hmzhuo eBSWOy"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-10-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-frDJqD kBWymD"
+                  type="default"
+                >
+                  1-10-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/2c34bd0f2b7095836d943c3764bd78b7dee91296"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                2c34bd0
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-kvZOFW exdBLC"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-hqyNC MjzeK"
+                type="default"
+              >
+                Update CHANGELOG for v1.10.8
+              </span>
+              <span
+                className="sc-jbKcbu jDJzwL"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                a year ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-11-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-dNLxif MQBKK"
+                  type="default"
+                >
+                  1-11-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/3f23e33b8146487592f303ab04cc68cdfb6364e9"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                3f23e33
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-jqCOkK gKsQZC"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-uJMKN kibNoF"
+                type="default"
+              >
+                Bump version to 1.11.6
+              </span>
+              <span
+                className="sc-bbmXgH iGdZSH"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                a year ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-2-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-gGBfsJ bmghVK"
+                  type="default"
+                >
+                  1-2-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/b975f25a8661bdb0648448df1dcef6cd08994d49"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                b975f25
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-jnlKLf gfcgVg"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-fYxtnH cdBHcY"
+                type="default"
+              >
+                Update CHANGELOG
+              </span>
+              <span
+                className="sc-tilXH hdMSoT"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-3-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-hEsumM eqhJme"
+                  type="default"
+                >
+                  1-3-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/3af07be2ae4f8bd289de2c1fdaafc800842de021"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                3af07be
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-ktHwxA ljLufm"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-cIShpX kVtvRK"
+                type="default"
+              >
+                Update VERSION to 1.3.5
+              </span>
+              <span
+                className="sc-kafWEX jYJkUN"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-4-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-feJyhm hhsrCu"
+                  type="default"
+                >
+                  1-4-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/6f15e0a75c3e0aaf3b2f38afcc7bad6a655a61d0"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                6f15e0a
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-iELTvK ebFRiT"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-cmTdod fHIqTD"
+                type="default"
+              >
+                Merge branch 'feature/changelog-entries-generator' into 'master'
+              </span>
+              <span
+                className="sc-jwKygS iDRljf"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-5-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-btzYZH UDxef"
+                  type="default"
+                >
+                  1-5-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/80d7eec767e633354ff4e51f46d2284ca7f578bd"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                80d7eec
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-lhVmIH hJITGa"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-bYSBpT LLiSK"
+                type="default"
+              >
+                Merge branch 'feature/changelog-entries-generator' into 'master'
+              </span>
+              <span
+                className="sc-elJkPf tYSSR"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-6-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-jtRfpW bmEYvU"
+                  type="default"
+                >
+                  1-6-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/765f5a595efcb6fd9c565d9e86f93839a7d0495f"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                765f5a5
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-kTUwUJ ewaGYK"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-dqBHgY gRYrZB"
+                type="default"
+              >
+                Merge branch '1754-squash-no-tls-connection-state-warning' into 'master'
+              </span>
+              <span
+                className="sc-gxMtzJ kIvVxJ"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-7-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-dfVpRl fVwKLb"
+                  type="default"
+                >
+                  1-7-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/e9a6d506d02ba37bad8aafd3ca45919ea990c202"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                e9a6d50
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-gzOgki iYiXOX"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-iyvyFf jZbiSn"
+                type="default"
+              >
+                Update CHANGELOG for v1.7.5
+              </span>
+              <span
+                className="sc-hwwEjo lnoKn"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                2 years ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-8-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-kPVwWT kewzW"
+                  type="default"
+                >
+                  1-8-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/ddb7a8169dc6425ff8f3c591f23e6dcf961e7f82"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                ddb7a81
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-kfGgVZ iBiidI"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-esjQYD jrLyHK"
+                type="default"
+              >
+                Update CHANGELOG for v1.8.8
+              </span>
+              <span
+                className="sc-kIPQKe ztPOq"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                a year ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/1-9-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-eXEjpC dkFkoD"
+                  type="default"
+                >
+                  1-9-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/79b5c463af1e31140245a36cf41b149a36b64c1d"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                79b5c46
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-ibxdXY DykCg"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-RefOD iCZNqy"
+                type="default"
+              >
+                Update CHANGELOG for v1.9.10
+              </span>
+              <span
+                className="sc-iQKALj gPNkNM"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                a year ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/10-0-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-bwCtUz leNQrp"
+                  type="default"
+                >
+                  10-0-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/a5c0deb1808c1d4a597512c9b20176ac3414a27c"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                a5c0deb
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-hrWEMg bMfnUa"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-eTuwsz jjFoLM"
+                type="default"
+              >
+                Merge branch 'update-changelog' into 'master'
+              </span>
+              <span
+                className="sc-gwVKww kmzzGc"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                10 months ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/10-1-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-hXRMBi lopJok"
+                  type="default"
+                >
+                  10-1-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/a0152c4c791f1cf306bf2283332222c4e22a7d0f"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                a0152c4
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-epnACN iWrvqX"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-iQNlJl csJHZX"
+                type="default"
+              >
+                Merge branch '10-1-stable-patch-1' into 10-1-stable
+              </span>
+              <span
+                className="sc-bsbRJL fSsKQV"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                6 months ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/10-2-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-hZSUBg fPpptr"
+                  type="default"
+                >
+                  10-2-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/f157dc9f57628676c11d9dc2970653be9830cc94"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                f157dc9
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-cMhqgX fpOgyy"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-iuJeZd fLvBSu"
+                type="default"
+              >
+                Merge branch '10-2-stable-patch-1' into 10-2-stable
+              </span>
+              <span
+                className="sc-esOvli drXHve"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                6 months ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/10-3-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-cmthru erDCpt"
+                  type="default"
+                >
+                  10-3-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/35afcf653c5567d9be30bf197f62e68c0fa57fb6"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                35afcf6
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-hMFtBS isRJRr"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-cLQEGU zLips"
+                type="default"
+              >
+                Merge branch '10-3-stable-patch-1' into 10-3-stable
+              </span>
+              <span
+                className="sc-gqPbQI eepRYr"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                6 months ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/10-4-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-hORach kjHcal"
+                  type="default"
+                >
+                  10-4-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/857480b64b013d8edffaf70e4b7ea43ee1c66a9e"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                857480b
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-bMVAic dPvuZf"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-bAeIUo ivQGGj"
+                type="default"
+              >
+                Update CHANGELOG for v10.4.0
+              </span>
+              <span
+                className="sc-iujRgT evVAhi"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                6 months ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dnqmqq Bpvft"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-iwsKbI gExwvp"
+          >
+            <div
+              className="sc-bdVaJa ivgsgg"
+            >
+              <a
+                href="https://gitlab.com/gitlab-org/gitlab-runner/tree/10-5-stable"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="sc-GMQeP iovhBB"
+                  type="default"
+                >
+                  10-5-stable
+                </span>
+              </a>
+               
+              <a
+                className="sc-bwzfXH jKRfgl"
+                href="https://gitlab.com/gitlab-org/gitlab-runner/commit/80b03db9893ab1668ac601909c1a1bf29d476035"
+                style={
+                  Object {
+                    "textDecoration": "underline",
+                  }
+                }
+                target="_blank"
+              >
+                80b03db
+              </a>
+            </div>
+          </div>
+          <div
+            className="sc-exAgwC yacBv"
+            type="default"
+          >
+            <div>
+              <span
+                className="sc-cQFLBn djIblQ"
+                type="default"
+              >
+                v10.5.0 changelog
+              </span>
+              <span
+                className="sc-gojNiO fbsmFY"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+                type="default"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                  />
+                </svg>
+                 
+                5 months ago
+              </span>
             </div>
           </div>
         </div>
