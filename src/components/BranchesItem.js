@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import styled from 'styled-components'
-import { WidgetListItem, Text, typography, ClockIcon } from '@mozaik/ui'
+import { WidgetListItem, Text, typography, ClockIcon, ExternalLink } from '@mozaik/ui'
 
 const Header = styled.div`
     display: flex;
@@ -33,15 +33,13 @@ export default class BranchesItem extends Component {
     render() {
         const { project, branch } = this.props
 
-        // {branch.protected && (<span><i className="fa fa-lock" /> protected</span>)}
-
         return (
             <WidgetListItem
                 title={
                     <Header>
-                        <a href={`${project.web_url}/tree/${branch.name}`} target="_blank">
+                        <ExternalLink href={`${project.web_url}/tree/${branch.name}`}>
                             <Text variant="strong">{branch.name}</Text>
-                        </a>&nbsp;
+                        </ExternalLink>&nbsp;
                         <CommitSha
                             href={`${project.web_url}/commit/${branch.commit.id}`}
                             target="_blank"

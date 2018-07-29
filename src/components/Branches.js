@@ -6,6 +6,7 @@ import {
     WidgetHeader,
     WidgetBody,
     WidgetLoader,
+    ExternalLink,
     GitBranchIcon,
 } from '@mozaik/ui'
 import BranchesItem from './BranchesItem'
@@ -44,11 +45,7 @@ export default class Branches extends Component {
 
             count = branches.pagination.total
 
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = (
                 <Fragment>

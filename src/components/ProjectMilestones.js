@@ -7,6 +7,7 @@ import {
     WidgetBody,
     WidgetLoader,
     WidgetListItem,
+    ExternalLink,
 } from '@mozaik/ui'
 
 export default class ProjectMilestones extends Component {
@@ -50,11 +51,7 @@ export default class ProjectMilestones extends Component {
 
             count = milestones.pagination.total
 
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = (
                 <Fragment>

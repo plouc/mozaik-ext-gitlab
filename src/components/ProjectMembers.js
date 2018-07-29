@@ -1,6 +1,14 @@
 import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
-import { TrapApiError, Widget, WidgetHeader, WidgetBody, WidgetLoader, UsersIcon } from '@mozaik/ui'
+import {
+    TrapApiError,
+    Widget,
+    WidgetHeader,
+    WidgetBody,
+    WidgetLoader,
+    ExternalLink,
+    UsersIcon,
+} from '@mozaik/ui'
 import ProjectMembersItem from './ProjectMembersItem'
 
 export default class ProjectMembers extends Component {
@@ -37,11 +45,7 @@ export default class ProjectMembers extends Component {
 
             count = members.pagination.total
 
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             body = (
                 <Fragment>

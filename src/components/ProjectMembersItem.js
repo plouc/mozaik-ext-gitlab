@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { WidgetListItem, WidgetAvatar } from '@mozaik/ui'
+import { WidgetListItem, WidgetAvatar, ExternalLink } from '@mozaik/ui'
 
 export default class ProjectMembersItem extends Component {
     static propTypes = {
@@ -29,11 +29,7 @@ export default class ProjectMembersItem extends Component {
 
         return (
             <WidgetListItem
-                title={
-                    <a href={web_url} target="_blank">
-                        {name}
-                    </a>
-                }
+                title={<ExternalLink href={web_url}>{name}</ExternalLink>}
                 href={web_url}
                 pre={avatar}
                 meta={`@${username} - ${state}`}

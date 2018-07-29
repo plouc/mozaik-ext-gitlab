@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import { WidgetListItem, WidgetLabel, WidgetStatusChip, ClockIcon } from '@mozaik/ui'
+import { WidgetListItem, WidgetLabel, WidgetStatusChip, ClockIcon, ExternalLink } from '@mozaik/ui'
 
 export default class JobHistoryItem extends Component {
     static propTypes = {
@@ -26,13 +26,12 @@ export default class JobHistoryItem extends Component {
                 <WidgetListItem
                     title={
                         <span>
-                            <a
+                            <ExternalLink
                                 href={`${project.web_url}/jobs/${job.id}`}
-                                target="_blank"
                                 style={{ textDecoration: 'underline' }}
                             >
                                 #{job.id}
-                            </a>&nbsp;
+                            </ExternalLink>&nbsp;
                             <WidgetLabel label={job.ref} prefix="ref" />&nbsp;
                             <WidgetLabel label={job.stage} prefix="stage" />&nbsp;
                             {job.commit && <span>{job.commit.message}</span>}

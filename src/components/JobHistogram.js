@@ -7,6 +7,7 @@ import {
     WidgetHeader,
     WidgetBody,
     WidgetLoader,
+    ExternalLink,
     BarChartIcon,
 } from '@mozaik/ui'
 import { ResponsiveBar } from 'nivo'
@@ -62,11 +63,7 @@ export default class JobHistogram extends Component {
         let subject = null
         if (apiData) {
             const { project, jobs } = apiData
-            subject = (
-                <a href={project.web_url} target="_blank">
-                    {project.name}
-                </a>
-            )
+            subject = <ExternalLink href={project.web_url}>{project.name}</ExternalLink>
 
             const data = [
                 {

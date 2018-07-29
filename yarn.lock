@@ -44,16 +44,15 @@
     babel-plugin-transform-object-rest-spread "^6.23.0"
     babel-plugin-transform-react-jsx "^6.24.1"
 
-"@mozaik/ui@^2.0.0-alpha.17":
-  version "2.0.0-alpha.17"
-  resolved "https://registry.yarnpkg.com/@mozaik/ui/-/ui-2.0.0-alpha.17.tgz#54ec5537fae04385f8102f019399ba31af5d24c4"
+"@mozaik/ui@^2.0.0-alpha.19":
+  version "2.0.0-alpha.19"
+  resolved "https://registry.yarnpkg.com/@mozaik/ui/-/ui-2.0.0-alpha.19.tgz#9509ab0fa71c462c02a0575d271f335c3e46053c"
   dependencies:
     immutable "^3.8.1"
     lodash "^4.17.4"
     lodash-es "^4.17.4"
     prop-types "^15.5.10"
     react-feather "^1.1.1"
-    react-icons "^2.2.5"
     react-redux "^5.0.5"
     react-svg-buttons "^0.4.0"
     redux "^3.7.2"
@@ -4297,12 +4296,6 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@15.5.8:
-  version "15.5.8"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
-  dependencies:
-    fbjs "^0.8.9"
-
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
@@ -4392,18 +4385,6 @@ react-dom@^16.4.0:
 react-feather@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-1.1.1.tgz#dd59143af457601e68f2cd3bf32c0d94d30f89e7"
-
-react-icon-base@2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/react-icon-base/-/react-icon-base-2.0.7.tgz#0bd18736bd6ce79ca6d69ce8387a07fb8d4ceffe"
-  dependencies:
-    prop-types "15.5.8"
-
-react-icons@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-2.2.5.tgz#f942501c21a4cc0456ce2bbee5032c93f6051dcf"
-  dependencies:
-    react-icon-base "2.0.7"
 
 react-is@^16.4.1:
   version "16.4.1"
