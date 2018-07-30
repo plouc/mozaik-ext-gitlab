@@ -37,30 +37,32 @@
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
     "@mozaik/babel-preset": "^1.0.0-alpha.6",
-    "@mozaik/ui": "^2.0.0-alpha.21",
+    "@mozaik/ui": "^2.0.0-alpha.23",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "coveralls": "^2.11.15",
     "cross-env": "^5.0.1",
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.2.0",
     "eslint-plugin-react": "^7.10.0",
     "husky": "^0.14.3",
     "jest": "^23.4.2",
-    "lint-staged": "^4.0.2",
+    "lint-staged": "^7.2.0",
     "nivo": "^0.12.0",
     "nock": "^9.0.14",
-    "prettier": "^1.13.7",
+    "prettier": "^1.14.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-test-renderer": "^16.4.0",
-    "styled-components": "^2.1.1",
-    "validate-commit-msg": "^2.14.0"
+    "styled-components": "^2.1.1"
   },
   "peerDependencies": {
-    "@mozaik/ui": "^2.0.0-alpha.21",
+    "@mozaik/ui": "^2.0.0-alpha.23",
     "nivo": "^0.12.0",
     "react": "^16.4.0",
     "styled-components": "^2.1.1"
@@ -81,48 +83,9 @@
     "prepublishOnly": "npm run lint && npm test && npm run build",
     "version": "echo ${npm_package_version}",
     "precommit": "lint-staged",
-    "commitmsg": "validate-commit-msg"
+    "commitmsg": "commitlint -E GIT_PARAMS"
   },
   "jest": {
     "testURL": "http://localhost/"
-  },
-  "lint-staged": {
-    "*.js": [
-      "lint:fix",
-      "fmt",
-      "git add",
-      "jest --bail --findRelatedTests"
-    ]
-  },
-  "config": {
-    "validate-commit-msg": {
-      "types": [
-        "feat",
-        "fix",
-        "docs",
-        "style",
-        "refactor",
-        "perf",
-        "test",
-        "build",
-        "ci",
-        "chore",
-        "revert"
-      ],
-      "scope": {
-        "required": true,
-        "allowed": [
-          "*"
-        ],
-        "validate": false,
-        "multiple": false
-      },
-      "warnOnFail": false,
-      "maxSubjectLength": 80,
-      "subjectPattern": ".+",
-      "subjectPatternErrorMsg": "subject does not match subject pattern!",
-      "helpMessage": "",
-      "autoFix": false
-    }
   }
 }

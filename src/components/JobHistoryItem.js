@@ -31,9 +31,12 @@ export default class JobHistoryItem extends Component {
                                 style={{ textDecoration: 'underline' }}
                             >
                                 #{job.id}
-                            </ExternalLink>&nbsp;
-                            <WidgetLabel label={job.ref} prefix="ref" />&nbsp;
-                            <WidgetLabel label={job.stage} prefix="stage" />&nbsp;
+                            </ExternalLink>
+                            &nbsp;
+                            <WidgetLabel label={job.ref} prefix="ref" />
+                            &nbsp;
+                            <WidgetLabel label={job.stage} prefix="stage" />
+                            &nbsp;
                             {job.commit && <span>{job.commit.message}</span>}
                         </span>
                     }
@@ -45,7 +48,8 @@ export default class JobHistoryItem extends Component {
                                     alignItems: 'center',
                                 }}
                             >
-                                <ClockIcon />&nbsp;
+                                <ClockIcon />
+                                &nbsp;
                                 {moment(job.finished_at).fromNow()}
                             </time>
                         )

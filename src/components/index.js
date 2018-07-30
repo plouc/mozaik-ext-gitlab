@@ -6,6 +6,7 @@ import JobHistogram from './JobHistogram'
 import Branches from './Branches'
 import ProjectActivity from './activity/ProjectActivity'
 import ProjectMilestones from './ProjectMilestones'
+import LatestProjectPipeline from './pipelines/LatestProjectPipeline'
 import * as labels from './labels'
 
 export default {
@@ -17,5 +18,6 @@ export default {
     Branches,
     ProjectActivity,
     ProjectMilestones,
+    LatestProjectPipeline,
     ...labels,
 }
