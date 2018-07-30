@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import styled from 'styled-components'
@@ -39,7 +39,8 @@ export default class BranchesItem extends Component {
                     <Header>
                         <ExternalLink href={`${project.web_url}/tree/${branch.name}`}>
                             <Text variant="strong">{branch.name}</Text>
-                        </ExternalLink>&nbsp;
+                        </ExternalLink>
+                        &nbsp;
                         <CommitSha
                             href={`${project.web_url}/commit/${branch.commit.id}`}
                             target="_blank"
@@ -50,7 +51,7 @@ export default class BranchesItem extends Component {
                     </Header>
                 }
                 meta={
-                    <div>
+                    <Fragment>
                         <Text variant="small">{branch.commit.message}</Text>
                         <Text
                             variant="small"
@@ -59,10 +60,11 @@ export default class BranchesItem extends Component {
                                 alignItems: 'center',
                             }}
                         >
-                            <ClockIcon />&nbsp;
+                            <ClockIcon size="1.8vmin" />
+                            &nbsp;
                             {moment(branch.commit.committed_date).fromNow()}
                         </Text>
-                    </div>
+                    </Fragment>
                 }
             />
         )

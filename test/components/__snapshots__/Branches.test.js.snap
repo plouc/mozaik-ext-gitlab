@@ -118,47 +118,45 @@ exports[`should render as expected 1`] = `
             className="sc-fMiknA jrnBJM"
             type="default"
           >
-            <div>
-              <span
-                className="sc-dVhcbM guLjQn"
-                type="default"
-              >
-                Fix 0.6.2 release
-              </span>
-              <span
-                className="sc-eqIVtm hCYmlC"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-dVhcbM guLjQn"
+              type="default"
+            >
+              Fix 0.6.2 release
+            </span>
+            <span
+              className="sc-eqIVtm hCYmlC"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                3 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              3 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -209,47 +207,45 @@ exports[`should render as expected 1`] = `
             className="sc-caSCKo gsheKy"
             type="default"
           >
-            <div>
-              <span
-                className="sc-gisBJw fLrGjf"
-                type="default"
-              >
-                Fix compilation error
-              </span>
-              <span
-                className="sc-kjoXOD bVInpr"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-gisBJw fLrGjf"
+              type="default"
+            >
+              Fix compilation error
+            </span>
+            <span
+              className="sc-kjoXOD bVInpr"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                3 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              3 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -300,47 +296,45 @@ exports[`should render as expected 1`] = `
             className="sc-TOsTZ gRPmVI"
             type="default"
           >
-            <div>
-              <span
-                className="sc-kgAjT fCRwiO"
-                type="default"
-              >
-                Fix error level checking for Windows Batch and PowerShell
-              </span>
-              <span
-                className="sc-cJSrbW kPkduk"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-kgAjT fCRwiO"
+              type="default"
+            >
+              Fix error level checking for Windows Batch and PowerShell
+            </span>
+            <span
+              className="sc-cJSrbW kPkduk"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -391,47 +385,45 @@ exports[`should render as expected 1`] = `
             className="sc-hmzhuo eBSWOy"
             type="default"
           >
-            <div>
-              <span
-                className="sc-frDJqD iRKYnb"
-                type="default"
-              >
-                Add CI_BUILD_TOKEN
-              </span>
-              <span
-                className="sc-kvZOFW exdBLC"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-frDJqD iRKYnb"
+              type="default"
+            >
+              Add CI_BUILD_TOKEN
+            </span>
+            <span
+              className="sc-kvZOFW exdBLC"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -482,47 +474,45 @@ exports[`should render as expected 1`] = `
             className="sc-jbKcbu jDJzwL"
             type="default"
           >
-            <div>
-              <span
-                className="sc-dNLxif fppWlp"
-                type="default"
-              >
-                Update CHANGELOG for v1.10.8
-              </span>
-              <span
-                className="sc-jqCOkK gKsQZC"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-dNLxif fppWlp"
+              type="default"
+            >
+              Update CHANGELOG for v1.10.8
+            </span>
+            <span
+              className="sc-jqCOkK gKsQZC"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                a year ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              a year ago
+            </span>
           </div>
         </div>
       </div>
@@ -573,47 +563,45 @@ exports[`should render as expected 1`] = `
             className="sc-bbmXgH iGdZSH"
             type="default"
           >
-            <div>
-              <span
-                className="sc-gGBfsJ ikBYXe"
-                type="default"
-              >
-                Bump version to 1.11.6
-              </span>
-              <span
-                className="sc-jnlKLf gfcgVg"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-gGBfsJ ikBYXe"
+              type="default"
+            >
+              Bump version to 1.11.6
+            </span>
+            <span
+              className="sc-jnlKLf gfcgVg"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                a year ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              a year ago
+            </span>
           </div>
         </div>
       </div>
@@ -664,47 +652,45 @@ exports[`should render as expected 1`] = `
             className="sc-tilXH hdMSoT"
             type="default"
           >
-            <div>
-              <span
-                className="sc-hEsumM kLPkVa"
-                type="default"
-              >
-                Update CHANGELOG
-              </span>
-              <span
-                className="sc-ktHwxA ljLufm"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-hEsumM kLPkVa"
+              type="default"
+            >
+              Update CHANGELOG
+            </span>
+            <span
+              className="sc-ktHwxA ljLufm"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -755,47 +741,45 @@ exports[`should render as expected 1`] = `
             className="sc-kafWEX jYJkUN"
             type="default"
           >
-            <div>
-              <span
-                className="sc-feJyhm cwWjYG"
-                type="default"
-              >
-                Update VERSION to 1.3.5
-              </span>
-              <span
-                className="sc-iELTvK ebFRiT"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-feJyhm cwWjYG"
+              type="default"
+            >
+              Update VERSION to 1.3.5
+            </span>
+            <span
+              className="sc-iELTvK ebFRiT"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -846,47 +830,45 @@ exports[`should render as expected 1`] = `
             className="sc-jwKygS iDRljf"
             type="default"
           >
-            <div>
-              <span
-                className="sc-btzYZH dNQKfd"
-                type="default"
-              >
-                Merge branch 'feature/changelog-entries-generator' into 'master'
-              </span>
-              <span
-                className="sc-lhVmIH hJITGa"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-btzYZH dNQKfd"
+              type="default"
+            >
+              Merge branch 'feature/changelog-entries-generator' into 'master'
+            </span>
+            <span
+              className="sc-lhVmIH hJITGa"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -937,47 +919,45 @@ exports[`should render as expected 1`] = `
             className="sc-elJkPf tYSSR"
             type="default"
           >
-            <div>
-              <span
-                className="sc-jtRfpW iTVYOW"
-                type="default"
-              >
-                Merge branch 'feature/changelog-entries-generator' into 'master'
-              </span>
-              <span
-                className="sc-kTUwUJ ewaGYK"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-jtRfpW iTVYOW"
+              type="default"
+            >
+              Merge branch 'feature/changelog-entries-generator' into 'master'
+            </span>
+            <span
+              className="sc-kTUwUJ ewaGYK"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -1028,47 +1008,45 @@ exports[`should render as expected 1`] = `
             className="sc-gxMtzJ kIvVxJ"
             type="default"
           >
-            <div>
-              <span
-                className="sc-dfVpRl hlUFgH"
-                type="default"
-              >
-                Merge branch '1754-squash-no-tls-connection-state-warning' into 'master'
-              </span>
-              <span
-                className="sc-gzOgki iYiXOX"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-dfVpRl hlUFgH"
+              type="default"
+            >
+              Merge branch '1754-squash-no-tls-connection-state-warning' into 'master'
+            </span>
+            <span
+              className="sc-gzOgki iYiXOX"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -1119,47 +1097,45 @@ exports[`should render as expected 1`] = `
             className="sc-hwwEjo lnoKn"
             type="default"
           >
-            <div>
-              <span
-                className="sc-kPVwWT HALYs"
-                type="default"
-              >
-                Update CHANGELOG for v1.7.5
-              </span>
-              <span
-                className="sc-kfGgVZ iBiidI"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-kPVwWT HALYs"
+              type="default"
+            >
+              Update CHANGELOG for v1.7.5
+            </span>
+            <span
+              className="sc-kfGgVZ iBiidI"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                2 years ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              2 years ago
+            </span>
           </div>
         </div>
       </div>
@@ -1210,47 +1186,45 @@ exports[`should render as expected 1`] = `
             className="sc-kIPQKe ztPOq"
             type="default"
           >
-            <div>
-              <span
-                className="sc-eXEjpC inWLdE"
-                type="default"
-              >
-                Update CHANGELOG for v1.8.8
-              </span>
-              <span
-                className="sc-ibxdXY DykCg"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-eXEjpC inWLdE"
+              type="default"
+            >
+              Update CHANGELOG for v1.8.8
+            </span>
+            <span
+              className="sc-ibxdXY DykCg"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                a year ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              a year ago
+            </span>
           </div>
         </div>
       </div>
@@ -1301,47 +1275,45 @@ exports[`should render as expected 1`] = `
             className="sc-iQKALj gPNkNM"
             type="default"
           >
-            <div>
-              <span
-                className="sc-bwCtUz kMeADu"
-                type="default"
-              >
-                Update CHANGELOG for v1.9.10
-              </span>
-              <span
-                className="sc-hrWEMg bMfnUa"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-bwCtUz kMeADu"
+              type="default"
+            >
+              Update CHANGELOG for v1.9.10
+            </span>
+            <span
+              className="sc-hrWEMg bMfnUa"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                a year ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              a year ago
+            </span>
           </div>
         </div>
       </div>
@@ -1392,47 +1364,45 @@ exports[`should render as expected 1`] = `
             className="sc-gwVKww kmzzGc"
             type="default"
           >
-            <div>
-              <span
-                className="sc-hXRMBi iBauTC"
-                type="default"
-              >
-                Merge branch 'update-changelog' into 'master'
-              </span>
-              <span
-                className="sc-epnACN iWrvqX"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-hXRMBi iBauTC"
+              type="default"
+            >
+              Merge branch 'update-changelog' into 'master'
+            </span>
+            <span
+              className="sc-epnACN iWrvqX"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                10 months ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              10 months ago
+            </span>
           </div>
         </div>
       </div>
@@ -1483,47 +1453,45 @@ exports[`should render as expected 1`] = `
             className="sc-bsbRJL fSsKQV"
             type="default"
           >
-            <div>
-              <span
-                className="sc-hZSUBg cbFHmF"
-                type="default"
-              >
-                Merge branch '10-1-stable-patch-1' into 10-1-stable
-              </span>
-              <span
-                className="sc-cMhqgX fpOgyy"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-hZSUBg cbFHmF"
+              type="default"
+            >
+              Merge branch '10-1-stable-patch-1' into 10-1-stable
+            </span>
+            <span
+              className="sc-cMhqgX fpOgyy"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                6 months ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              6 months ago
+            </span>
           </div>
         </div>
       </div>
@@ -1574,47 +1542,45 @@ exports[`should render as expected 1`] = `
             className="sc-esOvli drXHve"
             type="default"
           >
-            <div>
-              <span
-                className="sc-cmthru jGWEdj"
-                type="default"
-              >
-                Merge branch '10-2-stable-patch-1' into 10-2-stable
-              </span>
-              <span
-                className="sc-hMFtBS isRJRr"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-cmthru jGWEdj"
+              type="default"
+            >
+              Merge branch '10-2-stable-patch-1' into 10-2-stable
+            </span>
+            <span
+              className="sc-hMFtBS isRJRr"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                6 months ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              6 months ago
+            </span>
           </div>
         </div>
       </div>
@@ -1665,47 +1631,45 @@ exports[`should render as expected 1`] = `
             className="sc-gqPbQI eepRYr"
             type="default"
           >
-            <div>
-              <span
-                className="sc-hORach jtztwf"
-                type="default"
-              >
-                Merge branch '10-3-stable-patch-1' into 10-3-stable
-              </span>
-              <span
-                className="sc-bMVAic dPvuZf"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-hORach jtztwf"
+              type="default"
+            >
+              Merge branch '10-3-stable-patch-1' into 10-3-stable
+            </span>
+            <span
+              className="sc-bMVAic dPvuZf"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                6 months ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              6 months ago
+            </span>
           </div>
         </div>
       </div>
@@ -1756,47 +1720,45 @@ exports[`should render as expected 1`] = `
             className="sc-iujRgT evVAhi"
             type="default"
           >
-            <div>
-              <span
-                className="sc-GMQeP eRPxGi"
-                type="default"
-              >
-                Update CHANGELOG for v10.4.0
-              </span>
-              <span
-                className="sc-exAgwC yacBv"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-GMQeP eRPxGi"
+              type="default"
+            >
+              Update CHANGELOG for v10.4.0
+            </span>
+            <span
+              className="sc-exAgwC yacBv"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                6 months ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              6 months ago
+            </span>
           </div>
         </div>
       </div>
@@ -1847,47 +1809,45 @@ exports[`should render as expected 1`] = `
             className="sc-gojNiO fbsmFY"
             type="default"
           >
-            <div>
-              <span
-                className="sc-daURTG gsvlKc"
-                type="default"
-              >
-                v10.5.0 changelog
-              </span>
-              <span
-                className="sc-bXGyLb iZrUMZ"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                  }
+            <span
+              className="sc-daURTG gsvlKc"
+              type="default"
+            >
+              v10.5.0 changelog
+            </span>
+            <span
+              className="sc-bXGyLb iZrUMZ"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
                 }
-                type="default"
+              }
+              type="default"
+            >
+              <svg
+                fill="none"
+                height="1.8vmin"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width="1.8vmin"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                  />
-                  <polyline
-                    points="12 6 12 12 16 14"
-                  />
-                </svg>
-                 
-                5 months ago
-              </span>
-            </div>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <polyline
+                  points="12 6 12 12 16 14"
+                />
+              </svg>
+               
+              5 months ago
+            </span>
           </div>
         </div>
       </div>

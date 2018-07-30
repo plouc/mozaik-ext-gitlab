@@ -22,6 +22,8 @@ You can see a live demo of this extension [here](http://mozaik-gitlab.herokuapp.
     - [Project Members](#project-members)
     - [Project Contributors](#gitlab-project-contributors)
     - [Branches](#gitlab-branches)
+    - Pipelines
+        - [LatestProjectPipeline](#latestprojectpipeline)
     - Jobs
         - [Job Histogram](#gitlab-job-histogram)
         - [Job History](#gitlab-job-history)
@@ -110,6 +112,34 @@ key       | required | description
   rows:      1
   x:         0
   y:         0
+```
+
+## LatestProjectPipeline
+
+> Show details about latest project pipeline.
+
+![LatestProjectPipeline](preview/latest_project_pipeline.png)
+
+### parameters
+
+key                 | type        | required | default | description
+--------------------|-------------|----------|---------|-------------
+`project`           | `{string}`  | yes      |         | ID or NAMESPACE/PROJECT_NAME of a project
+`gitRef`            | `{string}`  | no       |         | Get latest pipeline for a specific ref (branch, tag…)
+`hideCommitMessage` | `{boolean}` | no       | `false` | Hide pipeline commit info
+
+### usage
+
+``` yaml
+- extension:         gitlab
+  widget:            LatestProjectPipeline
+  project:           gitlab-org/gitlab-runner
+  gitRef:            master
+  hideCommitMessage: false
+  columns:           2
+  rows:              1
+  x:                 0
+  y:                 0
 ```
 
 ## GitLab Job Histogram

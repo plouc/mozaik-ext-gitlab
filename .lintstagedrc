@@ -1,0 +1,8 @@
+{
+  "*.js": [
+    "eslint --fix ./src/** ./test/**",
+    "prettier --color --write \"{src,test}/**/*.js\" 'client.js'",
+    "git add",
+    "jest --bail --findRelatedTests"
+  ]
+}

@@ -1,10 +1,13 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import renderer from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
 import { WidgetHeader, WidgetLoader, defaultTheme } from '@mozaik/ui'
 import Branches from './../../src/components/Branches'
 import fixtures from '../../fixtures'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 test('should return correct api request', () => {
     expect(
@@ -18,20 +21,20 @@ test('should return correct api request', () => {
 })
 
 test('should display loader if no apiData available', () => {
-    const wrapper = shallow(<Branches project={fixtures.project.name} />)
+    const wrapper = Enzyme.shallow(<Branches project={fixtures.project.name} />)
 
     expect(wrapper.find(WidgetLoader).exists()).toBeTruthy()
 })
 
 test('header should display 0 count by default', () => {
-    const wrapper = shallow(<Branches project={fixtures.project.name} />)
+    const wrapper = Enzyme.shallow(<Branches project={fixtures.project.name} />)
 
     const header = wrapper.find(WidgetHeader)
     expect(header.prop('count')).toBe(0)
 })
 
 test('header should display pull request count when api sent data', () => {
-    const wrapper = shallow(
+    const wrapper = Enzyme.shallow(
         <Branches
             project={fixtures.project.name}
             apiData={{
@@ -47,7 +50,7 @@ test('header should display pull request count when api sent data', () => {
 })
 
 test(`header title should default to '<project_name> Branches'`, () => {
-    const wrapper = shallow(
+    const wrapper = Enzyme.shallow(
         <Branches
             project={fixtures.project.name}
             apiData={{
@@ -63,7 +66,7 @@ test(`header title should default to '<project_name> Branches'`, () => {
 
 test(`header title should be overridden when passing 'title' prop`, () => {
     const customTitle = 'Custom Title'
-    const wrapper = shallow(
+    const wrapper = Enzyme.shallow(
         <Branches
             project={fixtures.project.name}
             apiData={{

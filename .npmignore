@@ -3,10 +3,15 @@
 
 # config
 .babelrc
+.eslintignore
 .eslintrc.yml
 .gitignore
+.lintstagedrc
 .npmignore
+.prettierignore
+.prettierrc.yml
 .travis.yml
+commitlint.config.js
 
 # Logs
 *.log*
