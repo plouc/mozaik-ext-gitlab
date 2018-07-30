@@ -6,15 +6,17 @@
 [![Coverage Status][coverage-image]][coverage-url]
 ![widget count][widget-count-image]
 
+This repository contains some widgets to use with [Mozaïk](https://github.com/plouc/mozaik).
+
+![Sample gitlab dashboard](preview/sample_dashboard.png)
+
+You can see a live demo of this extension [here](http://mozaik-gitlab.herokuapp.com/)
+
 [![Deploy][heroku-image]][heroku-url]
 
 > This branch contains code for the version compatible with
 > Mozaïk v2, if you're looking for v1, please use
 > [mozaik-1 branch](https://github.com/plouc/mozaik-ext-gitlab/tree/mozaik-1).
-
-This repository contains some widgets to use with [Mozaïk](https://github.com/plouc/mozaik).
-
-You can see a live demo of this extension [here](http://mozaik-gitlab.herokuapp.com/)
 
 - [client configuration](#client-configuration)
 - widgets
