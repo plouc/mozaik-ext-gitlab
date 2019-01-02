@@ -64,7 +64,35 @@ const client = mozaik => {
                     };
                 })
             ;
-        }
+        },
+        projectsMergeRequests({ projects }) {
+            const reqs = projects.map((project) => {
+                return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`);
+            });
+            return Promise.props({
+                mergeRequests: Promise.all(reqs).then((data) => {
+                    return data.map((item) => item.body);
+                })
+            });
+        },
+        groupMergeRequests({ groups, query={} }) {
+            const reqs = groups.map((group) => {
+                return buildApiRequest(`/groups/${encodeURIComponent(group)}/merge_requests`, query);
+            });
+            return Promise.props({
+                mergeRequests: Promise.all(reqs).then((data) => {
+                    return data.map((item) => item.body);
+                })
+            });
+        },
+        projectPipelines({ project, query={} }) {
+            return Promise.props({
+                project:   operations.project({ project }),
+                pipelines: buildApiRequest(`/projects/${encodeURIComponent(project)}/pipelines`, query).then((res) => {
+                    return res.body;
+                })
+            });
+        },
     };
 
     return operations;
