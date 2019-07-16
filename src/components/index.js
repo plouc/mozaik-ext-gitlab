@@ -1,4 +1,5 @@
 import Project from './Project'
+import ProjectDescription from './ProjectDescription'
 import ProjectMembers from './ProjectMembers'
 import ProjectContributors from './ProjectContributors'
 import JobHistory from './JobHistory'
@@ -11,6 +12,7 @@ import * as labels from './labels'
 
 export default {
     Project,
+    ProjectDescription,
     ProjectMembers,
     ProjectContributors,
     JobHistory,
