@@ -7,6 +7,7 @@ import Branches from './Branches'
 import ProjectActivity from './activity/ProjectActivity'
 import ProjectMilestones from './ProjectMilestones'
 import LatestProjectPipeline from './pipelines/LatestProjectPipeline'
+import MergeRequestsStatus from './MergeRequestsStatus'
 import * as labels from './labels'
 
 export default {
@@ -19,5 +20,6 @@ export default {
     ProjectActivity,
     ProjectMilestones,
     LatestProjectPipeline,
+    MergeRequestsStatus,
     ...labels,
 }

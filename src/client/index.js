@@ -100,6 +100,9 @@ module.exports = mozaik => {
         projectMergeRequests({ project, query = {} }) {
             return gitlab.getProjectMergeRequests(project, query)
         },
+        projectMergeRequestsStatus({ project, query = {} }) {
+            return gitlab.getProjectMergeRequests(project, query)
+        },
         projectLabels({ project }) {
             return Promise.all([gitlab.getProject(project), gitlab.getProjectLabels(project)]).then(
                 ([project, labels]) => ({
