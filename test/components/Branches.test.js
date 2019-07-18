@@ -15,8 +15,8 @@ test('should return correct api request', () => {
             project: fixtures.project.name,
         })
     ).toEqual({
-        id: `gitlab.projectBranches.${fixtures.project.name}`,
-        params: { project: fixtures.project.name },
+        id: `gitlab.projectBranches.default.${fixtures.project.name}`,
+        params: { client: 'default', project: fixtures.project.name },
     })
 })
 

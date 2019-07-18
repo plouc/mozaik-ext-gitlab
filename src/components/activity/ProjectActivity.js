@@ -31,10 +31,10 @@ export default class ProjectActivity extends Component {
         apiError: PropTypes.object,
     }
 
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectEvents.${project}`,
-            params: { project },
+            id: `gitlab.projectEvents.${client}.${project}`,
+            params: { project, client },
         }
     }
 

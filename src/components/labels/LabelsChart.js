@@ -42,11 +42,10 @@ export default class LabelsChart extends Component {
         countBy: 'open_issues_count',
         animate: false,
     }
-
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectLabels.${project}`,
-            params: { project },
+            id: `gitlab.projectLabels.${client}.${project}`,
+            params: { project, client },
         }
     }
 

@@ -33,15 +33,15 @@ export default class MergeRequestsGauge extends Component {
         ],
         apiData: 0,
     }
-
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectMergeRequests.${project}.opened`,
+            id: `gitlab.projectMergeRequests.${client}.${project}`,
             params: {
                 project,
                 query: {
                     state: 'opened',
                 },
+                client,
             },
         }
     }

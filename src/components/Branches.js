@@ -30,13 +30,12 @@ export default class Branches extends Component {
         apiError: PropTypes.object,
     }
 
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectBranches.${project}`,
-            params: { project },
+            id: `gitlab.projectBranches.${client}.${project}`,
+            params: { project, client },
         }
     }
-
     render() {
         const { title, apiData, apiError } = this.props
 

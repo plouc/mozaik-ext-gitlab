@@ -27,10 +27,10 @@ export default class JobHistory extends Component {
         apiError: PropTypes.object,
     }
 
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectJobs.${project}`,
-            params: { project },
+            id: `gitlab.projectJobs.${client}.${project}`,
+            params: { project, client },
         }
     }
 
