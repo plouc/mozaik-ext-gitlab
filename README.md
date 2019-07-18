@@ -68,6 +68,30 @@ key       | required | description
   y:         0
 ```
 
+## Project Description
+
+> Show GitLab project info with the description and different layout.
+
+![Gitlab project](preview/project_description.png)
+
+### parameters
+
+key       | required | description
+----------|----------|--------------------------
+`project` | yes      | *ID or NAMESPACE/PROJECT_NAME of a project*
+
+### usage
+
+``` yaml
+- extension: gitlab
+  widget:    ProjectDescription
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  rows:      2
+  x:         0
+  y:         0
+```
+
 ## Project Members
 
 > Show GitLab project members.
