@@ -46,13 +46,12 @@ export default class JobHistogram extends Component {
         theme: PropTypes.object.isRequired,
     }
 
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectJobs.${project}`,
-            params: { project },
+            id: `gitlab.projectJobs.${client}.${project}`,
+            params: { project, client },
         }
     }
-
     render() {
         const { title, apiData, apiError, theme } = this.props
 

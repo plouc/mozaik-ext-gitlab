@@ -172,16 +172,15 @@ export default class LatestProjectPipeline extends Component {
     static defaultProps = {
         hideCommitMessage: false,
     }
-
-    static getApiRequest({ project, gitRef }) {
-        let id = `gitlab.latestProjectPipeline.${project}`
+    static getApiRequest({ project, gitRef, client = 'default' }) {
+        let id = `gitlab.latestProjectPipeline.${client}.${project}`
         if (gitRef !== undefined) {
             id += `.${gitRef}`
         }
 
         return {
             id,
-            params: { project, ref: gitRef },
+            params: { project, ref: gitRef, client },
         }
     }
 

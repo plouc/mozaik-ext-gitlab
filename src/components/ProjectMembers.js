@@ -29,11 +29,10 @@ export default class ProjectMembers extends Component {
         }),
         apiError: PropTypes.object,
     }
-
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectMembers.${project}`,
-            params: { project },
+            id: `gitlab.projectMembers.${client}.${project}`,
+            params: { project, client },
         }
     }
 

@@ -44,6 +44,35 @@ Configuration is loaded from environment variables.
 | GITLAB_BASE_URL  | yes      |         | gitlab API base url, eg. `'https://gitlab.com/api/v4`
 | GITLAB_API_TOKEN | yes      |         | gitlab API token
 
+You also have the ability to use multiple clients, you'll have to set the client parameter on your widget:
+
+```yaml
+dashboards:
+-
+  title: '@mozaik/ext-gitlab demo'
+  # …
+  widgets:
+  -
+    # will use 'default' client, GITLAB_* environment variables
+    extension: gitlab
+    widget:    Project
+    project:   gitlab-org/gitlab-ce
+    # …
+  -
+    # will use 'other' client, GITLAB_OTHER_* environment variables
+    extension: gitlab
+    widget:    Project
+    project:   gitlab-org/gitlab-ce
+    client:    other <— HERE IT IS
+    # …
+```
+when you define the `client` property, the loaded environment variables
+must have the form `GITLAB_<uppercased_client_id>_<key>`, for example:
+
+- GITLAB_OTHER_BASE_URL
+- GITLAB_OTHER_API_TOKEN
+- …
+
 ## Project
 
 > Show GitLab project info.

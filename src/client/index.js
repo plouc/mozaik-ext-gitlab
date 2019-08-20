@@ -1,6 +1,5 @@
 'use strict'
 
-const config = require('./config')
 const Gitlab = require('./gitlab').Gitlab
 
 const aggregatePipelineJobs = jobs => {
@@ -45,24 +44,38 @@ const aggregatePipelineJobs = jobs => {
     return stages
 }
 
+const clients = {}
+
+const getClient = (mozaik, id = 'default') => {
+    if (clients[id] !== undefined) return clients[id]
+
+    let envPrefix = 'GITLAB_'
+    if (id !== 'default') {
+        envPrefix += id.toUpperCase() + '_'
+    }
+
+    let options = {
+        baseUrl: process.env[envPrefix + 'BASE_URL'],
+        token: process.env[envPrefix + 'API_TOKEN'],
+    }
+
+    let client = new Gitlab(options.baseUrl, options.token, mozaik.request, mozaik.logger)
+    clients[id] = client
+
+    return client
+}
+
 /**
  * @param {Mozaik} mozaik
  */
 module.exports = mozaik => {
-    mozaik.loadApiConfig(config)
-
-    const gitlab = new Gitlab(
-        config.get('gitlab.baseUrl'),
-        config.get('gitlab.token'),
-        mozaik.request,
-        mozaik.logger
-    )
-
     return {
-        project({ project }) {
+        project({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return gitlab.getProject(project)
         },
-        projectMembers({ project }) {
+        projectMembers({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return Promise.all([
                 gitlab.getProject(project),
                 gitlab.getProjectMembers(project),
@@ -71,7 +84,8 @@ module.exports = mozaik => {
                 members,
             }))
         },
-        projectContributors({ project }) {
+        projectContributors({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return Promise.all([
                 gitlab.getProject(project),
                 gitlab.getProjectContributors(project),
@@ -80,7 +94,8 @@ module.exports = mozaik => {
                 contributors,
             }))
         },
-        projectJobs({ project }) {
+        projectJobs({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return Promise.all([gitlab.getProject(project), gitlab.getProjectJobs(project)]).then(
                 ([project, jobs]) => ({
                     project,
@@ -88,7 +103,8 @@ module.exports = mozaik => {
                 })
             )
         },
-        projectBranches({ project }) {
+        projectBranches({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return Promise.all([
                 gitlab.getProject(project),
                 gitlab.getProjectBranches(project),
@@ -97,10 +113,12 @@ module.exports = mozaik => {
                 branches,
             }))
         },
-        projectMergeRequests({ project, query = {} }) {
+        projectMergeRequests({ project, query = {}, client }) {
+            const gitlab = getClient(mozaik, client)
             return gitlab.getProjectMergeRequests(project, query)
         },
-        projectLabels({ project }) {
+        projectLabels({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return Promise.all([gitlab.getProject(project), gitlab.getProjectLabels(project)]).then(
                 ([project, labels]) => ({
                     project,
@@ -108,7 +126,8 @@ module.exports = mozaik => {
                 })
             )
         },
-        projectMilestones({ project }) {
+        projectMilestones({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return Promise.all([
                 gitlab.getProject(project),
                 gitlab.getProjectMilestones(project),
@@ -117,7 +136,8 @@ module.exports = mozaik => {
                 milestones,
             }))
         },
-        projectEvents({ project }) {
+        projectEvents({ project, client }) {
+            const gitlab = getClient(mozaik, client)
             return Promise.all([gitlab.getProject(project), gitlab.getProjectEvents(project)]).then(
                 ([project, events]) => ({
                     project,
@@ -125,7 +145,8 @@ module.exports = mozaik => {
                 })
             )
         },
-        latestProjectPipeline({ project, ref }) {
+        latestProjectPipeline({ project, ref, client }) {
+            const gitlab = getClient(mozaik, client)
             return gitlab.getProjectPipelines(project, { ref, per_page: 1 }).then(({ items }) => {
                 if (items.length === 0) return null
 

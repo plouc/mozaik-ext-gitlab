@@ -81,10 +81,10 @@ export default class Project extends Component {
         theme: PropTypes.object.isRequired,
     }
 
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.project.${project}`,
-            params: { project },
+            id: `gitlab.project.${client}.${project}`,
+            params: { project, client },
         }
     }
 

@@ -32,11 +32,10 @@ export default class ProjectMilestones extends Component {
         }),
         apiError: PropTypes.object,
     }
-
-    static getApiRequest({ project }) {
+    static getApiRequest({ project, client = 'default' }) {
         return {
-            id: `gitlab.projectMilestones.${project}`,
-            params: { project },
+            id: `gitlab.projectMilestones.${client}.${project}`,
+            params: { project, client },
         }
     }
 
