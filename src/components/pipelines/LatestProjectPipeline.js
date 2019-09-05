@@ -223,7 +223,7 @@ export default class LatestProjectPipeline extends Component {
                             </InfoItem>
                             <InfoItem>
                                 <GitBranchIcon
-                                    size="1.8vmin"
+                                    size="16px"
                                     style={{
                                         display: 'inline-block',
                                         verticalAlign: 'middle',
@@ -235,7 +235,7 @@ export default class LatestProjectPipeline extends Component {
                                     {apiData.ref}
                                 </ExternalLink>{' '}
                                 <GitCommitIcon
-                                    size="1.8vmin"
+                                    size="16px"
                                     style={{
                                         display: 'inline-block',
                                         verticalAlign: 'middle',
@@ -249,7 +249,7 @@ export default class LatestProjectPipeline extends Component {
                             </InfoItem>
                             <InfoItem>
                                 <ClockIcon
-                                    size="1.8vmin"
+                                    size="16px"
                                     style={{
                                         display: 'inline-block',
                                         verticalAlign: 'middle',
@@ -276,7 +276,7 @@ export default class LatestProjectPipeline extends Component {
                                         <Stage key={stage.name}>
                                             <StageLabel>
                                                 <StageIcon
-                                                    size="1.8vmin"
+                                                    size="16px"
                                                     style={{
                                                         display: 'inline-block',
                                                         verticalAlign: 'middle',
