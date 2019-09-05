@@ -80,13 +80,14 @@ module.exports = mozaik => {
                 contributors,
             }))
         },
-        projectJobs({ project }) {
-            return Promise.all([gitlab.getProject(project), gitlab.getProjectJobs(project)]).then(
-                ([project, jobs]) => ({
-                    project,
-                    jobs,
-                })
-            )
+        projectJobs({ project, maxResult }) {
+            return Promise.all([
+                gitlab.getProject(project),
+                gitlab.getProjectJobs(project, maxResult),
+            ]).then(([project, jobs]) => ({
+                project,
+                jobs,
+            }))
         },
         projectBranches({ project }) {
             return Promise.all([

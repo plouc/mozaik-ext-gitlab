@@ -93,9 +93,9 @@ class GitLab {
         }))
     }
 
-    getProjectJobs(projectId) {
+    getProjectJobs(projectId, maxResult = 40) {
         return this.makeRequest(`/projects/${encodeURIComponent(projectId)}/jobs`, {
-            per_page: 40,
+            per_page: maxResult,
         }).then(res => ({
             items: res.body,
             pagination: exports.paginationFromHeaders(res.headers),
