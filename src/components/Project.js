@@ -17,7 +17,7 @@ import {
 } from '@mozaik/ui'
 
 const AVATAR_SIZE = '12vmin'
-const ICON_SIZE = '1.8vmin'
+const ICON_SIZE = '17px'
 
 const Container = styled.div`
     display: flex;
