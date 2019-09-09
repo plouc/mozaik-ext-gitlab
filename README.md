@@ -294,6 +294,55 @@ key       | required | default               | description
   y:         0
 ```
 
+## GitLab merge requests status
+
+> Show GitLab project's merge requests status
+
+### parameters
+
+key         | required | default               | description
+------------|----------|-----------------------|----------------
+`project`   | yes      | *n/a*                 | *ID or NAMESPACE/PROJECT_NAME of a project*
+`status`    | no       | 'opened'              | 
+`thresholds`| no       |        - threshold: 0
+                                  textColor: 'text'
+                                  bgColor: 'success'
+                                  message: 'good job!'
+                                - threshold: 3
+                                  textColor: 'text'
+                                  bgColor: 'warning'
+                                  message: 'you should consider reviewing'
+                                - threshold: 5
+                                  textColor: 'text'
+                                  bgColor: 'failure'
+                                  message: 'merge requests overflow'
+
+### usage
+
+``` yaml
+- extension: gitlab
+  widget:    MergeRequestsStatus
+  project:   gitlab-org/gitlab-ce
+  columns:   1
+  status:    'opened'
+  thresholds:
+    - threshold: 0
+      textColor: 'text'
+      bgColor: 'success'
+      message: 'good job!'
+    - threshold: 3
+      textColor: 'text'
+      bgColor: 'warning'
+      message: 'you should consider reviewing'
+    - threshold: 5
+      textColor: 'text'
+      bgColor: 'failure'
+      message: 'merge requests overflow'
+  rows:      1
+  x:         0
+  y:         0
+```
+
 
 [license-image]: https://img.shields.io/github/license/plouc/mozaik-ext-gitlab.svg?style=flat-square
 [license-url]: https://github.com/plouc/mozaik-ext-gitlab/blob/master/LICENSE.md
